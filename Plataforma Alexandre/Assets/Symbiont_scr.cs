@@ -21,6 +21,7 @@ public class Symbiont_scr : MonoBehaviour
         
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -28,6 +29,8 @@ public class Symbiont_scr : MonoBehaviour
             sr.enabled = false;
             circle.enabled = false;
             collected.SetActive(true);
+            Manager_scr.instance.totalScore += score;
+            Manager_scr.instance.UpdateScoreText();
             Destroy(gameObject, .3f);
         }
     } 
