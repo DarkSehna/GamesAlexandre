@@ -10,11 +10,6 @@ public class Player_movement : MonoBehaviour
     Rigidbody2D rig;
     Animator anim;
     public bool isjump;
-    public GameObject Bullet;
-    Vector2 lookDirection;
-    float lookAngle;
-    public Transform player;
-    public float offSet;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +23,6 @@ public class Player_movement : MonoBehaviour
     {
         move();
         jump();
-        lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-        player.rotation = quaternion.Euler(0f, 0f, lookAngle + offSet);
-        if (Input.GetMouseButtonDown(0))
-        {
-            FireBullet();
-        }
     }
 
      void move()
@@ -82,10 +70,4 @@ public class Player_movement : MonoBehaviour
             isjump = true;
         }
     }
-    void FireBullet()
-    {
-        GameObject FireBullet = Instantiate(Bullet, player.position, player.rotation);
-        FireBullet.GetComponent<Rigidbody2D>().velocity = player.up * 10f;
-    }
-  
 }
