@@ -4420,8 +4420,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   direction: {x: 0, y: 0}
+  jumpSpeed: 5
+  jumpDelay: 0.25
+  jumpTimer: 0
   rb: {fileID: 608731428}
   animator: {fileID: 873661430}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  characterHolder: {fileID: 528273946}
+  maxSpeed: 7
+  linearDrag: 4
+  gravity: 1
+  fallMultiplier: 5
+  onGround: 0
+  groundLenght: 0.52
+  colliderOffset: {x: 0.25, y: 0, z: 0}
 --- !u!68 &608731427
 EdgeCollider2D:
   m_ObjectHideFlags: 0
