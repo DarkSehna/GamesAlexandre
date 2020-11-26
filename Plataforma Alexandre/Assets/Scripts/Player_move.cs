@@ -20,6 +20,7 @@ public class Player_move : MonoBehaviour
     public Animator animator;
     public LayerMask groundLayer;
     public GameObject characterHolder;
+    public ParticleSystem dust;
 
     [Header("Physics")]
     public float maxSpeed = 7f;
@@ -61,6 +62,7 @@ public class Player_move : MonoBehaviour
 
     void jump()
     {
+        CreateDust();
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
         jumpTimer = 0;
@@ -104,6 +106,7 @@ public class Player_move : MonoBehaviour
 
     void Flip()
     {
+        CreateDust();
         facingRight = !facingRight;
         transform.rotation = Quaternion.Euler(0, facingRight ? 0 : 180, 0);
     }
@@ -143,6 +146,11 @@ public class Player_move : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position + colliderOffset, transform.position + colliderOffset + Vector3.down * groundLenght);
         Gizmos.DrawLine(transform.position - colliderOffset, transform.position - colliderOffset + Vector3.down * groundLenght);
+    }
+
+    void CreateDust()
+    {
+        dust.Play();
     }
 }
 
