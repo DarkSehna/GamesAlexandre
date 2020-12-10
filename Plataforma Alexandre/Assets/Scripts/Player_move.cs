@@ -21,6 +21,7 @@ public class Player_move : MonoBehaviour
     public LayerMask groundLayer;
     public GameObject characterHolder;
     public ParticleSystem dust;
+    public DialogueManager talking;
 
     [Header("Physics")]
     public float maxSpeed = 7f;
@@ -52,12 +53,15 @@ public class Player_move : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveCharacter(direction.x);
-        if (jumpTimer > Time.time && onGround)
+        if (talking.talking == false)
         {
-            jump();
+            moveCharacter(direction.x);
+            if (jumpTimer > Time.time && onGround)
+            {
+                jump();
+            }
+            modifyPhysics();
         }
-        modifyPhysics();
     }
 
     void jump()

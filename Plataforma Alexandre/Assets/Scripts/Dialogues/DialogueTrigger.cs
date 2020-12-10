@@ -9,5 +9,6 @@ public class DialogueTrigger : MonoBehaviour
     public void triggerDialogue()
     {
         FindObjectOfType<DialogueManager>().startDialogue(dialogue);
-    }
+        FindObjectOfType<DialogueManager>().talking = true;
+    } 
 }

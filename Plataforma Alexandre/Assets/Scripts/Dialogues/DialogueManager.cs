@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
     public Animator animator;
+    public bool talking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     public void startDialogue(Dialogue dialogue)
     {
+        talking = true;
         animator.SetBool("isOpen",true);
         nameText.text = dialogue.name;
         sentences.Clear();
@@ -53,6 +55,7 @@ public class DialogueManager : MonoBehaviour
     void endDialogue()
     {
         animator.SetBool("isOpen", false);
+        talking = false;
     }
 
 }

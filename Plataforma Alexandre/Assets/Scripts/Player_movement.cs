@@ -10,6 +10,7 @@ public class Player_movement : MonoBehaviour
     Rigidbody2D rig;
     Animator anim;
     public bool isjump;
+    public DialogueManager talking;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +22,12 @@ public class Player_movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move();
-        jump();
+        if (!talking)
+        {
+            move();
+            jump();
+        }
+        
     }
 
      void move()
