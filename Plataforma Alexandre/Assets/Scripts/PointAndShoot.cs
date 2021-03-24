@@ -10,6 +10,7 @@ public class PointAndShoot : MonoBehaviour
     public GameObject bulletStart;
     public float bulletSpeed = 60f;
     private Vector3 target;
+    public DialogueManager talking;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class PointAndShoot : MonoBehaviour
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         player.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !talking.talking) 
         {
             float distance = difference.magnitude;
             Vector2 direction = difference / distance;

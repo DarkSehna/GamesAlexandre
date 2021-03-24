@@ -10,5 +10,13 @@ public class DialogueTrigger : MonoBehaviour
     {
         FindObjectOfType<DialogueManager>().startDialogue(dialogue);
         FindObjectOfType<DialogueManager>().talking = true;
-    } 
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown("e"))
+        {
+            triggerDialogue();
+        }
+    }
 }
