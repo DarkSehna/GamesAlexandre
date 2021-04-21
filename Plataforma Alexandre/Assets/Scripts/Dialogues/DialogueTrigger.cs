@@ -12,9 +12,17 @@ public class DialogueTrigger : MonoBehaviour
         FindObjectOfType<DialogueManager>().talking = true;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    /*private void OnTriggerStay2D(Collider2D collision)
     {
         if (Input.GetKeyDown("e"))
+        {
+            triggerDialogue();
+        }
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
             triggerDialogue();
         }
