@@ -134,5 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947c00e591060df45abbb7a1fe6245a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTime: 1
+  destroyTime: 1.5
   Bouncer: {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}

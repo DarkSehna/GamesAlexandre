@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float targetTime = 60f;
+    public float destroyTime = 60f;
     public GameObject Bouncer;
 
     // Start is called before the first frame update
@@ -16,8 +16,8 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetTime -= Time.deltaTime;
-        if (targetTime <= 0f)
+        destroyTime -= Time.deltaTime;
+        if (destroyTime <= 0f)
         {
             Destroy(gameObject);
         }
@@ -35,10 +35,10 @@ public class BulletScript : MonoBehaviour
             Instantiate(Bouncer as GameObject, this.transform.position, new Quaternion());
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Enemy")
+        /*if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
-        }
+        }*/
     }
 }
