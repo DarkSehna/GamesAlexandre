@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 707, y: 492}
   m_MaxSize: {x: 18002, y: 14042}
   vertical: 0
-  controlID: 62
+  controlID: 135
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 63
+  controlID: 90
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -373,9 +373,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 483e0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 5efbffff583a0000443b00000a3c0000763c0000
+      m_SelectedIDs: fc3d0000
+      m_LastClickedID: 15868
+      m_ExpandedIDs: 5efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 31138
+  m_LastSelectedObjectID: 15868
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -495,9 +495,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 13.748927, y: 13.995873, z: -581.866}
+    m_Target: {x: -2.730622, y: -4.055886, z: -593.9123}
     speed: 2
-    m_Value: {x: 13.748927, y: 13.995873, z: -581.866}
+    m_Value: {x: -2.730622, y: -4.055886, z: -593.9123}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -547,9 +547,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 36.923164
+    m_Target: 7.464875
     speed: 2
-    m_Value: 36.923164
+    m_Value: 7.464875
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -771,19 +771,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts/Player
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts/Player
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Alexandre\Downloads\GamesAlexandre\Plataforma Alexandre
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 46}
-    m_SelectedIDs: 3a3f0000
-    m_LastClickedID: 16186
+    m_SelectedIDs: 463f0000
+    m_LastClickedID: 16198
     m_ExpandedIDs: 00000000263f0000283f00002a3f00002c3f00002e3f0000303f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Inspector
+    m_Text: Debug
     m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
@@ -931,4 +931,4 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 373
+  m_LastVerticalScrollValue: 100

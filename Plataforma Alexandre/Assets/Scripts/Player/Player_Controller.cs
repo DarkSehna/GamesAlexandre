@@ -8,11 +8,16 @@ public class Player_Controller : MonoBehaviour
     private float moveInputDirection;
     private Rigidbody2D rb;
     private bool isFacingRight = true;
+    private bool isGrounded;
+    private bool canJump;
     #endregion
 
     #region Public Variables
     public float moveSpeed;
     public float jumpForce;
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask whatIsGround;
     #endregion
 
     // Start is called before the first frame update
@@ -26,11 +31,13 @@ public class Player_Controller : MonoBehaviour
     {
         checkInput();
         checkMoveDirection();
+        checkIfCanJump();
     }
 
     private void FixedUpdate()
     {
         applyMovement();
+        checkSurroundings();
     }
 
     private void checkInput()
@@ -67,6 +74,31 @@ public class Player_Controller : MonoBehaviour
 
     private void jump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        if (canJump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+    }
+
+    private void checkSurroundings()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+    }
+
+    private void checkIfCanJump()
+    {
+        if (isGrounded)
+        {
+            canJump = true;
+        }
+        else 
+        {
+            canJump = false;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 }
