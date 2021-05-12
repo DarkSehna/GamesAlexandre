@@ -6,11 +6,12 @@ public class BulletScript : MonoBehaviour
 {
     public float destroyTime = 60f;
     public GameObject Bouncer;
+    GameObject Player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -32,7 +33,8 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wall")
         {
-            Instantiate(Bouncer as GameObject, this.transform.position, new Quaternion());
+            var a = Instantiate(Bouncer as GameObject, this.transform.position, new Quaternion());
+            Player.GetComponent<PlayerShoot>().bouncers.Add(a);
             Destroy(gameObject);
         }
         /*if (collision.gameObject.tag == "Enemy")

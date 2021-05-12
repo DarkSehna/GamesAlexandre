@@ -18,14 +18,14 @@ public class BouncerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (box.enabled == true)
+        /*if (box.enabled == true)
         {
             destroyTime -= Time.deltaTime;
             if (destroyTime <= 0f)
             {
                 Destroy(gameObject);
             }
-        }
+        }*/
         
         activateTime -= Time.deltaTime;
         if (activateTime <= 0f)
