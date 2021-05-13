@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class BouncerScript : MonoBehaviour
 {
+    #region Public Variables
+    [Header("Floats")]
     public float activateTime = 60f;
     public float destroyTime = 60f;
     public float jumpForce = 40;
+    #endregion
+
+    #region Private Variables
     private Collider2D box;
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -18,15 +24,6 @@ public class BouncerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (box.enabled == true)
-        {
-            destroyTime -= Time.deltaTime;
-            if (destroyTime <= 0f)
-            {
-                Destroy(gameObject);
-            }
-        }*/
-        
         activateTime -= Time.deltaTime;
         if (activateTime <= 0f)
         {

@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    #region Public Variables
+    [Header("Floats")]
     public float destroyTime = 60f;
+
+    [Header("Game Objects")]
     public GameObject Bouncer;
+    #endregion
+
     GameObject Player;
 
     // Start is called before the first frame update

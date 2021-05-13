@@ -5,11 +5,19 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> sentences;
+    #region Public Variables
+    [Header("GameObjects")]
     public Text nameText;
     public Text dialogueText;
     public Animator animator;
+
+    [Header("Bools")]
     public bool talking = false;
+    #endregion
+
+    #region Private Variables
+    private Queue<string> sentences;
+    #endregion
 
     // Start is called before the first frame update
     void Start()

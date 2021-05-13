@@ -13,10 +13,15 @@ public class Player_Controller : MonoBehaviour
     #endregion
 
     #region Public Variables
+    [Header("Floats")]
     public float moveSpeed;
     public float jumpForce;
-    public Transform groundCheck;
     public float groundCheckRadius;
+
+    [Header("Game Objects")]
+    public Transform groundCheck;
+
+    [Header("Layers")]
     public LayerMask whatIsGround;
     #endregion
 

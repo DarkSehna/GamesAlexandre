@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    #region Public Variables
+    [Header("Scripts")]
     public Dialogue dialogue;
+    #endregion
 
     public void triggerDialogue()
     {

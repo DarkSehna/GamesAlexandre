@@ -9,7 +9,7 @@ public class BouncePower_scr : MonoBehaviour
         if (collision.CompareTag("Player")) 
         {
             var Bounce = collision.GetComponent<PlayerShoot>();
-            Bounce.canShoot = true;
+            Bounce.hasBouncePower = true;
             Destroy(gameObject);
         }
     }
