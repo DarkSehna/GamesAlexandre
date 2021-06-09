@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     public Vector2 rawMovementInput;
+    public int normInputX;
+    public int normInputY;
 
     void Update()
     {
@@ -15,6 +17,8 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnMoveInput(InputAction.CallbackContext context)
     {
         rawMovementInput = context.ReadValue<Vector2>();
+        normInputX = (int)(rawMovementInput * Vector2.right).normalized.x;
+        normInputY = (int)(rawMovementInput * Vector2.up).normalized.y;
     }
 
     public void OnJumpInput(InputAction.CallbackContext context)
