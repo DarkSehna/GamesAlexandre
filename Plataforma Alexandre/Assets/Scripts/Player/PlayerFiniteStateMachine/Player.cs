@@ -92,8 +92,41 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Check Functions
+
+     public bool CheckIfGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
+    }
+
+    public bool CheckIfTouchingWall()
+    {
+        return Physics2D.Raycast(wallCheck.position, Vector2.right * facingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
+    }
+
+    public void CheckIfShouldFlip(int xInput)
+    {
+        if(xInput!=0&&xInput!=facingDirection)
+        {
+            Flip();
+        }
+    }
     #endregion
 
     #region Other Functions
+    private void Flip()
+    {
+        facingDirection *= -1;
+        transform.Rotate(0f, 180f, 0f);
+    }
+
+    private void AnimationTrigger()
+    {
+        stateMachine.currentState.AnimationTrigger();
+    }
+
+    private void AnimationFinishTrigger()
+    {
+        stateMachine.currentState.AnimationFinishTrigger();
+    }
     #endregion
 }
