@@ -47,24 +47,27 @@ public class PlayerInAirState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        CheckCoyoteTime();
         xInput = player.inputHandler.normInputX;
         jumpInput = player.inputHandler.jumpInput;
         jumpInputStop = player.inputHandler.jumpInputStop;
         grabInput = player.inputHandler.grabInput;
+        CheckJumpMultiplier();
 
-        if(isGrounded&&player.currentVelocity.y<0.01f)
+        if(isGrounded && player.currentVelocity.y<0.01f)
         {
             stateMachine.ChangeState(player.landState);
         }
-        else if(jumpInput&&player.jumpState.CanJump())
+        else if(jumpInput && player.jumpState.CanJump())
         {
             stateMachine.ChangeState(player.jumpState);
         }
-        else if(isTouchingWall&&grabInput)
+        else if(isTouchingWall && grabInput)
         {
             stateMachine.ChangeState(player.wallGrabState);
         }
-        else if(isTouchingWall&&xInput==player.facingDirection&&player.currentVelocity.y<=0)
+        else if(isTouchingWall && xInput==player.facingDirection && player.currentVelocity.y<=0)
         {
             stateMachine.ChangeState(player.wallSlideState);
         }
@@ -81,5 +84,40 @@ public class PlayerInAirState : PlayerState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+    }
+
+    private void CheckJumpMultiplier()
+    {
+        if(isJumping)
+        {
+            if(jumpInputStop)
+            {
+                player.SetVelocityY(player.currentVelocity.y * playerData.variableJumpHeightMultiplier);
+                isJumping = false;
+            }
+            else if(player.currentVelocity.y<=0f)
+            {
+                isJumping = false;
+            }
+        }
+    }
+
+    private void CheckCoyoteTime()
+    {
+        if(coyoteTime && Time.time>startTime+playerData.coyoteTime)
+        {
+            coyoteTime = false;
+            player.jumpState.DecreaseAmountOfJumpsLeft();
+        }
+    }
+    
+    public void StartCoyoteTime()
+    {
+        coyoteTime = true;
+    }
+
+    public void SetIsJumping()
+    {
+        isJumping = true;
     }
 }

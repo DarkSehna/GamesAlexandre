@@ -29,8 +29,8 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Other Variables
-    public Vector2 currentVelocity;
-    public int facingDirection;
+    public Vector2 currentVelocity { get; private set; }
+    public int facingDirection { get; private set; }
     #endregion
 
     #region Check Transforms
