@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     public Animator anim { get; private set; }
     public PlayerInputHandler inputHandler { get; private set; }
     public Rigidbody2D rB { get; private set; }
+    public Transform dashDirectionIndicator { get; private set; }
+    public BoxCollider2D movementCollider { get; private set; }
+
     #endregion
 
     #region State Variables
@@ -21,6 +24,11 @@ public class Player : MonoBehaviour
     public PlayerWallSlideState wallSlideState { get; private set; }
     public PlayerWallGrabState wallGrabState { get; private set; }
     public PlayerWallClimbState wallClimbState { get; private set; }
+    public PlayerWallJumpState wallJumpState { get; private set; }
+    public PlayerLedgeClimbState ledgeClimbState { get; private set; }
+    public PlayerDashState dashState { get; private set; }
+    public PlayerCrouchIdleState crouchIdleState { get; private set; }
+    public PlayerCrouchMoveState crouchMoveState { get; private set; }
 
 
     [SerializeField]
@@ -39,6 +47,12 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private Transform wallCheck;
+
+    [SerializeField]
+    private Transform ledgeCheck;
+
+    [SerializeField]
+    private Transform ceilingCheck;
     #endregion
 
     #region Unity Callback Functions
@@ -54,12 +68,19 @@ public class Player : MonoBehaviour
         wallSlideState = new PlayerWallSlideState(this, stateMachine, playerData, "wallSlide");
         wallGrabState = new PlayerWallGrabState(this, stateMachine, playerData, "wallGrab");
         wallClimbState = new PlayerWallClimbState(this, stateMachine, playerData, "wallClimb");
+        wallJumpState = new PlayerWallJumpState(this, stateMachine, playerData, "inAir");
+        ledgeClimbState = new PlayerLedgeClimbState(this, stateMachine, playerData, "ledgeClimb");
+        dashState = new PlayerDashState(this, stateMachine, playerData, "inAir");
+        crouchIdleState = new PlayerCrouchIdleState(this, stateMachine, playerData, "crouchIdle");
+        crouchMoveState = new PlayerCrouchMoveState(this, stateMachine, playerData, "crouchMove");
     }
     private void Start()
     {
         anim = GetComponent<Animator>();
         inputHandler = GetComponent<PlayerInputHandler>();
         rB = GetComponent<Rigidbody2D>();
+        dashDirectionIndicator = transform.Find("DashDirectionIndicator");
+        movementCollider = GetComponent<BoxCollider2D>();
 
         facingDirection = 1;
         stateMachine.Inicialize(idleState);
@@ -89,11 +110,33 @@ public class Player : MonoBehaviour
         rB.velocity = workSpace;
         currentVelocity = workSpace;
     }
+
+    public void SetVelocityZero()
+    {
+        rB.velocity = Vector2.zero;
+        currentVelocity = Vector2.zero;
+    }
+
+    public void SetVelocity(float velocity, Vector2 angle, int direction)
+    {
+        angle.Normalize();
+        workSpace.Set(angle.x * velocity * direction, angle.y * velocity);
+        rB.velocity = workSpace;
+        currentVelocity = workSpace;
+    }
+
+    public void SetVelocity(float velocity, Vector2 direction)
+    {
+        workSpace = direction * velocity;
+        rB.velocity = workSpace;
+        currentVelocity = workSpace;
+    }
+
     #endregion
 
     #region Check Functions
 
-     public bool CheckIfGrounded()
+    public bool CheckIfGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
     }
@@ -109,6 +152,21 @@ public class Player : MonoBehaviour
         {
             Flip();
         }
+    }
+
+    public bool CheckForCeiling()
+    {
+        return Physics2D.OverlapCircle(ceilingCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
+    }
+
+    public bool CheckIfTouchingLedge()
+    {
+        return Physics2D.Raycast(ledgeCheck.position, Vector2.right * facingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
+    }
+
+    public bool CheckIfTouchingWallBack()
+    {
+        return Physics2D.Raycast(wallCheck.position, Vector2.right * -facingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
     }
     #endregion
 
@@ -127,6 +185,30 @@ public class Player : MonoBehaviour
     private void AnimationFinishTrigger()
     {
         stateMachine.currentState.AnimationFinishTrigger();
+    }
+
+    public Vector2 DetermineCornerPosition()
+    {
+        RaycastHit2D xHit = Physics2D.Raycast(wallCheck.position, Vector2.right * facingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
+        float xDistance = xHit.distance;
+        workSpace.Set((xDistance + 0.015f) * facingDirection, 0f);
+
+        RaycastHit2D yHit = Physics2D.Raycast(ledgeCheck.position + (Vector3)(workSpace), Vector2.down, ledgeCheck.position.y - wallCheck.position.y + 0.015f, playerData.whatIsGround);
+        float yDistance = yHit.distance;
+        workSpace.Set(wallCheck.position.x + (xDistance * facingDirection), ledgeCheck.position.y - yDistance);
+
+        return workSpace;
+    }
+
+    public void SetColliderHeight(float height)
+    {
+        Vector2 center = movementCollider.offset;
+        workSpace.Set(movementCollider.size.x, height);
+
+        center.y += (height - movementCollider.size.y) / 2;
+
+        movementCollider.size = workSpace;
+        movementCollider.offset = center;
     }
     #endregion
 }
