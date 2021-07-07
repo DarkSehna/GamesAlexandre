@@ -8,11 +8,14 @@ public class PlayerJumpState : PlayerAbilityState
 
     public PlayerJumpState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
+        amountOfJumpsLeft = playerData.amountOfJumps;
     }
 
     public override void Enter()
     {
         base.Enter();
+
+        player.inputHandler.UseJumpInput();
         player.SetVelocityY(playerData.jumpVelocity);
         isAbilityDone = true;
         amountOfJumpsLeft--;
