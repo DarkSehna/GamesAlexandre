@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
         wallGrabState = new PlayerWallGrabState(this, stateMachine, playerData, "wallGrab");
         wallClimbState = new PlayerWallClimbState(this, stateMachine, playerData, "wallClimb");
         wallJumpState = new PlayerWallJumpState(this, stateMachine, playerData, "inAir");
-        ledgeClimbState = new PlayerLedgeClimbState(this, stateMachine, playerData, "ledgeClimb");
+        ledgeClimbState = new PlayerLedgeClimbState(this, stateMachine, playerData, "ledgeClimbState");
         dashState = new PlayerDashState(this, stateMachine, playerData, "inAir");
         crouchIdleState = new PlayerCrouchIdleState(this, stateMachine, playerData, "crouchIdle");
         crouchMoveState = new PlayerCrouchMoveState(this, stateMachine, playerData, "crouchMove");
@@ -148,7 +148,7 @@ public class Player : MonoBehaviour
 
     public void CheckIfShouldFlip(int xInput)
     {
-        if(xInput!=0&&xInput!=facingDirection)
+        if(xInput != 0 && xInput != facingDirection)
         {
             Flip();
         }
@@ -209,6 +209,11 @@ public class Player : MonoBehaviour
 
         movementCollider.size = workSpace;
         movementCollider.offset = center;
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * facingDirection * playerData.wallCheckDistance));
     }
     #endregion
 }
