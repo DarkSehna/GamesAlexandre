@@ -31,7 +31,7 @@ public class E1_MoveState : MoveState
 
         if(isPlayerInMinAgroRange)
         {
-            //stateMachine.ChangeState(enemy.playerDetectedState);
+            stateMachine.ChangeState(enemy.playerDetectedState);
         }
         else if(isDetectingWall || !isDetectingLedge)
         {
