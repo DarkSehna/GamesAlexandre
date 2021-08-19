@@ -12,6 +12,7 @@ public class Entity : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     public Animator anim { get; private set; }
     public GameObject aliveGO { get; private set; }
+    public AnimationToStateMachine atsm { get; private set; }
 
     [SerializeField] private Transform wallCheck;
     [SerializeField] private Transform ledgeCheck;

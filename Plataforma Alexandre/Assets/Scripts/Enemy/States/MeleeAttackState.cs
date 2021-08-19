@@ -5,8 +5,25 @@ using UnityEngine;
 public class MeleeAttackState : AttackState
 {
     protected D_MeleeAttackState stateData;
-    public MeleeAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_MeleeAttackState stateData) : base(entity, stateMachine, animBoolName)
+
+    public MeleeAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttackState stateData) : base(entity, stateMachine, animBoolName, attackPosition)
     {
         this.stateData = stateData;
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+    }
+
+    public override void FinishAttack()
+    {
+        base.FinishAttack();
+
+        Collider2D[] detectedObject = Physics2D.OverlapCircleAll(attackPosition.position, stateData.attackRadius, stateData.whatIsPlayer);
+        foreach (Collider2D collider in detectedObject)
+        {
+            //collider.transform.SendMessage("Damage", attackDetails);
+        }
     }
 }
