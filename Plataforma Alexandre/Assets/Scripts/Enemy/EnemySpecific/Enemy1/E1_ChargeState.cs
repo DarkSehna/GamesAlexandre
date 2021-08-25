@@ -9,4 +9,49 @@ public class E1_ChargeState : ChargeState
     {
         this.enemy = enemy;
     }
+
+    public override void DoChecks()
+    {
+        base.DoChecks();
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+
+        if(performCloseRangeAction)
+        {
+            stateMachine.ChangeState(enemy.lookForPLayerState);
+        }
+        else if(!isDetectingLedge || isDetecteingWall)
+        {
+            stateMachine.ChangeState(enemy.lookForPLayerState);
+        }
+        else if(isChargeTimeOver)
+        {
+            if(isPlayerInMinAgroRange)
+            {
+                stateMachine.ChangeState(enemy.playerDetectedState);
+            }
+            else
+            {
+                stateMachine.ChangeState(enemy.lookForPLayerState);
+            }
+        }
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+    }
 }

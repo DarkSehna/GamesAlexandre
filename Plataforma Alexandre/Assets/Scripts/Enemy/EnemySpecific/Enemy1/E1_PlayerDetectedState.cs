@@ -16,11 +16,11 @@ public class E1_PlayerDetectedState : PlayerDetectedState
 
         if(performCloseRangeAction)
         {
-          //  stateMachine.ChangeState(enemy.meleeAttackState);
+            stateMachine.ChangeState(enemy.meleeAttackState);
         }
         else if(performLongRangeAction)
         {
-          //  stateMachine.ChangeState(enemy.chargeState);
+            stateMachine.ChangeState(enemy.chargeState);
         }
         else if(!isPlayerInMinAgroRange)
         {
