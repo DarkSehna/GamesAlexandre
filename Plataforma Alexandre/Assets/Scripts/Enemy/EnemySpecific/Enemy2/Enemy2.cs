@@ -21,7 +21,7 @@ public class Enemy2 : Entity
     [SerializeField] private D_LookForPlayer lookForPlayerStateData;
     [SerializeField] private D_StunState stunStateData;
     [SerializeField] private D_DeadState deadStateData;
-    [SerializeField] private D_DodgeState dodgeStateData;
+    [SerializeField] public D_DodgeState dodgeStateData;
     [SerializeField] private D_RangedAttackState rangedAttackStateData;
 
     [SerializeField] private Transform meleeAttackPosition;
@@ -42,5 +42,35 @@ public class Enemy2 : Entity
         rangedAttackState = new E2_RangedAttackState(this, stateMachine, "rangedAttack", rangedAttackPosition, rangedAttackStateData, this);
 
         stateMachine.Initialize(moveState);
+    }
+
+    public override void Damage(AttackDetails attackDetails)
+    {
+        base.Damage(attackDetails);
+
+        if(isDead)
+        {
+            stateMachine.ChangeState(deadState);
+        }
+        else if(isStunned && stateMachine.currentState != stunState)
+        {
+            stateMachine.ChangeState(stunState);
+        }
+        else if(CheckPlayerInMinAgroRange())
+        {
+            stateMachine.ChangeState(rangedAttackState);
+        }
+        else if(!CheckPlayerInMinAgroRange())
+        {
+            lookForPlayerState.SetTurnImmediately(true);
+            stateMachine.ChangeState(lookForPlayerState);
+        }
+    }
+
+    public override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+
+        Gizmos.DrawWireSphere(meleeAttackPosition.position, meleeAttackStateData.attackRadius);
     }
 }

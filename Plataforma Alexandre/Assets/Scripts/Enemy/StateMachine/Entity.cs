@@ -25,8 +25,8 @@ public class Entity : MonoBehaviour
 
     private Vector2 velocityWorkspace;
 
-    private bool isStunned;
-    private bool isDead;
+    protected bool isStunned;
+    protected bool isDead;
 
     public virtual void Start()
     {
@@ -97,7 +97,7 @@ public class Entity : MonoBehaviour
     public virtual bool CheckPlayerInCloseRangeAction()
     {
         return Physics2D.Raycast(playerCheck.position, aliveGO.transform.right, entityData.closeRangeActionDistance, entityData.whatIsPlayer);
-    }
+    } 
 
     public virtual void DamageHop(float velocity)
     {
@@ -109,6 +109,37 @@ public class Entity : MonoBehaviour
     {
         isStunned = false;
         currentStunResistance = entityData.stunResistance;
+    }
+
+    public virtual void Damage(AttackDetails attackDetails)
+    {
+        lastDamageTime = Time.time;
+
+        currentHealth -= attackDetails.damageAmount;
+        currentStunResistance -= attackDetails.stunDamageAmount;
+
+        DamageHop(entityData.damageHopSpeed);
+
+        Instantiate(entityData.hitParticle, aliveGO.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+
+        if(attackDetails.position.x > aliveGO.transform.position.x)
+        {
+            lastDamageDirection = -1;
+        }
+        else
+        {
+            lastDamageDirection = 1;
+        }
+
+        if(currentStunResistance >= 0)
+        {
+            isStunned = true;
+        }
+
+        if(currentHealth <= 0)
+        {
+            isDead = true;
+        }
     }
 
     public virtual void Flip()
