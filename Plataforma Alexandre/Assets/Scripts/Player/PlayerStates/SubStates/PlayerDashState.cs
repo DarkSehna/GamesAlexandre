@@ -37,7 +37,7 @@ public class PlayerDashState : PlayerAbilityState
 
         if(player.currentVelocity.y > 0)
         {
-            player.SetVelocityY(player.currentVelocity.y * playerData.dashEndYMultiplier);
+            core.Movement.SetVelocityY(player.currentVelocity.y * playerData.dashEndYMultiplier);
         }
     }
 
@@ -69,9 +69,9 @@ public class PlayerDashState : PlayerAbilityState
                     isHolding = false;
                     Time.timeScale = 1f;
                     startTime = Time.time;
-                    player.CheckIfShouldFlip(Mathf.RoundToInt(dashDirection.x));
+                    core.Movement.CheckIfShouldFlip(Mathf.RoundToInt(dashDirection.x));
                     player.rB.drag = playerData.drag;
-                    player.SetVelocity(playerData.dashVelocity, dashDirection);
+                    core.Movement.SetVelocity(playerData.dashVelocity, dashDirection);
 
                     player.dashDirectionIndicator.gameObject.SetActive(false);
                     PlaceAfterImage();
@@ -79,7 +79,7 @@ public class PlayerDashState : PlayerAbilityState
             }
             else
             {
-                player.SetVelocity(playerData.dashVelocity, dashDirection);
+                core.Movement.SetVelocity(playerData.dashVelocity, dashDirection);
                 CheckIfShouldPlaceAfterImage();
 
                 if (Time.time >= startTime + playerData.dashTime)

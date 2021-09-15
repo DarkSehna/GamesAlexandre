@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     #region Components
+    public Core Core { get; private set; }
     public Animator anim { get; private set; }
     public PlayerInputHandler inputHandler { get; private set; }
     public Rigidbody2D rB { get; private set; }
@@ -58,6 +59,8 @@ public class Player : MonoBehaviour
     #region Unity Callback Functions
     private void Awake()
     {
+        Core = GetComponentInChildren<Core>();
+
         stateMachine = new PlayerStateMachine();
 
         idleState = new PlayerIdleState(this, stateMachine, playerData, "idle");
@@ -97,40 +100,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Set Functions
-    public void setVelocityX(float velocity)
-    {
-        workSpace.Set(velocity, currentVelocity.y);
-        rB.velocity = workSpace;
-        currentVelocity = workSpace;
-    }
-
-    public void SetVelocityY(float velocity)
-    {
-        workSpace.Set(currentVelocity.x, velocity);
-        rB.velocity = workSpace;
-        currentVelocity = workSpace;
-    }
-
-    public void SetVelocityZero()
-    {
-        rB.velocity = Vector2.zero;
-        currentVelocity = Vector2.zero;
-    }
-
-    public void SetVelocity(float velocity, Vector2 angle, int direction)
-    {
-        angle.Normalize();
-        workSpace.Set(angle.x * velocity * direction, angle.y * velocity);
-        rB.velocity = workSpace;
-        currentVelocity = workSpace;
-    }
-
-    public void SetVelocity(float velocity, Vector2 direction)
-    {
-        workSpace = direction * velocity;
-        rB.velocity = workSpace;
-        currentVelocity = workSpace;
-    }
+    
 
     #endregion
 
@@ -144,14 +114,6 @@ public class Player : MonoBehaviour
     public bool CheckIfTouchingWall()
     {
         return Physics2D.Raycast(wallCheck.position, Vector2.right * facingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
-    }
-
-    public void CheckIfShouldFlip(int xInput)
-    {
-        if(xInput != 0 && xInput != facingDirection)
-        {
-            Flip();
-        }
     }
 
     public bool CheckForCeiling()
@@ -171,11 +133,6 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Other Functions
-    private void Flip()
-    {
-        facingDirection *= -1;
-        transform.Rotate(0f, 180f, 0f);
-    }
 
     private void AnimationTrigger()
     {

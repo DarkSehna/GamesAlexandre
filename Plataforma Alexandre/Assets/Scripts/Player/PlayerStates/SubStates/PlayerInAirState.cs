@@ -118,8 +118,8 @@ public class PlayerInAirState : PlayerState
         }
         else
         {
-            player.CheckIfShouldFlip(xInput);
-            player.setVelocityX(playerData.movementVelocity * xInput);
+            core.Movement.CheckIfShouldFlip(xInput);
+            core.Movement.SetVelocityX(playerData.movementVelocity * xInput);
 
             player.anim.SetFloat("yVelocity", player.currentVelocity.y);
             player.anim.SetFloat("xVelocity", Mathf.Abs(player.currentVelocity.x));
@@ -137,7 +137,7 @@ public class PlayerInAirState : PlayerState
         {
             if(jumpInputStop)
             {
-                player.SetVelocityY(player.currentVelocity.y * playerData.variableJumpHeightMultiplier);
+                core.Movement.SetVelocityY(player.currentVelocity.y * playerData.variableJumpHeightMultiplier);
                 isJumping = false;
             }
             else if(player.currentVelocity.y<=0f)
