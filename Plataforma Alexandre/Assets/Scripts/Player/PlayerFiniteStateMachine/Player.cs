@@ -106,30 +106,7 @@ public class Player : MonoBehaviour
 
     #region Check Functions
 
-    public bool CheckIfGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
-    }
-
-    public bool CheckIfTouchingWall()
-    {
-        return Physics2D.Raycast(wallCheck.position, Vector2.right * facingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
-    }
-
-    public bool CheckForCeiling()
-    {
-        return Physics2D.OverlapCircle(ceilingCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
-    }
-
-    public bool CheckIfTouchingLedge()
-    {
-        return Physics2D.Raycast(ledgeCheck.position, Vector2.right * facingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
-    }
-
-    public bool CheckIfTouchingWallBack()
-    {
-        return Physics2D.Raycast(wallCheck.position, Vector2.right * -facingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
-    }
+    
     #endregion
 
     #region Other Functions
