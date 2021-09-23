@@ -21,8 +21,8 @@ public class ChargeState : State
         base.DoChecks();
 
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
-        isDetectingLedge = entity.CheckLedge();
-        isDetecteingWall = entity.CheckWall();
+        isDetectingLedge = core.CollisionSenses.LedgeVertical;
+        isDetecteingWall = core.CollisionSenses.WallFront;
         performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
@@ -31,7 +31,7 @@ public class ChargeState : State
         base.Enter();
 
         isChargeTimeOver = false;
-        entity.SetVelocity(stateData.chargeSpeed);
+        core.Movement.SetVelocityX(stateData.chargeSpeed);
     }
 
     public override void LogicUpdate()

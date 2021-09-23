@@ -24,9 +24,9 @@ public class Enemy1 : Entity
 
     [SerializeField] private Transform meleeAttackPosition;
 
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
 
         moveState = new E1_MoveState(this, stateMachine, "Move", moveStateData, this);
         idleState = new E1_IdleState(this, stateMachine, "Idle", idleStateData, this);

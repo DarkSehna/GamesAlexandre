@@ -65,7 +65,7 @@ public class Movement : CoreComponents
         }
     }
 
-    private void Flip()
+    public void Flip()
     {
         facingDirection *= -1;
         transform.Rotate(0f, 180f, 0f);
