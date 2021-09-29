@@ -27,7 +27,7 @@ public class MoveState : State
     {
         base.Enter();
 
-        core.Movement.SetVelocityX(stateData.movementSpeed);
+        core.Movement.SetVelocityX(stateData.movementSpeed * core.Movement.facingDirection);
     }
 
     public override void Exit()
@@ -38,6 +38,8 @@ public class MoveState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        core.Movement.SetVelocityX(stateData.movementSpeed * core.Movement.facingDirection);
     }
 
     public override void PhysicsUpdate()

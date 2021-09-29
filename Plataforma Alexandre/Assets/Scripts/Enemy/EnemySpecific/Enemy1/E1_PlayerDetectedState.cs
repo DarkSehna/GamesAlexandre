@@ -22,7 +22,7 @@ public class E1_PlayerDetectedState : PlayerDetectedState
         {
             stateMachine.ChangeState(enemy.chargeState);
         }
-        else if(!isPlayerInMinAgroRange)
+        else if(!isPlayerInMaxAgroRange)
         {
             stateMachine.ChangeState(enemy.lookForPLayerState);
         }

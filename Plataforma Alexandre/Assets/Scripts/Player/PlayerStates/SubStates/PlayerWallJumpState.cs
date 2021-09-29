@@ -25,8 +25,8 @@ public class PlayerWallJumpState : PlayerAbilityState
     {
         base.LogicUpdate();
 
-        player.anim.SetFloat("yVelocity", player.currentVelocity.y);
-        player.anim.SetFloat("xVelocity", Mathf.Abs(player.currentVelocity.x));
+        player.anim.SetFloat("yVelocity", core.Movement.currentVelocity.y);
+        player.anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.currentVelocity.x));
         
         if(Time.time > startTime+playerData.wallJumpTime)
         {
@@ -38,11 +38,11 @@ public class PlayerWallJumpState : PlayerAbilityState
     {
         if(isTouchingWall)
         {
-            wallJumpDirection = -player.facingDirection;
+            wallJumpDirection = -core.Movement.facingDirection;
         }
         else
         {
-            wallJumpDirection = player.facingDirection;
+            wallJumpDirection = core.Movement.facingDirection;
         }
     }
 }

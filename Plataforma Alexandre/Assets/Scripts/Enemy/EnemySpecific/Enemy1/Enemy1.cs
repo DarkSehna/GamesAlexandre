@@ -28,14 +28,14 @@ public class Enemy1 : Entity
     {
         base.Awake();
 
-        moveState = new E1_MoveState(this, stateMachine, "Move", moveStateData, this);
-        idleState = new E1_IdleState(this, stateMachine, "Idle", idleStateData, this);
-        lookForPLayerState = new E1_LookForPlayerState(this, stateMachine, "LookForPlayer", lookForPlayerData, this);
-        playerDetectedState = new E1_PlayerDetectedState(this, stateMachine, "PlayerDetected", playerDetectedData, this);
-        meleeAttackState = new E1_MeleeAttackState(this, stateMachine, "MeleeAttack", meleeAttackPosition, meleeAttackStateData, this);
-        deadState = new E1_DeadState(this, stateMachine, "Dead", deadStateData, this);
-        chargeState = new E1_ChargeState(this, stateMachine, "Charge", chargeStateData, this);
-        stunState = new E1_StunState(this, stateMachine, "Stun", stunStateData, this);
+        moveState = new E1_MoveState(this, stateMachine, "move", moveStateData, this);
+        idleState = new E1_IdleState(this, stateMachine, "idle", idleStateData, this);
+        lookForPLayerState = new E1_LookForPlayerState(this, stateMachine, "lookForPlayer", lookForPlayerData, this);
+        playerDetectedState = new E1_PlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedData, this);
+        meleeAttackState = new E1_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
+        deadState = new E1_DeadState(this, stateMachine, "dead", deadStateData, this);
+        chargeState = new E1_ChargeState(this, stateMachine, "charge", chargeStateData, this);
+        stunState = new E1_StunState(this, stateMachine, "stun", stunStateData, this);
 
         stateMachine.Initialize(moveState);
     }

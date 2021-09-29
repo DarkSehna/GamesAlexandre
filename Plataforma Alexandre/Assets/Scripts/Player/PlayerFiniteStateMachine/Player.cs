@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rB { get; private set; }
     public Transform dashDirectionIndicator { get; private set; }
     public BoxCollider2D movementCollider { get; private set; }
-
+    //public PlayerInventory inventory { get; private set; }
     #endregion
 
     #region State Variables
@@ -35,25 +35,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private PlayerData playerData;
     private Vector2 workSpace;
-    #endregion
-
-    #region Other Variables
-    public Vector2 currentVelocity { get; private set; }
-    public int facingDirection { get; private set; }
-    #endregion
-
-    #region Check Transforms
-    [SerializeField]
-    private Transform groundCheck;
-
-    [SerializeField]
-    private Transform wallCheck;
-
-    [SerializeField]
-    private Transform ledgeCheck;
-
-    [SerializeField]
-    private Transform ceilingCheck;
     #endregion
 
     #region Unity Callback Functions
@@ -84,29 +65,19 @@ public class Player : MonoBehaviour
         rB = GetComponent<Rigidbody2D>();
         dashDirectionIndicator = transform.Find("DashDirectionIndicator");
         movementCollider = GetComponent<BoxCollider2D>();
+        //inventory = GetComponent<PlayerInventory>();
 
-        facingDirection = 1;
         stateMachine.Inicialize(idleState);
     }
     private void Update()
     {
-        currentVelocity = rB.velocity;
+        Core.LogicUpdate();
         stateMachine.currentState.LogicUpdate();
     }
     private void FixedUpdate()
     {
         stateMachine.currentState.PhysicsUpdate();
     }
-    #endregion
-
-    #region Set Functions
-    
-
-    #endregion
-
-    #region Check Functions
-
-    
     #endregion
 
     #region Other Functions
@@ -121,19 +92,6 @@ public class Player : MonoBehaviour
         stateMachine.currentState.AnimationFinishTrigger();
     }
 
-    public Vector2 DetermineCornerPosition()
-    {
-        RaycastHit2D xHit = Physics2D.Raycast(wallCheck.position, Vector2.right * facingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
-        float xDistance = xHit.distance;
-        workSpace.Set((xDistance + 0.015f) * facingDirection, 0f);
-
-        RaycastHit2D yHit = Physics2D.Raycast(ledgeCheck.position + (Vector3)(workSpace), Vector2.down, ledgeCheck.position.y - wallCheck.position.y + 0.015f, playerData.whatIsGround);
-        float yDistance = yHit.distance;
-        workSpace.Set(wallCheck.position.x + (xDistance * facingDirection), ledgeCheck.position.y - yDistance);
-
-        return workSpace;
-    }
-
     public void SetColliderHeight(float height)
     {
         Vector2 center = movementCollider.offset;
@@ -143,11 +101,6 @@ public class Player : MonoBehaviour
 
         movementCollider.size = workSpace;
         movementCollider.offset = center;
-    }
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * facingDirection * playerData.wallCheckDistance));
     }
     #endregion
 }

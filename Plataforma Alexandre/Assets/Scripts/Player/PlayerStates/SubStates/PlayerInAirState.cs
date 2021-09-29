@@ -85,7 +85,7 @@ public class PlayerInAirState : PlayerState
         dashInput = player.inputHandler.dashInput;
         CheckJumpMultiplier();
 
-        if(isGrounded && player.currentVelocity.y<0.01f)
+        if(isGrounded && core.Movement.currentVelocity.y<0.01f)
         {
             stateMachine.ChangeState(player.landState);
         }
@@ -108,7 +108,7 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.wallGrabState);
         }
-        else if(isTouchingWall && xInput == player.facingDirection && player.currentVelocity.y<=0)
+        else if(isTouchingWall && xInput == core.Movement.facingDirection && core.Movement.currentVelocity.y<=0)
         {
             stateMachine.ChangeState(player.wallSlideState);
         }
@@ -121,8 +121,8 @@ public class PlayerInAirState : PlayerState
             core.Movement.CheckIfShouldFlip(xInput);
             core.Movement.SetVelocityX(playerData.movementVelocity * xInput);
 
-            player.anim.SetFloat("yVelocity", player.currentVelocity.y);
-            player.anim.SetFloat("xVelocity", Mathf.Abs(player.currentVelocity.x));
+            player.anim.SetFloat("yVelocity", core.Movement.currentVelocity.y);
+            player.anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.currentVelocity.x));
         }
     }
 
@@ -137,10 +137,10 @@ public class PlayerInAirState : PlayerState
         {
             if(jumpInputStop)
             {
-                core.Movement.SetVelocityY(player.currentVelocity.y * playerData.variableJumpHeightMultiplier);
+                core.Movement.SetVelocityY(core.Movement.currentVelocity.y * playerData.variableJumpHeightMultiplier);
                 isJumping = false;
             }
-            else if(player.currentVelocity.y<=0f)
+            else if(core.Movement.currentVelocity.y<=0f)
             {
                 isJumping = false;
             }
