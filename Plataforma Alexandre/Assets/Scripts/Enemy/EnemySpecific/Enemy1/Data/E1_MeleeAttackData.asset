@@ -16,4 +16,6 @@ MonoBehaviour:
   attackDamage: 10
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
+  knockbackAngle: {x: 1, y: 1}
+  knockbackStrength: 10

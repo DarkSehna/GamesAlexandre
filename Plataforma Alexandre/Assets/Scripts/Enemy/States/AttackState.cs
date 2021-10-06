@@ -29,6 +29,13 @@ public class AttackState : State
         core.Movement.SetVelocityX(0f);
     }
 
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+
+        core.Movement.SetVelocityX(0f);
+    }
+
     public virtual void TriggerAttack()
     {
 

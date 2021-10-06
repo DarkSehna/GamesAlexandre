@@ -19,11 +19,37 @@ public class MeleeAttackState : AttackState
     public override void FinishAttack()
     {
         base.FinishAttack();
+        
+    }
 
-        Collider2D[] detectedObject = Physics2D.OverlapCircleAll(attackPosition.position, stateData.attackRadius, stateData.whatIsPlayer);
-        foreach (Collider2D collider in detectedObject)
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+    }
+
+    public override void TriggerAttack()
+    {
+        base.TriggerAttack();
+
+        Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackPosition.position, stateData.attackRadius, stateData.whatIsPlayer);
+        foreach (Collider2D collider in detectedObjects)
         {
-            //collider.transform.SendMessage("Damage", attackDetails);
+            IDamageable damageable = collider.GetComponent<IDamageable>();
+            if(damageable != null)
+            {
+                damageable.Damage(stateData.attackDamage);
+            }
+
+            IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
+            if (knockbackable != null)
+            {
+                knockbackable.Knockback(stateData.knockbackAngle, stateData.knockbackStrength, core.Movement.facingDirection);
+            }
         }
     }
 }

@@ -36,7 +36,10 @@ public class Enemy1 : Entity
         deadState = new E1_DeadState(this, stateMachine, "dead", deadStateData, this);
         chargeState = new E1_ChargeState(this, stateMachine, "charge", chargeStateData, this);
         stunState = new E1_StunState(this, stateMachine, "stun", stunStateData, this);
+    }
 
+    private void Start()
+    {
         stateMachine.Initialize(moveState);
     }
 }
