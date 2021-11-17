@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private AttackDetails attackDetails;
+    //private AttackDetails attackDetails;
     private float speed;
     private float travelDistance;
     private float xStartPos;
@@ -33,7 +33,7 @@ public class Projectile : MonoBehaviour
     {
         if(!hasHitGround)
         {
-            attackDetails.position = transform.position;
+            //attackDetails.position = transform.position;
             if(isGravityOn)
             {
                 float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
@@ -72,7 +72,7 @@ public class Projectile : MonoBehaviour
     {
         this.speed = speed;
         this.travelDistance = travelDistance;
-        attackDetails.damageAmount = damage;
+        //attackDetails.damageAmount = damage;
     }
 
     private void OnDrawGizmos()

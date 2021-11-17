@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rB { get; private set; }
     public Transform dashDirectionIndicator { get; private set; }
     public BoxCollider2D movementCollider { get; private set; }
-    //public PlayerInventory inventory { get; private set; }
+    public PlayerInventory inventory { get; private set; }
     #endregion
 
     #region State Variables
@@ -30,7 +30,8 @@ public class Player : MonoBehaviour
     public PlayerDashState dashState { get; private set; }
     public PlayerCrouchIdleState crouchIdleState { get; private set; }
     public PlayerCrouchMoveState crouchMoveState { get; private set; }
-
+    public PlayerAttackState primaryAttackState { get; private set; }
+    public PlayerAttackState secondaryAttackState { get; private set; }
 
     [SerializeField]
     private PlayerData playerData;
@@ -57,6 +58,8 @@ public class Player : MonoBehaviour
         dashState = new PlayerDashState(this, stateMachine, playerData, "inAir");
         crouchIdleState = new PlayerCrouchIdleState(this, stateMachine, playerData, "crouchIdle");
         crouchMoveState = new PlayerCrouchMoveState(this, stateMachine, playerData, "crouchMove");
+        primaryAttackState = new PlayerAttackState(this, stateMachine, playerData, "attack"); 
+        secondaryAttackState = new PlayerAttackState(this, stateMachine, playerData, "attack");
     }
     private void Start()
     {
@@ -65,7 +68,10 @@ public class Player : MonoBehaviour
         rB = GetComponent<Rigidbody2D>();
         dashDirectionIndicator = transform.Find("DashDirectionIndicator");
         movementCollider = GetComponent<BoxCollider2D>();
-        //inventory = GetComponent<PlayerInventory>();
+        inventory = GetComponent<PlayerInventory>();
+
+        primaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.primary]);
+        //secondaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.secondary]);
 
         stateMachine.Inicialize(idleState);
     }

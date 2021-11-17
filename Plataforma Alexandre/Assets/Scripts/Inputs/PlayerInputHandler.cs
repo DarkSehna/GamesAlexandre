@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,17 +22,44 @@ public class PlayerInputHandler : MonoBehaviour
     public bool grabInput { get; private set; }
     public bool dashInput { get; private set; }
     public bool dashInputStop { get; private set; }
+    public bool[] attackInputs { get; private set; }
 
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         cam = Camera.main;
+        int count = Enum.GetValues(typeof(combatInputs)).Length;
+        attackInputs = new bool[count];
     }
 
     void Update()
     {
         CheckJumpInputHoldTime();
         CheckDashInputHoldTime();
+    }
+
+    public void OnPrimaryAttackInput(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            attackInputs[(int)combatInputs.primary] = true;
+        }
+        if(context.canceled)
+        {
+            attackInputs[(int)combatInputs.primary] = false;
+        }
+    }
+
+    public void OnSecondaryAttackInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            attackInputs[(int)combatInputs.secondary] = true;
+        }
+        if (context.canceled)
+        {
+            attackInputs[(int)combatInputs.secondary] = false;
+        }
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -114,4 +142,10 @@ public class PlayerInputHandler : MonoBehaviour
             dashInput = false;
         }
     }
+}
+
+public enum combatInputs 
+{ 
+    primary,
+    secondary
 }
