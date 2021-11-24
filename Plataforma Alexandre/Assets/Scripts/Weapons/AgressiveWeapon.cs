@@ -41,4 +41,32 @@ public class AgressiveWeapon : Weapon
             item.Knockback(details.knockbackAngle, details.knockbackStrength, core.Movement.facingDirection);
         }
     }
+
+    public void AddToDetected(Collider2D collision)
+    {
+        IDamageable damageable = collision.GetComponent<IDamageable>();
+        if(damageable != null)
+        {
+            detectedDamageable.Add(damageable);
+        }
+        IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
+        if (knockbackable != null)
+        {
+            detectedKnockbackables.Add(knockbackable);
+        }
+    }
+
+    public void RemoveFromDetected(Collider2D collision)
+    {
+        IDamageable damageable = collision.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            detectedDamageable.Remove(damageable);
+        }
+        IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
+        if (knockbackable != null)
+        {
+            detectedKnockbackables.Remove(knockbackable);
+        }
+    }
 }
