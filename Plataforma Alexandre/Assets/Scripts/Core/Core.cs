@@ -37,6 +37,7 @@ public class Core : MonoBehaviour
         Movement = GetComponentInChildren<Movement>();
         CollisionSenses = GetComponentInChildren<CollisionSenses>();
         Combat = GetComponentInChildren<Combat>();
+        Stats = GetComponentInChildren<Stats>();
     }
 
     public void LogicUpdate()

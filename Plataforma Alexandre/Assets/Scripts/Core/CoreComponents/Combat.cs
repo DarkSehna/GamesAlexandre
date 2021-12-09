@@ -8,7 +8,7 @@ public class Combat : CoreComponents, IDamageable, IKnockbackable
     private float knockbackStartTime;
     [SerializeField] private float maxKnockbackTime = 0.2f;
     
-    public void LogicUpdate()
+    public override void LogicUpdate()
     {
         CheckKnockback();
     }
