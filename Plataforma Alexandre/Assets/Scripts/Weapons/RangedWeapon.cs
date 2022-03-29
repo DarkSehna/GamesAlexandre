@@ -7,13 +7,14 @@ public class RangedWeapon : Weapon
     protected SO_RangedWeaponData rangedWeaponData;
     protected Projectile projectileScript;
     public GameObject attackPosition;
+    public GameObject projectile;
 
     public override void AnimationActionTrigger()
     {
         base.AnimationActionTrigger();
 
-        rangedWeaponData.projectile = GameObject.Instantiate(rangedWeaponData.projectile, attackPosition.transform.position, attackPosition.transform.rotation);
-        projectileScript = rangedWeaponData.projectile.GetComponent<Projectile>();
+        var projectilePrefab = GameObject.Instantiate(projectile, attackPosition.transform.position, attackPosition.transform.rotation);
+        projectileScript = projectilePrefab.GetComponent<Projectile>();
         projectileScript.FireProjectile(rangedWeaponData.projectileSpeed, rangedWeaponData.projectileTravelDistance, rangedWeaponData.projectileDamage);
     }
 }

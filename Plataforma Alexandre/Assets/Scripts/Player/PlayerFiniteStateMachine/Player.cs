@@ -109,4 +109,20 @@ public class Player : MonoBehaviour
         movementCollider.offset = center;
     }
     #endregion
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Platform"))
+        {
+            transform.parent = collision.gameObject.transform;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Platform"))
+        {
+            transform.parent = null;
+        }
+    }
 }

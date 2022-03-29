@@ -7634,6 +7634,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -7643,8 +7645,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -7665,9 +7667,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -7917,6 +7922,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      RedSlimeWalk_2: -3338289074507178506
+      RedSlimeDeath_2: -4443941702826884376
+      RedSlimeDeath_1: -559994513297254797
+      RedSlimeDeath_4: -7437797142130561594
+      RedSlimeDash_3: 8404595659607916206
+      RedSlimeDash_1: -8789408909947039513
+      RedSlimeWalk_3: -6136959132959975240
+      RedSlimeWalk_1: 6019213158428059475
+      RedSlimeDeath_3: -6989751136703639788
+      RedSlimeDash_2: 7598214978176893841
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

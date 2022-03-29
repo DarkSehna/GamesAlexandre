@@ -4124,6 +4124,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -4133,8 +4135,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -4155,9 +4157,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -4827,6 +4832,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      PlayerMove_6: -8248373323259183822
+      PlayerJump_31: 6901580864425905586
+      PlayerIdle_24: 6517196866797529538
+      PlayerIdle_22: -1194989774955612035
+      PlayerDeath_9: -2812009109852995773
+      PlayerIdle_21: 2125722565176706746
+      PlayerDeath_15: -6919090567548245167
+      PlayerJump_28: 5130179791868973033
+      PlayerJump_32: -2639084507762849638
+      PlayerJump_25: 1147902810384845524
+      PlayerWallStick_17: -5176002209997715743
+      PlayerDeath_11: 1201068388223038149
+      PlayerJump_29: -279629221511791982
+      PlayerJump_30: 2667212216402734203
+      PlayerMove_7: 5131077897349433162
+      PlayerMove_0: 2481130367028502837
+      PlayerMove_1: 285753964064125630
+      PlayerMove_5: -5869651730541546785
+      PlayerDeath_13: 8071873476128375714
+      PlayerDeath_10: 534741065363809137
+      PlayerJump_27: 7598971860852079615
+      PlayerMove_3: 4827397016449691305
+      PlayerMove_4: -2115441247568057974
+      PlayerMove_2: 9153207279402659708
+      PlayerIdle_23: -7164909197192161710
+      PlayerDeath_14: -3547643490149143323
+      PlayerDeath_8: 6511470032912666501
+      PlayerJump_26: 2620530863438884745
+      PlayerWallStick_16: -1406733954834492955
+      PlayerDeath_12: -929928241728976721
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
