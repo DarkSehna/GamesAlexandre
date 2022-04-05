@@ -57,6 +57,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  whatIsTrap:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8819809881214395125
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8819809881769453837
 Transform:
   m_ObjectHideFlags: 0
@@ -316,7 +319,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1266164027
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 6019213158428059475, guid: 1f37e2f906d10544a87af4ea5eef1735,
     type: 3}

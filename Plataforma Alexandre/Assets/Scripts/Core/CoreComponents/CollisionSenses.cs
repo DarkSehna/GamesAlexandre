@@ -44,10 +44,15 @@ public class CollisionSenses : CoreComponents
     [SerializeField] private float wallCheckDistance;
 
     [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private LayerMask whatIsTrap;
 
     public bool Ground
     {
         get => Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, whatIsGround);
+    }
+    public bool Trap
+    {
+        get => Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, whatIsTrap);
     }
     public bool WallFront
     {
