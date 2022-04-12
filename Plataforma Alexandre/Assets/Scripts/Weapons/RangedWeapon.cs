@@ -15,6 +15,6 @@ public class RangedWeapon : Weapon
 
         var projectilePrefab = GameObject.Instantiate(projectile, attackPosition.transform.position, attackPosition.transform.rotation);
         projectileScript = projectilePrefab.GetComponent<Projectile>();
-        projectileScript.FireProjectile(rangedWeaponData.projectileSpeed, rangedWeaponData.projectileTravelDistance, rangedWeaponData.projectileDamage);
+        projectileScript.FireProjectile(10,10,1);
     }
 }
