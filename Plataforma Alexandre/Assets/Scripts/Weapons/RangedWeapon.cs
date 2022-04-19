@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RangedWeapon : Weapon
 {
-    protected SO_RangedWeaponData rangedWeaponData;
     protected Projectile projectileScript;
     public GameObject attackPosition;
     public GameObject projectile;
@@ -15,6 +14,7 @@ public class RangedWeapon : Weapon
 
         var projectilePrefab = GameObject.Instantiate(projectile, attackPosition.transform.position, attackPosition.transform.rotation);
         projectileScript = projectilePrefab.GetComponent<Projectile>();
-        projectileScript.FireProjectile(10,10,1);
+        var rangedWeapon = weaponData as SO_RangedWeaponData;
+        projectileScript.FireProjectile(rangedWeapon.projectileSpeed, rangedWeapon.projectileTravelDistance, rangedWeapon.projectileDamage);
     }
 }

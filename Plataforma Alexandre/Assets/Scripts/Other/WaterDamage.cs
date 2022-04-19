@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class WaterDamage : MonoBehaviour
 {
-    public int damage = 99;
-    private IDamageable damageable;
+    [SerializeField] int damage = 99;
+    
+    public void DamageEntity(IDamageable entity, float damage)
+    {
+        entity.Damage(damage);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        OnTriggerStay2D(collision);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        IDamageable damageable = collision.GetComponent<IDamageable>();
+        if(damageable != null)
         {
-            damageable.Damage(damage);
+            DamageEntity(damageable, damage);
         }
     }
 }
