@@ -29,7 +29,7 @@ public class Stats : CoreComponents
             if(currentShield <= 0)
             {
                 Debug.Log("Shield broken ");
-                //core.entity.transform.position = core.playerRespawn.GetRespawnPosition();
+                core.entity.transform.position = core.PlayerRespawn.GetRespawnPosition();
                 StartCoroutine(RechargeShield());
             }
         }

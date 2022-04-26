@@ -24,12 +24,19 @@ public class Core : MonoBehaviour
         get => GenericNotImplementedError<Stats>.TryGet(stats, transform.parent.name);
         private set => stats = value;
     }
+    public PlayerRespawn PlayerRespawn
+    {
+        get => GenericNotImplementedError<PlayerRespawn>.TryGet(respawn, transform.parent.name);
+        private set => respawn = value;
+    }
+    public Player entity;
 
     private Movement movement;
     private CollisionSenses collisionSenses;
     private Combat combat;
     private Stats stats;
-    
+    private PlayerRespawn respawn;
+
     private List<ILogicUpdate> components = new List<ILogicUpdate>();
 
     private void Awake()
@@ -37,6 +44,8 @@ public class Core : MonoBehaviour
         Movement = GetComponentInChildren<Movement>();
         CollisionSenses = GetComponentInChildren<CollisionSenses>();
         Combat = GetComponentInChildren<Combat>();
+        Stats = GetComponentInChildren<Stats>();
+        PlayerRespawn = GetComponentInChildren<PlayerRespawn>();
     }
 
     public void LogicUpdate()
