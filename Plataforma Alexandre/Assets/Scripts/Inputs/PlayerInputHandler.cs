@@ -23,6 +23,8 @@ public class PlayerInputHandler : MonoBehaviour
     public bool dashInput { get; private set; }
     public bool dashInputStop { get; private set; }
     public bool[] attackInputs { get; private set; }
+    public bool[] powerSetInputs { get; private set; }
+
 
     private void Start()
     {
@@ -111,6 +113,74 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    #region OnPowerSetInputs
+    public void OnBouncePowerSetInput(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            powerSetInputs[(int)powerChangeInputs.bounce] = true;
+        }
+
+        if (context.canceled)
+        {
+            powerSetInputs[(int)powerChangeInputs.bounce] = false;
+        }
+    }
+
+    public void OnBubblePowerSetInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            powerSetInputs[(int)powerChangeInputs.bubble] = true;
+        }
+
+        if (context.canceled)
+        {
+            powerSetInputs[(int)powerChangeInputs.bubble] = false;
+        }
+    }
+
+    public void OnGrapplePowerSetInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            powerSetInputs[(int)powerChangeInputs.grapple] = true;
+        }
+
+        if (context.canceled)
+        {
+            powerSetInputs[(int)powerChangeInputs.grapple] = false;
+        }
+    }
+
+    public void OnAntiGPowerSetInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            powerSetInputs[(int)powerChangeInputs.antiG] = true;
+        }
+
+        if (context.canceled)
+        {
+            powerSetInputs[(int)powerChangeInputs.antiG] = false;
+        }
+    }
+
+    public void OnClonePowerSetInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            powerSetInputs[(int)powerChangeInputs.clone] = true;
+        }
+
+        if (context.canceled)
+        {
+            powerSetInputs[(int)powerChangeInputs.clone] = false;
+        }
+    }
+
+    #endregion
+
     public void OnDashDirectionInput(InputAction.CallbackContext context)
     {
         rawDashDirectionInput = context.ReadValue<Vector2>();
@@ -148,4 +218,13 @@ public enum combatInputs
 { 
     primary,
     secondary
+}
+
+public enum powerChangeInputs
+{
+    bounce,
+    bubble,
+    grapple,
+    antiG,
+    clone
 }

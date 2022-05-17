@@ -416,6 +416,7 @@
 "Assets/Scripts/Enemy/States/RangedAttackState.cs"
 "Assets/Scripts/Enemy/States/StunState.cs"
 "Assets/Scripts/Generics/GenericNotImplementedError.cs"
+"Assets/Scripts/Huds/CanvasScript.cs"
 "Assets/Scripts/Huds/HealthBar_scr.cs"
 "Assets/Scripts/Huds/PauseMenu.cs"
 "Assets/Scripts/Inputs/PlayerInputHandler.cs"
