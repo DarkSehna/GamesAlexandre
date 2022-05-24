@@ -31,7 +31,7 @@ public class PlayerAttackState : PlayerAbilityState
         base.Enter();
 
         setVelocity = false;
-        weapon.EnterWeapon();
+        weapon.EnterWeapon(playerData.objectToSpawn[(int)player.inputHandler.currentPower]);
     }
 
     public override void Exit()

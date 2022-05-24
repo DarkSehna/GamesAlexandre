@@ -35,3 +35,9 @@ MonoBehaviour:
   crouchMoveVelocity: 5
   crouchColliderHeight: 0.8
   standColliderHeight: 1.6
+  objectToSpawn:
+  - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

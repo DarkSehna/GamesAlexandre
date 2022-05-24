@@ -8,12 +8,11 @@ public class CanvasScript : MonoBehaviour
     public PlayerInputHandler inputHandler;
 
     #region PlayerHud
-    bool bouncePower;
-    bool bubblePower;
-    bool antiGPower;
-    bool grapplePower;
-    bool clonePower;
-
-
+    private int powerSet;
     #endregion
+
+    private void Update()
+    {
+        
+    }
 }

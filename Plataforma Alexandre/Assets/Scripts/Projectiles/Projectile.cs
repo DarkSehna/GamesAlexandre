@@ -20,6 +20,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private LayerMask whatIsPlayer;
     [SerializeField] private Transform damagePosition;
 
+    public GameObject objectToSpawn;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -55,6 +57,10 @@ public class Projectile : MonoBehaviour
             }
             if(groundHit)
             {
+                if (objectToSpawn != null)
+                {
+                    Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+                }
                 hasHitGround = true;
                 rb.gravityScale = 0;
                 rb.velocity = Vector2.zero;

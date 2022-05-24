@@ -46,4 +46,7 @@ public class PlayerData : ScriptableObject
     public float crouchColliderHeight = 0.8f;
     public float standColliderHeight = 1.6f;
 
+    [Header("Powers")]
+    public GameObject[] objectToSpawn;
+
 }

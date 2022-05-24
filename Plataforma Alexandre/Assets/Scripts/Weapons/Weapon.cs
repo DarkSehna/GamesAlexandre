@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     protected PlayerAttackState state;
     protected Core core;
     protected int attackCounter;
+    protected GameObject objectToSpawn;
 
     protected virtual void Awake()
     {
@@ -19,8 +20,9 @@ public class Weapon : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public virtual void EnterWeapon()
+    public virtual void EnterWeapon(GameObject objectToSpawn)
     {
+        this.objectToSpawn = objectToSpawn;
         gameObject.SetActive(true);
         if(attackCounter >= weaponData.amountOfAttacks)
         {

@@ -16,5 +16,6 @@ public class RangedWeapon : Weapon
         projectileScript = projectilePrefab.GetComponent<Projectile>();
         var rangedWeapon = weaponData as SO_RangedWeaponData;
         projectileScript.FireProjectile(rangedWeapon.projectileSpeed, rangedWeapon.projectileTravelDistance, rangedWeapon.projectileDamage);
+        projectileScript.objectToSpawn = objectToSpawn;
     }
 }

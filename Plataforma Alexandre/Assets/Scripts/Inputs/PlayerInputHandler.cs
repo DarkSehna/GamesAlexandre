@@ -23,8 +23,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool dashInput { get; private set; }
     public bool dashInputStop { get; private set; }
     public bool[] attackInputs { get; private set; }
-    public bool[] powerSetInputs { get; private set; }
-
+    public powerInputs currentPower { get; private set; }
 
     private void Start()
     {
@@ -118,12 +117,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if(context.started)
         {
-            powerSetInputs[(int)powerChangeInputs.bounce] = true;
-        }
-
-        if (context.canceled)
-        {
-            powerSetInputs[(int)powerChangeInputs.bounce] = false;
+            currentPower = powerInputs.bounce; 
+            Debug.Log(" bounce ");
         }
     }
 
@@ -131,12 +126,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            powerSetInputs[(int)powerChangeInputs.bubble] = true;
-        }
-
-        if (context.canceled)
-        {
-            powerSetInputs[(int)powerChangeInputs.bubble] = false;
+            currentPower = powerInputs.bubble;
+            Debug.Log(" bubble ");
         }
     }
 
@@ -144,12 +135,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            powerSetInputs[(int)powerChangeInputs.grapple] = true;
-        }
-
-        if (context.canceled)
-        {
-            powerSetInputs[(int)powerChangeInputs.grapple] = false;
+            currentPower = powerInputs.grapple;
+            Debug.Log(" grapple ");
         }
     }
 
@@ -157,12 +144,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            powerSetInputs[(int)powerChangeInputs.antiG] = true;
-        }
-
-        if (context.canceled)
-        {
-            powerSetInputs[(int)powerChangeInputs.antiG] = false;
+            currentPower = powerInputs.antiG;
+            Debug.Log(" antiG ");
         }
     }
 
@@ -170,12 +153,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            powerSetInputs[(int)powerChangeInputs.clone] = true;
-        }
-
-        if (context.canceled)
-        {
-            powerSetInputs[(int)powerChangeInputs.clone] = false;
+            currentPower = powerInputs.clone;
+            Debug.Log(" clone ");
         }
     }
 
@@ -220,7 +199,7 @@ public enum combatInputs
     secondary
 }
 
-public enum powerChangeInputs
+public enum powerInputs
 {
     bounce,
     bubble,
