@@ -48,5 +48,6 @@ public class PlayerData : ScriptableObject
 
     [Header("Powers")]
     public GameObject[] objectToSpawn;
+    public int[] ammo;
 
 }

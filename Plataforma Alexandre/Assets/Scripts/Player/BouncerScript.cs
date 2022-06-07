@@ -13,21 +13,35 @@ public class BouncerScript : MonoBehaviour
 
     #region Private Variables
     private Collider2D box;
+    private bool isActive = false;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
         box = GetComponent<Collider2D>();
+        isActive = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        activateTime -= Time.deltaTime;
-        if (activateTime <= 0f)
+        if(!isActive)
         {
-            box.enabled = true;
+            activateTime -= Time.deltaTime;
+            if (activateTime <= 0f)
+            {
+                box.enabled = true;
+                isActive = true;
+            }
+        }
+        else
+        {
+            destroyTime -= Time.deltaTime;
+            if(destroyTime <= 0f)
+            {
+                box.enabled = false;
+            }
         }
     }
 

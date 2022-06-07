@@ -202,8 +202,8 @@ public enum combatInputs
 public enum powerInputs
 {
     bounce,
+    antiG,
     bubble,
     grapple,
-    antiG,
     clone
 }

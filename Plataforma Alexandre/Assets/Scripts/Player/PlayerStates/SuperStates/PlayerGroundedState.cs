@@ -64,9 +64,10 @@ public class PlayerGroundedState : PlayerState
         {
             stateMachine.ChangeState(player.primaryAttackState);
         }
-        else if (player.inputHandler.attackInputs[(int)combatInputs.secondary] && !isTouchingCeiling)
+        else if (player.inputHandler.attackInputs[(int)combatInputs.secondary] && !isTouchingCeiling && playerData.ammo[(int)player.inputHandler.currentPower] > 0)
         {
             stateMachine.ChangeState(player.secondaryAttackState);
+            playerData.ammo[(int)player.inputHandler.currentPower]--;
         }
         else if (jumpInput && player.jumpState.CanJump())
         {
