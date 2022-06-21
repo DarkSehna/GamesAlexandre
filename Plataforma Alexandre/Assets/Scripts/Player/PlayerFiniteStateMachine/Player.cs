@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     public PlayerAttackState secondaryAttackState { get; private set; }
 
     [SerializeField]
-    private PlayerData playerData;
+    public PlayerData playerData;
     private Vector2 workSpace;
     #endregion
 
