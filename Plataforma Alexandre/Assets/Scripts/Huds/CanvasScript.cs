@@ -19,12 +19,13 @@ public class CanvasScript : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         SwitchOff();
         AmmoOff();
 
         selectedPower = (int)player.inputHandler.currentPower; // Poder selecionado
         selectedPowerAmmo = player.playerData.ammo[selectedPower]; // Munição atual
-        previousAmmo = selectedPowerAmmo; // Munição anterior
+        previousAmmo = selectedPower; // Munição anterior
         selectedPowerMaxAmmo = player.playerData.maxAmmo[selectedPower]; // Munição máxima
     }
 
@@ -41,6 +42,7 @@ public class CanvasScript : MonoBehaviour
             PowerSelected();
             powerImages[selectedPower].gameObject.SetActive(true);
             powerSet = selectedPower;
+            previousAmmo = selectedPowerAmmo;
         }
         else if(selectedPowerAmmo != previousAmmo)
         {

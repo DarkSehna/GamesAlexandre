@@ -9,6 +9,7 @@ public class PlayerGroundedState : PlayerState
     private bool jumpInput;
     private bool grabInput;
     private bool dashInput;
+    private bool gatherInput;
 
     private bool isGrounded;
     private bool isTouchingWall;
@@ -59,6 +60,7 @@ public class PlayerGroundedState : PlayerState
         jumpInput = player.inputHandler.jumpInput;
         grabInput = player.inputHandler.grabInput;
         dashInput = player.inputHandler.dashInput;
+        gatherInput = player.inputHandler.ammoGatherInput;
 
         if (player.inputHandler.attackInputs[(int)combatInputs.primary] && !isTouchingCeiling)
         {
@@ -68,6 +70,10 @@ public class PlayerGroundedState : PlayerState
         {
             stateMachine.ChangeState(player.secondaryAttackState);
             playerData.ammo[(int)player.inputHandler.currentPower]--;
+        }
+        else if (gatherInput && isGrounded)
+        {
+            stateMachine.ChangeState(player.ammoGatherState);
         }
         else if (jumpInput && player.jumpState.CanJump())
         {

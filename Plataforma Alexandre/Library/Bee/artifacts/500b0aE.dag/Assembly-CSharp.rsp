@@ -439,6 +439,7 @@
 "Assets/Scripts/Player/PlayerFiniteStateMachine/PlayerStateMachine.cs"
 "Assets/Scripts/Player/PlayerInventory.cs"
 "Assets/Scripts/Player/PlayerShoot.cs"
+"Assets/Scripts/Player/PlayerStates/SubStates/PlayerAmmoGatherState.cs"
 "Assets/Scripts/Player/PlayerStates/SubStates/PlayerAttackState.cs"
 "Assets/Scripts/Player/PlayerStates/SubStates/PlayerCrouchIdleState.cs"
 "Assets/Scripts/Player/PlayerStates/SubStates/PlayerCrouchMoveState.cs"

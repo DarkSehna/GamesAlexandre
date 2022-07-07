@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     public PlayerCrouchMoveState crouchMoveState { get; private set; }
     public PlayerAttackState primaryAttackState { get; private set; }
     public PlayerAttackState secondaryAttackState { get; private set; }
+    public PlayerAmmoGatherState ammoGatherState { get; private set; }
 
     [SerializeField]
     public PlayerData playerData;
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Core = GetComponentInChildren<Core>();
+        inputHandler = GetComponent<PlayerInputHandler>();
 
         stateMachine = new PlayerStateMachine();
 
@@ -60,11 +62,11 @@ public class Player : MonoBehaviour
         crouchMoveState = new PlayerCrouchMoveState(this, stateMachine, playerData, "crouchMove");
         primaryAttackState = new PlayerAttackState(this, stateMachine, playerData, "attack"); 
         secondaryAttackState = new PlayerAttackState(this, stateMachine, playerData, "attack");
+        ammoGatherState = new PlayerAmmoGatherState(this, stateMachine, playerData, "ammoGather");
     }
     private void Start()
     {
         anim = GetComponent<Animator>();
-        inputHandler = GetComponent<PlayerInputHandler>();
         rB = GetComponent<Rigidbody2D>();
         dashDirectionIndicator = transform.Find("DashDirectionIndicator");
         movementCollider = GetComponent<BoxCollider2D>();

@@ -24,6 +24,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool dashInputStop { get; private set; }
     public bool[] attackInputs { get; private set; }
     public powerInputs currentPower { get; private set; }
+    public bool ammoGatherInput { get; private set; }
 
     private void Start()
     {
@@ -118,7 +119,7 @@ public class PlayerInputHandler : MonoBehaviour
         if(context.started)
         {
             currentPower = powerInputs.bounce; 
-            Debug.Log(" bounce ");
+            //Debug.Log(" bounce ");
         }
     }
 
@@ -127,7 +128,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             currentPower = powerInputs.bubble;
-            Debug.Log(" bubble ");
+            //Debug.Log(" bubble ");
         }
     }
 
@@ -136,7 +137,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             currentPower = powerInputs.grapple;
-            Debug.Log(" grapple ");
+            //Debug.Log(" grapple ");
         }
     }
 
@@ -145,7 +146,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             currentPower = powerInputs.antiG;
-            Debug.Log(" antiG ");
+            //Debug.Log(" antiG ");
         }
     }
 
@@ -154,11 +155,22 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             currentPower = powerInputs.clone;
-            Debug.Log(" clone ");
+            //Debug.Log(" clone ");
         }
     }
 
     #endregion
+    public void OnAmmoGatherInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            ammoGatherInput = true;
+        }
+        if (context.canceled)
+        {
+            ammoGatherInput = false;
+        }
+    }
 
     public void OnDashDirectionInput(InputAction.CallbackContext context)
     {
