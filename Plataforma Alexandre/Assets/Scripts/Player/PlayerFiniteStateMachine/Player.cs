@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public Transform dashDirectionIndicator { get; private set; }
     public BoxCollider2D movementCollider { get; private set; }
     public PlayerInventory inventory { get; private set; }
+    public Transform powerRepository { get; private set; }
     #endregion
 
     #region State Variables
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
         dashDirectionIndicator = transform.Find("DashDirectionIndicator");
         movementCollider = GetComponent<BoxCollider2D>();
         inventory = GetComponent<PlayerInventory>();
+        powerRepository = GameObject.Find("AmmoRepository").transform;
 
         primaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.primary]);
         secondaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.secondary]);

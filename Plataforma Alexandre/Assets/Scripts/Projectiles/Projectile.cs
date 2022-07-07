@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Transform damagePosition;
 
     public GameObject objectToSpawn;
+    private GameObject powerRepository;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class Projectile : MonoBehaviour
         rb.velocity = transform.right * speed;
         isGravityOn = false;
         xStartPos = transform.position.x;
+        powerRepository = GameObject.Find("AmmoRepository");
     }
 
     private void Update()
@@ -59,7 +61,7 @@ public class Projectile : MonoBehaviour
             {
                 if (objectToSpawn != null)
                 {
-                    Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+                    Instantiate(objectToSpawn, transform.position, Quaternion.identity, powerRepository.transform);
                 }
                 hasHitGround = true;
                 rb.gravityScale = 0;
