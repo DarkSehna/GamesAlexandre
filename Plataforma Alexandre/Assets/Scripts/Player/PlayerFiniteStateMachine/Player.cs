@@ -78,6 +78,8 @@ public class Player : MonoBehaviour
         secondaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.secondary]);
 
         stateMachine.Inicialize(idleState);
+
+        ammoGatherState.Reload();
     }
     private void Update()
     {

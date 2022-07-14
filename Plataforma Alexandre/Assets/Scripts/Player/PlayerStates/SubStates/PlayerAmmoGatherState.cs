@@ -14,6 +14,24 @@ public class PlayerAmmoGatherState : PlayerAbilityState
     {
         base.Enter();
 
+        Reload();
+        DestroyPowers();
         isAbilityDone = true;
+    }
+
+    public void Reload()
+    {
+        for (int i = 0; i < playerData.maxAmmo.Length; i++)
+        {
+            playerData.ammo[i] = playerData.maxAmmo[i];
+        }
+    }
+
+    private void DestroyPowers()
+    {
+        foreach (Transform child in player.powerRepository.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
     }
 }
