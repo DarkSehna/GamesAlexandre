@@ -5,29 +5,31 @@ using UnityEngine.UI;
 
 public class CanvasScript : MonoBehaviour
 {
-    public Player player;
+    private Player player;
+    private PlayerData data;
 
     #region PlayerHud
     private int powerSet = 5;
     public Image[] powerImages;
     public Image[] ammoImages;
     private int selectedPower;
-    private int[] previousAmmo;
-    private int[] ammo;
-    private int[] maxAmmo;
+    public int[] previousAmmo;
+    public int[] ammo;
+    public int[] maxAmmo;
     #endregion
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        data = player.playerData;
         SwitchOff();
         AmmoOff();
 
         selectedPower = (int)player.inputHandler.currentPower; // Poder selecionado
         
-        for (int i = 0; i < player.playerData.maxAmmo.Length; i++)
+        for (int i = 0; i < data.maxAmmo.Length; i++)
         {
-            previousAmmo[i] = player.playerData.maxAmmo[i];
+            previousAmmo[i] = data.maxAmmo[i];
         }
         AmmoUpdate();
     }
@@ -45,6 +47,15 @@ public class CanvasScript : MonoBehaviour
             powerImages[selectedPower].gameObject.SetActive(true);
             powerSet = selectedPower;
             previousAmmo[selectedPower] = ammo[selectedPower];
+        }
+        else if(player.inputHandler.ammoGatherInput)
+        {
+            for (int i = 0; i < data.maxAmmo.Length; i++)
+            {
+                previousAmmo[i] = data.maxAmmo[i];
+            }
+            AmmoUpdate();
+            PowerSelected();
         }
         else if(ammo[selectedPower] != previousAmmo[selectedPower])
         {
@@ -94,14 +105,14 @@ public class CanvasScript : MonoBehaviour
 
     private void AmmoUpdate()
     {
-        for (int i = 0; i < player.playerData.ammo.Length; i++)
+        for (int i = 0; i < data.ammo.Length; i++)
         {
-            ammo[i] = player.playerData.ammo[i];
+            ammo[i] = data.ammo[i];
         }
 
-        for (int i = 0; i < player.playerData.maxAmmo.Length; i++)
+        for (int i = 0; i < data.maxAmmo.Length; i++)
         {
-            maxAmmo[i] = player.playerData.maxAmmo[i];
+            maxAmmo[i] = data.maxAmmo[i];
         }
     }
 
