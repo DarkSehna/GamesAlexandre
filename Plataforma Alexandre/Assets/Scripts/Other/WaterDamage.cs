@@ -11,6 +11,11 @@ public class WaterDamage : MonoBehaviour
         entity.Damage(damage);
     }
 
+    public void KnockbackEntity(IKnockbackable entity)
+    {
+        entity.Knockback(Vector2.one, 10f, -1);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         OnTriggerStay2D(collision);
@@ -22,6 +27,12 @@ public class WaterDamage : MonoBehaviour
         if(damageable != null)
         {
             DamageEntity(damageable, damage);
+        }
+
+        IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
+        if(knockbackable != null && gameObject.tag != "Water")
+        {
+            KnockbackEntity(knockbackable);
         }
     }
 }
