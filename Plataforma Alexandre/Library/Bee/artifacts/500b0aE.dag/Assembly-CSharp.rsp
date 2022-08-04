@@ -430,7 +430,7 @@
 "Assets/Scripts/Other/Manager_scr.cs"
 "Assets/Scripts/Other/Platform.cs"
 "Assets/Scripts/Other/Symbiont_scr.cs"
-"Assets/Scripts/Other/WaterDamage.cs"
+"Assets/Scripts/Other/TrapDamage.cs"
 "Assets/Scripts/Player/BouncerScript.cs"
 "Assets/Scripts/Player/BulletScript.cs"
 "Assets/Scripts/Player/Data/PlayerData.cs"
