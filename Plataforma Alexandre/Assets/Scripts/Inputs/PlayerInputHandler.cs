@@ -25,6 +25,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool[] attackInputs { get; private set; }
     public powerInputs currentPower { get; private set; }
     public bool ammoGatherInput { get; private set; }
+    public bool interactInput { get; private set; }
 
     private void Start()
     {
@@ -160,6 +161,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
     #endregion
+
     public void OnAmmoGatherInput(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -182,6 +184,18 @@ public class PlayerInputHandler : MonoBehaviour
         }
 
         dashDirectionInput = Vector2Int.RoundToInt(rawDashDirectionInput.normalized);
+    }
+
+    public void OnInteractInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            interactInput = true;
+        }
+        if (context.canceled)
+        {
+            interactInput = false;
+        }
     }
 
     public void UseJumpInput() => jumpInput = false;

@@ -10,7 +10,7 @@ public class TrapDamage : MonoBehaviour
     
     public void DamageEntity(IDamageable entity, float damage)
     {
-        entity.Damage(damage);
+        entity.Damage(damage, this.gameObject);
     }
 
     public void KnockbackEntity(IKnockbackable entity, int facingDirection)

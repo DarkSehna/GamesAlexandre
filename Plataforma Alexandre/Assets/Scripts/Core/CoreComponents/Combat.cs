@@ -13,10 +13,18 @@ public class Combat : CoreComponents, IDamageable, IKnockbackable
         CheckKnockback();
     }
 
-    public void Damage(float amount)
+    public void Damage(float amount, GameObject collider)
     {
         Debug.Log(core.transform.parent.name + "damaged");
-        core.Stats.DecreaseHealth(amount);
+        if(collider.tag == "Water")
+        {
+            core.Stats.DecreaseHealth(amount);
+            core.Stats.WaterRespawn();
+        }
+        else
+        {
+            core.Stats.DecreaseHealth(amount);
+        }
     }
 
     public void Knockback(Vector2 angle, float strength, int direction)

@@ -29,7 +29,6 @@ public class Stats : CoreComponents
             if(currentShield <= 0)
             {
                 Debug.Log("Shield broken ");
-                core.entity.transform.position = core.PlayerRespawn.GetRespawnPosition();
                 StartCoroutine(RechargeShield());
             }
         }
@@ -55,6 +54,11 @@ public class Stats : CoreComponents
     {
         yield return new WaitForSeconds(shieldRechargeTime);
         currentShield = maxShield;
+    }
+
+    public void WaterRespawn()
+    {
+        core.entity.transform.position = core.PlayerRespawn.GetRespawnPosition();
     }
     #endregion
 }

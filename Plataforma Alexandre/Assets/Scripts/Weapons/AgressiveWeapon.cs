@@ -34,7 +34,7 @@ public class AgressiveWeapon : Weapon
         WeaponAttackDetails details = agressiveWeaponData.AttackDetails[attackCounter];
         foreach (IDamageable item in detectedDamageable.ToList())
         {
-            item.Damage(details.damageAmount);
+            item.Damage(details.damageAmount, this.gameObject);
         }
         foreach (IKnockbackable item in detectedKnockbackables.ToList())
         {
