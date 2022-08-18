@@ -15,6 +15,8 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 rawMovementInput { get; private set; }
     public Vector2 rawDashDirectionInput { get; private set; }
     public Vector2Int dashDirectionInput { get; private set; }
+    public Vector2 rawShotDirectionInput { get; private set; }
+    public Vector2Int shotDirectionInput { get; private set; }
     public int normInputX { get; private set; }
     public int normInputY { get; private set; }
     public bool jumpInput { get; private set; }
@@ -184,6 +186,13 @@ public class PlayerInputHandler : MonoBehaviour
         }
 
         dashDirectionInput = Vector2Int.RoundToInt(rawDashDirectionInput.normalized);
+    }
+
+    public void OnShotDirectionInput(InputAction.CallbackContext context)
+    {
+        rawShotDirectionInput = context.ReadValue<Vector2>();
+        rawShotDirectionInput = cam.ScreenToWorldPoint((Vector3)rawShotDirectionInput) - transform.position;
+        shotDirectionInput = Vector2Int.RoundToInt(rawShotDirectionInput.normalized);
     }
 
     public void OnInteractInput(InputAction.CallbackContext context)

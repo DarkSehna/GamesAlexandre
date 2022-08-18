@@ -34,8 +34,7 @@ public class PlayerAbilityState : PlayerState
 
         if (isAbilityDone)
         {
-            if (isGrounded && core.Movement.currentVelocity
-                .y < 0.01f)
+            if (isGrounded && core.Movement.currentVelocity.y < 0.01f)
             {
                 stateMachine.ChangeState(player.idleState);
             }

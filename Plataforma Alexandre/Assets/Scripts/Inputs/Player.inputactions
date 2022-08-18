@@ -78,6 +78,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ShotAim",
+                    "type": "Value",
+                    "id": "264fe6bd-8013-4f27-86fb-013173c039c2",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "PowerSwitch1",
                     "type": "Button",
                     "id": "c65aaa95-41b4-412c-ba7c-1a9f63ac68d6",
@@ -348,6 +357,17 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef55f964-8226-4cf0-be44-caf9e717ab42",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ShotAim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
