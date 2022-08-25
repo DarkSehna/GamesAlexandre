@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public BoxCollider2D movementCollider { get; private set; }
     public PlayerInventory inventory { get; private set; }
     public Transform powerRepository { get; private set; }
+    public Transform aimDirectionIndicator { get; private set; }
     #endregion
 
     #region State Variables
@@ -38,6 +39,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     public PlayerData playerData;
     private Vector2 workSpace;
+    public Vector2 aimDirection;
+    private Vector2 aimDirectionInput;
     #endregion
 
     #region Unity Callback Functions
@@ -70,6 +73,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         rB = GetComponent<Rigidbody2D>();
         dashDirectionIndicator = transform.Find("DashDirectionIndicator");
+        aimDirectionIndicator = transform.Find("AimDirectionIndicator");
         movementCollider = GetComponent<BoxCollider2D>();
         inventory = GetComponent<PlayerInventory>();
         powerRepository = GameObject.Find("AmmoRepository").transform;
@@ -85,6 +89,7 @@ public class Player : MonoBehaviour
     {
         Core.LogicUpdate();
         stateMachine.currentState.LogicUpdate();
+        AimDirection();
     }
     private void FixedUpdate()
     {
@@ -113,6 +118,15 @@ public class Player : MonoBehaviour
 
         movementCollider.size = workSpace;
         movementCollider.offset = center;
+    }
+
+    public void AimDirection()
+    {
+        aimDirectionInput = inputHandler.shotDirectionInput;
+        aimDirection = aimDirectionInput;
+        aimDirection.Normalize();
+        float angle = Vector2.SignedAngle(Vector2.right, aimDirection);
+        aimDirectionIndicator.rotation = Quaternion.Euler(0f, 0f, angle - 45f);
     }
     #endregion
 

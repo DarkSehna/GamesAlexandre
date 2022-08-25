@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     protected Core core;
     protected int attackCounter;
     protected GameObject objectToSpawn;
+    protected Vector2 shotAngle;
 
     protected virtual void Awake()
     {
@@ -20,9 +21,10 @@ public class Weapon : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public virtual void EnterWeapon(GameObject objectToSpawn)
+    public virtual void EnterWeapon(GameObject objectToSpawn, Vector2 shotAngle)
     {
         this.objectToSpawn = objectToSpawn;
+        this.shotAngle = shotAngle;
         gameObject.SetActive(true);
         if(attackCounter >= weaponData.amountOfAttacks)
         {

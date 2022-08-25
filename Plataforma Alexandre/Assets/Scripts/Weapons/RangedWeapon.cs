@@ -12,7 +12,8 @@ public class RangedWeapon : Weapon
     {
         base.AnimationActionTrigger();
 
-        var projectilePrefab = GameObject.Instantiate(projectile, attackPosition.transform.position, attackPosition.transform.rotation);
+        float angle = Vector2.SignedAngle(Vector2.right, shotAngle);
+        var projectilePrefab = GameObject.Instantiate(projectile, attackPosition.transform.position, Quaternion.Euler(0f, 0f, angle));
         projectileScript = projectilePrefab.GetComponent<Projectile>();
         var rangedWeapon = weaponData as SO_RangedWeaponData;
         projectileScript.FireProjectile(rangedWeapon.projectileSpeed, rangedWeapon.projectileTravelDistance, rangedWeapon.projectileDamage);
