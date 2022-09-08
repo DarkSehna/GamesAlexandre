@@ -11,6 +11,7 @@ public class CanvasScript : MonoBehaviour
     #region PlayerHud
     private int powerSet = 5;
     public Image[] powerImages;
+    public Scrollbar shieldBar;
     public Image[] ammoImages;
     private int selectedPower;
     public int[] previousAmmo;
@@ -37,6 +38,7 @@ public class CanvasScript : MonoBehaviour
     private void Update()
     {
         selectedPower = (int)player.inputHandler.currentPower;
+        ShieldUpdate();
         AmmoUpdate();
 
         if (selectedPower != powerSet)
@@ -72,6 +74,15 @@ public class CanvasScript : MonoBehaviour
         {
             powerImages[i].gameObject.SetActive(false);
         }
+    }
+
+    private void ShieldUpdate()
+    {
+        shieldBar.size = player.Core.Stats.currentShield / 100;
+        /*if(player.Core.Stats.currentShield <= 0)
+        {
+            
+        }*/
     }
 
     private void AmmoOff()

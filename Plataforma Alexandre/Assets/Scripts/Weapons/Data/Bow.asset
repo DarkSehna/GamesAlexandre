@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41dc65c16666537468361f531a4c7dad, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  projectile: {fileID: 5453044503896159740, guid: 592d127736cc83341bd4c26dbdab3dfd,
-    type: 3}
   projectileDamage: 10
   projectileSpeed: 12
   projectileTravelDistance: 5
+  projectileSpawnRadius: 1

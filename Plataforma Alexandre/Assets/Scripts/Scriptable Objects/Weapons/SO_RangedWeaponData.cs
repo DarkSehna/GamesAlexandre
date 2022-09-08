@@ -8,4 +8,5 @@ public class SO_RangedWeaponData : SO_WeaponData
     public float projectileDamage = 10f;
     public float projectileSpeed = 12f;
     public float projectileTravelDistance = 5f;
+    public float projectileSpawnRadius = 1f;
 }
