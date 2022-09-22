@@ -9,9 +9,9 @@ public class CanvasScript : MonoBehaviour
     private PlayerData data;
 
     #region PlayerHud
-    private int powerSet = 5;
+    private int powerSet = 0;
     public Image[] powerImages;
-    public Scrollbar shieldBar;
+    public Image shieldBar;
     public Image[] ammoImages;
     private int selectedPower;
     public int[] previousAmmo;
@@ -72,13 +72,16 @@ public class CanvasScript : MonoBehaviour
     {
         for (int i = 0; i < powerImages.Length; i++)
         {
-            powerImages[i].gameObject.SetActive(false);
+            if(powerImages[i] != null)
+            {
+                powerImages[i].gameObject.SetActive(false);
+            }
         }
     }
 
     private void ShieldUpdate()
     {
-        shieldBar.size = player.Core.Stats.currentShield / 100;
+        shieldBar.fillAmount = player.Core.Stats.currentShield / 100;
         /*if(player.Core.Stats.currentShield <= 0)
         {
             
@@ -129,23 +132,23 @@ public class CanvasScript : MonoBehaviour
 
     private void PowerSelected()
     {
-        if(selectedPower == 0)
+        if(selectedPower == 1)
         {
             AmmoOn(maxAmmo[selectedPower], ammo[selectedPower], Color.green);
         }
-        else if(selectedPower == 1)
+        else if(selectedPower == 2)
         {
             AmmoOn(maxAmmo[selectedPower], ammo[selectedPower], Color.yellow);
         }
-        else if (selectedPower == 2)
+        else if (selectedPower == 3)
         {
             AmmoOn(maxAmmo[selectedPower], ammo[selectedPower], Color.cyan);
         }
-        else if (selectedPower == 3)
+        else if (selectedPower == 4)
         {
             AmmoOn(maxAmmo[selectedPower], ammo[selectedPower], Color.red);
         }
-        else if (selectedPower == 4)
+        else if (selectedPower == 5)
         {
             AmmoOn(maxAmmo[selectedPower], ammo[selectedPower], Color.black);
         }

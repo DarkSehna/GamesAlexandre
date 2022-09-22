@@ -7,9 +7,11 @@ public class Stats : CoreComponents
     [SerializeField] private float maxHealth;
     [SerializeField] private float maxShield;
     [SerializeField] private float shieldRechargeTime;
+    [SerializeField] private float shieldRechargeValue;
+    [SerializeField] private float maxShieldRecharge;
     public float currentHealth;
     public float currentShield;
-    
+    private float timeWithoutDamage;
 
     protected override void Awake()
     {
@@ -17,6 +19,7 @@ public class Stats : CoreComponents
 
         currentHealth = maxHealth;
         currentShield = maxShield;
+        timeWithoutDamage = shieldRechargeTime;
     }
 
     #region Health
@@ -24,26 +27,39 @@ public class Stats : CoreComponents
     {
         base.LogicUpdate();
 
-        if(currentShield < 100)
+        timeWithoutDamage += Time.deltaTime;
+
+        if(currentShield < maxShieldRecharge && timeWithoutDamage >= shieldRechargeTime)
+        {
+            currentShield += shieldRechargeValue * Time.deltaTime;
+            if(currentShield > maxShieldRecharge)
+            {
+                currentShield = maxShieldRecharge;
+            }
+        }
+
+        /*if(currentShield < 100)
         {
             StartCoroutine(RechargeShield());           
         }
         if (currentShield > maxShield)
         {
             currentShield = maxShield;
-        }
+        }*/
     }
 
     public void DecreaseHealth(float amount)
     {
+        timeWithoutDamage = 0f;
+
         if(currentShield > 0)
         {
             currentShield -= amount;
             
             if(currentShield <= 0)
-            {
+            { 
                 Debug.Log("Shield broken ");
-                
+                currentShield = 0;
             }
         }
         else

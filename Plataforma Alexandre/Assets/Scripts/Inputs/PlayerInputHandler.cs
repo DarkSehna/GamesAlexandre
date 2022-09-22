@@ -26,6 +26,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool dashInputStop { get; private set; }
     public bool[] attackInputs { get; private set; }
     public powerInputs currentPower { get; private set; }
+    public bool[] collectedPowers { get; set; }
     public bool ammoGatherInput { get; private set; }
     public bool interactInput { get; private set; }
 
@@ -35,6 +36,16 @@ public class PlayerInputHandler : MonoBehaviour
         cam = Camera.main;
         int count = Enum.GetValues(typeof(combatInputs)).Length;
         attackInputs = new bool[count];
+
+        collectedPowers = new bool[]
+        {
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        };
     }
 
     void Update()
@@ -121,8 +132,11 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if(context.started)
         {
-            currentPower = powerInputs.bounce; 
-            //Debug.Log(" bounce ");
+            if(collectedPowers[(int)powerInputs.bounce])
+            {
+                currentPower = powerInputs.bounce;
+                //Debug.Log(" bounce ");
+            }
         }
     }
 
@@ -130,8 +144,11 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            currentPower = powerInputs.bubble;
-            //Debug.Log(" bubble ");
+            if (collectedPowers[(int)powerInputs.bubble])
+            {
+                currentPower = powerInputs.bubble;
+                //Debug.Log(" bubble ");
+            }
         }
     }
 
@@ -139,8 +156,11 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            currentPower = powerInputs.grapple;
-            //Debug.Log(" grapple ");
+            if (collectedPowers[(int)powerInputs.grapple])
+            {
+                currentPower = powerInputs.grapple;
+                //Debug.Log(" grapple ");
+            }
         }
     }
 
@@ -148,8 +168,11 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            currentPower = powerInputs.antiG;
-            //Debug.Log(" antiG ");
+            if (collectedPowers[(int)powerInputs.antiG])
+            {
+                currentPower = powerInputs.antiG;
+                //Debug.Log(" antiG ");
+            }
         }
     }
 
@@ -157,8 +180,11 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            currentPower = powerInputs.clone;
-            //Debug.Log(" clone ");
+            if (collectedPowers[(int)powerInputs.clone])
+            {
+                currentPower = powerInputs.clone;
+                //Debug.Log(" clone ");
+            }
         }
     }
 
@@ -191,8 +217,9 @@ public class PlayerInputHandler : MonoBehaviour
     public void OnShotDirectionInput(InputAction.CallbackContext context)
     {
         rawShotDirectionInput = context.ReadValue<Vector2>();
-        rawShotDirectionInput = cam.ScreenToWorldPoint((Vector3)rawShotDirectionInput) - transform.position;
-        shotDirectionInput = Vector2Int.RoundToInt(rawShotDirectionInput.normalized);
+        //rawShotDirectionInput = cam.ScreenToWorldPoint((Vector3)rawShotDirectionInput) - transform.position;
+        //shotDirectionInput = Vector2Int.RoundToInt(rawShotDirectionInput.normalized);
+        rawShotDirectionInput = cam.ScreenToWorldPoint((Vector3)rawShotDirectionInput);
     }
 
     public void OnInteractInput(InputAction.CallbackContext context)
@@ -236,6 +263,7 @@ public enum combatInputs
 
 public enum powerInputs
 {
+    empty,
     bounce,
     antiG,
     bubble,
