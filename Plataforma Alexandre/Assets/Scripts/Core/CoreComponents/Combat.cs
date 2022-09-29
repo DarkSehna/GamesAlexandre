@@ -18,8 +18,8 @@ public class Combat : CoreComponents, IDamageable, IKnockbackable
         Debug.Log(core.transform.parent.name + "damaged");
         if(collider.tag == "Water")
         {
-            core.Stats.DecreaseHealth(amount);
             core.Stats.WaterRespawn();
+            core.Stats.DecreaseHealth(amount);
         }
         else
         {

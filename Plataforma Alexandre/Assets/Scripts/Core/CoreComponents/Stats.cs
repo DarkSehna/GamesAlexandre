@@ -70,7 +70,8 @@ public class Stats : CoreComponents
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            Debug.Log("Health is zero!!");
+            CheckpointRespawn();
+            //Debug.Log("Health is zero!!");
             //Eventually here is where the entity will let the system know that it has died and the system will respond appropriately.
         }
     }
@@ -90,6 +91,11 @@ public class Stats : CoreComponents
     public void WaterRespawn()
     {
         core.entity.transform.position = core.PlayerRespawn.GetRespawnPosition();
+    }
+
+    public void CheckpointRespawn()
+    {
+        core.entity.transform.position = core.entity.playerData.lastCheckpointPos;
     }
     #endregion
 }

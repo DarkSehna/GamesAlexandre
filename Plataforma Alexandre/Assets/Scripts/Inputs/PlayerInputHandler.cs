@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PlayerInputHandler : MonoBehaviour
     private float dashInputStartTime;
     private PlayerInput playerInput;
     private Camera cam;
+    public float cameraMinY = 0.4f;
+    public float cameraMaxY = 0.6f;
+    public CinemachineVirtualCamera virtualCamera;
     public Vector2 rawMovementInput { get; private set; }
     public Vector2 rawDashDirectionInput { get; private set; }
     public Vector2Int dashDirectionInput { get; private set; }
@@ -83,6 +87,9 @@ public class PlayerInputHandler : MonoBehaviour
         rawMovementInput = context.ReadValue<Vector2>();
         normInputX = (int)(rawMovementInput * Vector2.right).normalized.x;
         normInputY = (int)(rawMovementInput * Vector2.up).normalized.y;
+
+        float lerpValue = (normInputY + 1) / 2f;
+        virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenY = Mathf.Lerp(cameraMinY, cameraMaxY, lerpValue);
     }
 
     public void OnJumpInput(InputAction.CallbackContext context)

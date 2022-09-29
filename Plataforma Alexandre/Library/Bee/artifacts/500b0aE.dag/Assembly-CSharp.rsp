@@ -429,6 +429,7 @@
 "Assets/Scripts/Intermediaries/WeaponAnimationToWeapon.cs"
 "Assets/Scripts/Intermediaries/WeaponHitboxToWeapon.cs"
 "Assets/Scripts/Other/BouncePower_scr.cs"
+"Assets/Scripts/Other/Checkpoint_scr.cs"
 "Assets/Scripts/Other/Manager_scr.cs"
 "Assets/Scripts/Other/Symbiont_scr.cs"
 "Assets/Scripts/Other/TrapDamage.cs"
