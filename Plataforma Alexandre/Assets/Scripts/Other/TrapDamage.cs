@@ -20,7 +20,10 @@ public class TrapDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnTriggerStay2D(collision);
+        if(collision.CompareTag("Player"))
+        {
+            OnTriggerStay2D(collision);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

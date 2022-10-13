@@ -17,7 +17,9 @@ public class YSlime_IdleState : IdleState
 
     public override void Enter()
     {
-        base.Enter();
+        //base.Enter();
+
+        //isIdleTimeOver = false;
     }
 
     public override void Exit()

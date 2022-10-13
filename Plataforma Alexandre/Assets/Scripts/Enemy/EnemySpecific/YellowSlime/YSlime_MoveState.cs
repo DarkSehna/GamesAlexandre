@@ -19,8 +19,13 @@ public class YSlime_MoveState : MoveState
     {
         //base.Enter();
 
+        var vectorUp = new Vector2(20, 0);
+        var vectorRight = new Vector2(0, 20);
         var vectorJump = (Vector2.up + Vector2.right).normalized;
-        core.Movement.SetVelocity(stateData.movementSpeed, new Vector2(vectorJump.x * core.Movement.facingDirection, vectorJump.y));
+        Debug.DrawLine(enemy.transform.position, (Vector3)vectorJump);
+        //core.Movement.SetVelocity(stateData.movementSpeed, new Vector2(vectorJump.x * core.Movement.facingDirection, vectorJump.y));
+        core.Movement.SetVelocity(20f, Vector2.one, core.Movement.facingDirection);
+        stateMachine.ChangeState(enemy.idleState);
     }
 
     public override void Exit()
@@ -32,11 +37,11 @@ public class YSlime_MoveState : MoveState
     {
         //base.LogicUpdate();
 
-        if (isDetectingWall || !isDetectingLedge)
+        /*if (isDetectingWall || !isDetectingLedge)
         {
             enemy.idleState.SetFlipAfterIdle(true);
             stateMachine.ChangeState(enemy.idleState);
-        }
+        }*/
     }
 
     public override void PhysicsUpdate()
