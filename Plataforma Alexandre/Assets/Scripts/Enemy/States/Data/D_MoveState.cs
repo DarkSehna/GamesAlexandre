@@ -6,4 +6,6 @@ using UnityEngine;
 public class D_MoveState : ScriptableObject
 {
     public float movementSpeed = 3f;
+    public float jumpTime = 0.2f;
+    public Vector2 jumpAngle;
 }

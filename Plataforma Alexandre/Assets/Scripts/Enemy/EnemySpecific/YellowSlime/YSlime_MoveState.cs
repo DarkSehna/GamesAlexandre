@@ -19,13 +19,12 @@ public class YSlime_MoveState : MoveState
     {
         //base.Enter();
 
-        var vectorUp = new Vector2(20, 0);
-        var vectorRight = new Vector2(0, 20);
-        var vectorJump = (Vector2.up + Vector2.right).normalized;
-        Debug.DrawLine(enemy.transform.position, (Vector3)vectorJump);
+        //var vectorUp = new Vector2(20, 0);
+        //var vectorRight = new Vector2(0, 20);
+        //var vectorJump = (Vector2.up + Vector2.right).normalized;
+        //Debug.DrawLine(enemy.transform.position, (Vector3)vectorJump);
         //core.Movement.SetVelocity(stateData.movementSpeed, new Vector2(vectorJump.x * core.Movement.facingDirection, vectorJump.y));
-        core.Movement.SetVelocity(20f, Vector2.one, core.Movement.facingDirection);
-        stateMachine.ChangeState(enemy.idleState);
+        core.Movement.SetVelocity(stateData.movementSpeed, stateData.jumpAngle, core.Movement.facingDirection);
     }
 
     public override void Exit()
@@ -36,12 +35,19 @@ public class YSlime_MoveState : MoveState
     public override void LogicUpdate()
     {
         //base.LogicUpdate();
+        core.Movement.SetVelocity(stateData.movementSpeed, stateData.jumpAngle, core.Movement.facingDirection);
 
-        /*if (isDetectingWall || !isDetectingLedge)
+        if (Time.time >= startTime + stateData.jumpTime)// && isTouchingGround)
         {
-            enemy.idleState.SetFlipAfterIdle(true);
+            //enemy.idleState.SetFlipAfterIdle(true);
             stateMachine.ChangeState(enemy.idleState);
-        }*/
+        }
+
+        //if (isTouchingGround && (isDetectingWall || !isDetectingLedge))
+        //{
+        //    enemy.idleState.SetFlipAfterIdle(true);
+        //    stateMachine.ChangeState(enemy.idleState);
+        //}
     }
 
     public override void PhysicsUpdate()

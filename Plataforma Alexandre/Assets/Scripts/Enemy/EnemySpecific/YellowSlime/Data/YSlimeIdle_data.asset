@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0395c030eb5e4686dd3248bfb22d5, type: 3}
   m_Name: YSlimeIdle_data
   m_EditorClassIdentifier: 
-  minIdleTime: 1
-  maxIdleTime: 2
+  minIdleTime: 1.5
+  maxIdleTime: 1.5
