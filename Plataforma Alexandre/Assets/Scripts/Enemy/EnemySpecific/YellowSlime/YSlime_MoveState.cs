@@ -18,6 +18,7 @@ public class YSlime_MoveState : MoveState
     public override void Enter()
     {
         //base.Enter();
+        startTime = Time.time;
 
         //var vectorUp = new Vector2(20, 0);
         //var vectorRight = new Vector2(0, 20);
@@ -35,9 +36,9 @@ public class YSlime_MoveState : MoveState
     public override void LogicUpdate()
     {
         //base.LogicUpdate();
-        core.Movement.SetVelocity(stateData.movementSpeed, stateData.jumpAngle, core.Movement.facingDirection);
+        //core.Movement.SetVelocity(stateData.movementSpeed, stateData.jumpAngle, core.Movement.facingDirection);
 
-        if (Time.time >= startTime + stateData.jumpTime)// && isTouchingGround)
+        if (Time.time >= startTime + stateData.jumpTime && isTouchingGround)
         {
             //enemy.idleState.SetFlipAfterIdle(true);
             stateMachine.ChangeState(enemy.idleState);

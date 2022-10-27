@@ -23,6 +23,8 @@ public class YSlime_IdleState : IdleState
     public override void Exit()
     {
         base.Exit();
+
+        SetFlipAfterIdle(false);
     }
 
     public override void LogicUpdate()
@@ -31,6 +33,10 @@ public class YSlime_IdleState : IdleState
 
         if (isIdleTimeOver)
         {
+            if(!isDetectingLedge || isDetectingWall)
+            {
+                SetFlipAfterIdle(true);
+            }
             stateMachine.ChangeState(enemy.moveState);
         }
     }

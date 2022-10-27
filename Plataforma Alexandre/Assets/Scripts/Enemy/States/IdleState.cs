@@ -5,10 +5,12 @@ using UnityEngine;
 public class IdleState : State
 {
     protected D_IdleState stateData;
+    protected float idleTime;
     protected bool flipAfterIdle;
     protected bool isIdleTimeOver;
     protected bool isPlayerInMinAgroRange;
-    protected float idleTime;
+    protected bool isDetectingLedge;
+    protected bool isDetectingWall;
 
     public IdleState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_IdleState stateData) : base(entity, stateMachine, animBoolName)
     {
@@ -20,6 +22,8 @@ public class IdleState : State
         base.DoChecks();
 
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
+        isDetectingLedge = core.CollisionSenses.LedgeVertical;
+        isDetectingWall = core.CollisionSenses.WallFront;
     }
 
     public override void Enter()

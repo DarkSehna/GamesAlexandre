@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e161ddf2c13bf4186e0e7334dd4e99, type: 3}
   m_Name: YSlimeMove_data
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  jumpTime: 0.5
-  jumpAngle: {x: 10, y: 20}
+  movementSpeed: 25
+  jumpTime: 0.2
+  jumpAngle: {x: 1, y: 2}
