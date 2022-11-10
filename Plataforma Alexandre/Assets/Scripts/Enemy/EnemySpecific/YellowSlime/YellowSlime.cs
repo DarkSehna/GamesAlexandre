@@ -9,12 +9,13 @@ public class YellowSlime : Entity
 
     [SerializeField] private D_IdleState idleStateData;
     [SerializeField] private D_MoveState moveStateData;
+    [SerializeField] private Transform hitPosition;
 
     public override void Awake()
     {
         base.Awake();
 
-        moveState = new YSlime_MoveState(this, stateMachine, "move", moveStateData, this);
+        moveState = new YSlime_MoveState(this, stateMachine, "move", moveStateData, this, hitPosition);
         idleState = new YSlime_IdleState(this, stateMachine, "idle", idleStateData, this);
     }
 

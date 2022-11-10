@@ -5,9 +5,11 @@ using UnityEngine;
 public class YSlime_MoveState : MoveState
 {
     private YellowSlime enemy;
-    public YSlime_MoveState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_MoveState stateData, YellowSlime enemy) : base(entity, stateMachine, animBoolName, stateData)
+    protected Transform hitPosition;
+    public YSlime_MoveState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_MoveState stateData, YellowSlime enemy, Transform hitPosition) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
+        this.hitPosition = hitPosition;
     }
 
     public override void DoChecks()
@@ -20,11 +22,6 @@ public class YSlime_MoveState : MoveState
         //base.Enter();
         startTime = Time.time;
 
-        //var vectorUp = new Vector2(20, 0);
-        //var vectorRight = new Vector2(0, 20);
-        //var vectorJump = (Vector2.up + Vector2.right).normalized;
-        //Debug.DrawLine(enemy.transform.position, (Vector3)vectorJump);
-        //core.Movement.SetVelocity(stateData.movementSpeed, new Vector2(vectorJump.x * core.Movement.facingDirection, vectorJump.y));
         core.Movement.SetVelocity(stateData.movementSpeed, stateData.jumpAngle, core.Movement.facingDirection);
     }
 
@@ -36,23 +33,37 @@ public class YSlime_MoveState : MoveState
     public override void LogicUpdate()
     {
         //base.LogicUpdate();
-        //core.Movement.SetVelocity(stateData.movementSpeed, stateData.jumpAngle, core.Movement.facingDirection);
+
+        DamagePlayer();
 
         if (Time.time >= startTime + stateData.jumpTime && isTouchingGround)
         {
             //enemy.idleState.SetFlipAfterIdle(true);
             stateMachine.ChangeState(enemy.idleState);
         }
-
-        //if (isTouchingGround && (isDetectingWall || !isDetectingLedge))
-        //{
-        //    enemy.idleState.SetFlipAfterIdle(true);
-        //    stateMachine.ChangeState(enemy.idleState);
-        //}
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+    }
+
+    private void DamagePlayer()
+    {
+        Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(hitPosition.position, stateData.hitRadius, stateData.whatIsPlayer);
+        foreach (Collider2D collider in detectedObjects)
+        {
+            IDamageable damageable = collider.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.Damage(stateData.hitDamage, entity.gameObject);
+            }
+
+            IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
+            if (knockbackable != null)
+            {
+                knockbackable.Knockback(stateData.knockbackAngle, stateData.knockbackStrength, core.Movement.facingDirection);
+            }
+        }
     }
 }
