@@ -25,7 +25,7 @@ public class Janitor : Entity
     [SerializeField] private Transform meleeAttackPosition;
     [SerializeField] private Transform rangedAttackPosition;
 
-    public bool outOfAmmo;
+    public bool outOfAmmo { get; set; }
 
     public override void Awake()
     {
