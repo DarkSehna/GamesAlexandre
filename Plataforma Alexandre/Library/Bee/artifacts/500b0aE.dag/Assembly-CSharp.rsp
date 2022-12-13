@@ -451,6 +451,7 @@
 "Assets/Scripts/Huds/PauseMenu.cs"
 "Assets/Scripts/Inputs/PlayerInputHandler.cs"
 "Assets/Scripts/Interactables/DoorLeverScript.cs"
+"Assets/Scripts/Interactables/EscapeDoor_script.cs"
 "Assets/Scripts/Interactables/Platform.cs"
 "Assets/Scripts/Interfaces/IDamageable.cs"
 "Assets/Scripts/Interfaces/IKnockbackable.cs"

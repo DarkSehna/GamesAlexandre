@@ -36,7 +36,7 @@ public class FleeState : State
         base.LogicUpdate();
 
         core.Movement.SetVelocityX(stateData.fleeSpeed * core.Movement.facingDirection);
-        if (Time.time > startTime + stateData.fleeTime && stateData.fleeForever)
+        if (Time.time > startTime + stateData.fleeTime && !stateData.fleeForever)
         {
             isFleeTimeOver = true;
         }
