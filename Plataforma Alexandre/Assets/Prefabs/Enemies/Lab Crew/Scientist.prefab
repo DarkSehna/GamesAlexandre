@@ -524,6 +524,7 @@ Transform:
   - {fileID: 3383901576615437914}
   - {fileID: 3383901577016072297}
   - {fileID: 3383901576815519395}
+  - {fileID: 5272574580831519390}
   m_Father: {fileID: 3383901577570066150}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -544,11 +545,47 @@ MonoBehaviour:
   ledgeCheckHorizontal: {fileID: 0}
   ledgeCheckVertical: {fileID: 3383901576815519395}
   ceilingCheck: {fileID: 0}
+  interactableCheck: {fileID: 5272574580831519390}
   groundCheckRadius: 0.3
   wallCheckDistance: 0.3
+  interactableCheckRadius: 0.3
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
   whatIsTrap:
     serializedVersion: 2
     m_Bits: 64
+  whatIsInteractable:
+    serializedVersion: 2
+    m_Bits: 8192
+--- !u!1 &7339727770167944539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5272574580831519390}
+  m_Layer: 10
+  m_Name: InteractableCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5272574580831519390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7339727770167944539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3383901577919030886}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

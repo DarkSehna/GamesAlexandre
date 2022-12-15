@@ -37,7 +37,7 @@ public class Guard : Entity
 
     private void Start()
     {
-        stateMachine.Initialize(moveState);
+        stateMachine.Initialize(playerDetectedState);
 
     }
 }

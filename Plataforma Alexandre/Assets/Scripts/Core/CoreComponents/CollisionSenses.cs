@@ -29,6 +29,11 @@ public class CollisionSenses : CoreComponents
         get => GenericNotImplementedError<Transform>.TryGet(ceilingCheck, core.transform.parent.name);
         private set => ceilingCheck = value;
     }
+    public Transform InteractableCheck
+    {
+        get => GenericNotImplementedError<Transform>.TryGet(interactableCheck, core.transform.parent.name);
+        private set => interactableCheck = value;
+    }
 
     public float GroundCheckRadius { get => groundCheckRadius; set => groundCheckRadius = value; }
     public float WallCheckDistance { get => wallCheckDistance; set => wallCheckDistance = value; }
@@ -39,12 +44,15 @@ public class CollisionSenses : CoreComponents
     [SerializeField] private Transform ledgeCheckHorizontal;
     [SerializeField] private Transform ledgeCheckVertical;
     [SerializeField] private Transform ceilingCheck;
+    [SerializeField] private Transform interactableCheck;
 
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private float wallCheckDistance;
+    [SerializeField] private float interactableCheckRadius;
 
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private LayerMask whatIsTrap;
+    [SerializeField] private LayerMask whatIsInteractable;
 
     public bool Ground
     {
@@ -73,5 +81,9 @@ public class CollisionSenses : CoreComponents
     public bool WallBack
     {
         get => Physics2D.Raycast(WallCheck.position, Vector2.right * -core.Movement.facingDirection, wallCheckDistance, whatIsGround);
+    }
+    public bool Interactable
+    {
+        get => Physics2D.OverlapCircle(InteractableCheck.position, interactableCheckRadius, whatIsInteractable);
     }
 }

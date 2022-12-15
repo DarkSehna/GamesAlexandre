@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579ff78e0ba237d4aa963431128fd637, type: 3}
   m_Name: Scientist_FleeStateData
   m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 7511431837404301052, guid: 123666710aa17114097f1421c61379e0,
+    type: 3}
   fleeSpeed: 6
   fleeTime: 2
   fleeForever: 1

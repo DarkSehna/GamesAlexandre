@@ -34,6 +34,12 @@ public class Scientist_FleeState : FleeState
         {
             stateMachine.ChangeState(enemy.lookForPlayerState);
         }
+        else if (isDetectingInteractable) //Escape door
+        {
+            GameObject.Instantiate(stateData.objectToSpawn, entity.gameObject.transform.position + new Vector3(0, 0), entity.gameObject.transform.rotation);
+            GameObject.Instantiate(stateData.objectToSpawn, entity.gameObject.transform.position + new Vector3(-1, 0), entity.gameObject.transform.rotation); 
+            entity.gameObject.SetActive(false);
+        }
     }
 
     public override void PhysicsUpdate()

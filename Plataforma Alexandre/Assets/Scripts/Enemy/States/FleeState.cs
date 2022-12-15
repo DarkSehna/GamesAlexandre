@@ -7,6 +7,7 @@ public class FleeState : State
     protected D_FleeState stateData;
     protected bool isDetectingLedge;
     protected bool isDetectingWall;
+    protected bool isDetectingInteractable;
     protected bool isFleeTimeOver;
 
     public FleeState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_FleeState stateData) : base(entity, stateMachine, animBoolName)
@@ -20,6 +21,7 @@ public class FleeState : State
 
         isDetectingLedge = core.CollisionSenses.LedgeVertical;
         isDetectingWall = core.CollisionSenses.WallFront;
+        isDetectingInteractable = core.CollisionSenses.Interactable;
     }
 
     public override void Enter()
