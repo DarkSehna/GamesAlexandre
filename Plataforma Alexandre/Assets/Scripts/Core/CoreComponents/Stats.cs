@@ -96,6 +96,8 @@ public class Stats : CoreComponents
     public void CheckpointRespawn()
     {
         core.entity.transform.position = core.entity.playerData.lastCheckpointPos;
+        currentHealth = maxHealth;
+        currentShield = maxShield;
     }
     #endregion
 }
