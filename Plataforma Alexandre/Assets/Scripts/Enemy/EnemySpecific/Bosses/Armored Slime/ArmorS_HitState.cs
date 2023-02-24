@@ -28,6 +28,12 @@ public class ArmorS_HitState : StunState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if(isStunTimeOver)
+        {
+            core.Movement.Flip();
+            stateMachine.ChangeState(boss.idleState);
+        }
     }
 
     public override void PhysicsUpdate()

@@ -28,6 +28,11 @@ public class ArmorS_IdleState : IdleState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if (isIdleTimeOver)
+        {
+            stateMachine.ChangeState(boss.chargeState);
+        }
     }
 
     public override void PhysicsUpdate()
