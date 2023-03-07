@@ -36,5 +36,6 @@ public class ArmoredSlime : Entity
         base.OnDrawGizmos();
 
         //Gizmos.DrawWireSphere(meleeAttackPosition.position + (Vector3)(Vector2.right * meleeAttackPosition.position), chargeStateData.collisionRadius);
+        Gizmos.DrawWireSphere(meleeAttackPosition.position, chargeStateData.collisionRadius);
     }
 }

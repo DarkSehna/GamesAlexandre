@@ -46,7 +46,29 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(objectToSpawn != null)
+        {
+            Instantiate(objectToSpawn, collision.contacts[0].point, Quaternion.identity, powerRepository.transform).transform.up = collision.contacts[0].normal;
+            Destroy(gameObject);
+            Debug.DrawLine(collision.contacts[0].point, collision.contacts[0].point + collision.contacts[0].normal, Color.magenta, 5f);
+        }
+    }
+
     private void FixedUpdate()
+    {
+        if(!hasHitGround)
+        {
+            if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance && !isGravityOn)
+            {
+                isGravityOn = true;
+                rb.gravityScale = gravity;
+            }
+        }
+    }
+
+    /*private void FixedUpdate()
     {
         if(!hasHitGround)
         {
@@ -74,7 +96,7 @@ public class Projectile : MonoBehaviour
                 rb.gravityScale = gravity;
             }
         }
-    }
+    }*/
 
     public void FireProjectile(float speed, float travelDistance, float damage)
     {
