@@ -7,8 +7,11 @@ public class Movement : CoreComponents
     public Rigidbody2D rB { get; private set; }
     public int facingDirection { get; private set; }
     public bool CanSetVelocity { get; set; }
+    public bool isDriven { get; set; }
     public Vector2 currentVelocity { get; private set; }
     private Vector2 workSpace;
+
+    public Vector2 maxControllableVelocity;
 
     protected override void Awake()
     {
@@ -17,11 +20,13 @@ public class Movement : CoreComponents
         rB = GetComponentInParent<Rigidbody2D>();
         facingDirection = 1;
         CanSetVelocity = true;
+        isDriven = false;
     }
 
     public override void LogicUpdate()
     {
         currentVelocity = rB.velocity;
+        CheckIfIsDriven();
     }
 
     public void SetVelocityX(float velocity)
@@ -61,6 +66,18 @@ public class Movement : CoreComponents
         {
             rB.velocity = workSpace;
             currentVelocity = workSpace;
+        }
+    }
+
+    public void CheckIfIsDriven()
+    {
+        if(Mathf.Abs(currentVelocity.x) < Mathf.Abs(maxControllableVelocity.x))
+        {
+            isDriven = false;
+        }
+        else
+        {
+            isDriven = true;
         }
     }
 

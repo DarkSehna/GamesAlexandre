@@ -55,12 +55,14 @@ public class BouncerScript : MonoBehaviour
             {
                 //rb.velocity = new Vector2(rb.velocity.x, jumpForce + 10);
                 playerMovement.SetVelocity(jumpForce, Vector2.Reflect(playerMovement.currentVelocity, transform.up).normalized);
+                playerMovement.isDriven = true;
                 Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
             }
             else
             {
                 //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 playerMovement.SetVelocity(jumpForce, Vector2.Reflect(playerMovement.currentVelocity, transform.up).normalized);
+                playerMovement.isDriven = true;
                 Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
             }
         }

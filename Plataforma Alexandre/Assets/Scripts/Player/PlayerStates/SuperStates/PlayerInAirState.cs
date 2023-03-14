@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class PlayerInAirState : PlayerState
 {
-    private int xInput;
-    private bool isGrounded;
-    private bool isTouchingWall;
-    private bool isTouchingWallBack;
-    private bool oldIsTouchingWall;
-    private bool oldIsTouchingWallBack;
-    private bool isTouchingLedge;
-    private bool jumpInput;
-    private bool jumpInputStop;
-    private bool isJumping;
-    private bool grabInput;
-    private bool dashInput;
-    private bool coyoteTime;
-    private bool wallJumpCoyoteTime;
-    private float startWallJumpCoyoteTime;
+    protected int xInput;
+    protected bool isDriven;
+    protected bool isGrounded;
+    protected bool isTouchingWall;
+    protected bool isTouchingWallBack;
+    protected bool oldIsTouchingWall;
+    protected bool oldIsTouchingWallBack;
+    protected bool isTouchingLedge;
+    protected bool jumpInput;
+    protected bool jumpInputStop;
+    protected bool isJumping;
+    protected bool grabInput;
+    protected bool dashInput;
+    protected bool coyoteTime;
+    protected bool wallJumpCoyoteTime;
+    protected float startWallJumpCoyoteTime;
 
     public PlayerInAirState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -45,6 +46,8 @@ public class PlayerInAirState : PlayerState
         isTouchingWall = core.CollisionSenses.WallFront;
         isTouchingWallBack = core.CollisionSenses.WallBack;
         isTouchingLedge = core.CollisionSenses.LedgeHorizontal;
+
+        isDriven = core.Movement.isDriven;
 
         if(isTouchingWall && !isTouchingLedge)
         {
@@ -83,6 +86,7 @@ public class PlayerInAirState : PlayerState
         jumpInputStop = player.inputHandler.jumpInputStop;
         grabInput = player.inputHandler.grabInput;
         dashInput = player.inputHandler.dashInput;
+        isDriven = core.Movement.isDriven;
         CheckJumpMultiplier();
 
         if(isGrounded && core.Movement.currentVelocity.y<0.01f)
@@ -115,14 +119,6 @@ public class PlayerInAirState : PlayerState
         else if(dashInput && player.dashState.CheckIfCanDash())
         {
             stateMachine.ChangeState(player.dashState);
-        }
-        else
-        {
-            core.Movement.CheckIfShouldFlip(xInput);
-            core.Movement.SetVelocityX(playerData.movementVelocity * xInput);
-
-            player.anim.SetFloat("yVelocity", core.Movement.currentVelocity.y);
-            player.anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.currentVelocity.x));
         }
     }
 
