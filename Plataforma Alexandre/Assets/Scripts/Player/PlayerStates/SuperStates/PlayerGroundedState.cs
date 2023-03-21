@@ -82,8 +82,15 @@ public class PlayerGroundedState : PlayerState
         }
         else if (!isGrounded)
         {
-            player.inAirState.StartCoyoteTime();
-            stateMachine.ChangeState(player.inAirState);
+            if(!core.Movement.isDriven)
+            {
+                player.inAirState.StartCoyoteTime();
+                stateMachine.ChangeState(player.inAirState);
+            }
+            else
+            {
+                stateMachine.ChangeState(player.airImpulseState);
+            }
         }
         else if(isTouchingWall && grabInput && isTouchingLedge)
         {

@@ -51,20 +51,31 @@ public class BouncerScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             var playerMovement = collision.GetComponent<Player>().Core.Movement;
+            var playerDirection = SetBounceDirection(playerMovement.currentVelocity);
+            Debug.Log(playerDirection);
             if (Input.GetButton("Jump"))
             {
                 //rb.velocity = new Vector2(rb.velocity.x, jumpForce + 10);
-                playerMovement.SetVelocity(jumpForce, Vector2.Reflect(playerMovement.currentVelocity, transform.up).normalized);
+                playerMovement.SetVelocity(jumpForce, playerDirection);
                 playerMovement.isDriven = true;
                 Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
             }
             else
             {
                 //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                playerMovement.SetVelocity(jumpForce, Vector2.Reflect(playerMovement.currentVelocity, transform.up).normalized);
+                playerMovement.SetVelocity(jumpForce, playerDirection);
                 playerMovement.isDriven = true;
                 Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
             }
         }
+    }
+
+    private Vector2 SetBounceDirection(Vector2 velocity)
+    {
+        var direction = Vector2.Reflect(velocity, transform.up).normalized;
+
+        //if(direction)
+
+        return direction;
     }
 }

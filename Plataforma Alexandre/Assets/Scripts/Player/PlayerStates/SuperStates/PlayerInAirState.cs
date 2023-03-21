@@ -93,7 +93,7 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.landState);
         }
-        else if(isTouchingWall && !isTouchingLedge && !isGrounded)
+        else if(isTouchingWall && !isTouchingLedge && !isGrounded && !isDriven)
         {
             stateMachine.ChangeState(player.ledgeClimbState);
         }
@@ -108,11 +108,11 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.jumpState);
         }
-        else if(isTouchingWall && grabInput && isTouchingLedge)
+        else if(isTouchingWall && grabInput && isTouchingLedge && !isDriven)
         {
             stateMachine.ChangeState(player.wallGrabState);
         }
-        else if(isTouchingWall && xInput == core.Movement.facingDirection && core.Movement.currentVelocity.y<=0)
+        else if(isTouchingWall && !isDriven && xInput == core.Movement.facingDirection && core.Movement.currentVelocity.y<=0)
         {
             stateMachine.ChangeState(player.wallSlideState);
         }

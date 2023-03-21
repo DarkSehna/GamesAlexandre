@@ -73,6 +73,10 @@ public class PlayerTouchingWallState : PlayerState
         {
             stateMachine.ChangeState(player.inAirState);
         }
+        else if(core.Movement.isDriven)
+        {
+            stateMachine.ChangeState(player.airImpulseState);
+        }
         else if(isTouchingWall && !isTouchingLedge)
         {
             stateMachine.ChangeState(player.ledgeClimbState);

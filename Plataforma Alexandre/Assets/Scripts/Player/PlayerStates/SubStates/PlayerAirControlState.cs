@@ -37,11 +37,18 @@ public class PlayerAirControlState : PlayerInAirState
     {
         base.LogicUpdate();
 
-            core.Movement.CheckIfShouldFlip(xInput);
-            core.Movement.SetVelocityX(playerData.movementVelocity * xInput);
+        core.Movement.CheckIfShouldFlip(xInput);
+        core.Movement.SetVelocityX(playerData.movementVelocity * xInput);
 
-            player.anim.SetFloat("yVelocity", core.Movement.currentVelocity.y);
-            player.anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.currentVelocity.x));
+        player.anim.SetFloat("yVelocity", core.Movement.currentVelocity.y);
+        player.anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.currentVelocity.x));
+
+        if(isDriven)
+        {
+            stateMachine.ChangeState(player.airImpulseState);
+        }
+
+
     }
 
     public override void PhysicsUpdate()

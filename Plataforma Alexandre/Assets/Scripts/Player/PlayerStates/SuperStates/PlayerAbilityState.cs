@@ -38,9 +38,16 @@ public class PlayerAbilityState : PlayerState
             {
                 stateMachine.ChangeState(player.idleState);
             }
-            else 
+            else
             {
-                stateMachine.ChangeState(player.inAirState);
+                if(!core.Movement.isDriven)
+                {
+                    stateMachine.ChangeState(player.inAirState);
+                }
+                else
+                {
+                    stateMachine.ChangeState(player.airImpulseState);
+                }
             }
         }
     }
