@@ -9,6 +9,8 @@ public class BouncerScript : MonoBehaviour
     public float activateTime = 60f;
     public float destroyTime = 60f;
     public float jumpForce = 40f;
+
+    public Vector2 wallNormal;
     #endregion
 
     #region Private Variables
