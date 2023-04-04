@@ -86,6 +86,8 @@ public class Player : MonoBehaviour
         stateMachine.Inicialize(idleState);
 
         ammoGatherState.Reload();
+
+        playerData.lastCheckpointPos = gameObject.transform.position;
     }
     private void Update()
     {

@@ -24,6 +24,8 @@ public class BouncerScript : MonoBehaviour
         box = GetComponent<Collider2D>();
         isActive = true;
         box.enabled = true;
+
+        Debug.Log(wallNormal);
     }
 
     // Update is called once per frame
@@ -53,7 +55,7 @@ public class BouncerScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             var playerMovement = collision.GetComponent<Player>().Core.Movement;
-            var playerDirection = SetBounceDirection(playerMovement.currentVelocity);
+            var playerDirection = SetBounceDirection(-wallNormal);
             Debug.Log(playerDirection);
             if (Input.GetButton("Jump"))
             {

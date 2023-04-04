@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     private float speed;
     private float travelDistance;
     private float xStartPos;
+    private float yStartPos;
 
     [SerializeField] private float gravity;
     [SerializeField] private float damageRadius;
@@ -30,6 +31,7 @@ public class Projectile : MonoBehaviour
         rb.velocity = transform.right * speed;
         isGravityOn = false;
         xStartPos = transform.position.x;
+        yStartPos = transform.position.y;
         powerRepository = GameObject.Find("AmmoRepository");
     }
 
@@ -48,14 +50,17 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(objectToSpawn != null)
+        if(collision.transform.tag != "Player")
         {
-            //var bouncer = Instantiate(objectToSpawn, collision.contacts[0].point, Quaternion.identity, powerRepository.transform).transform.up = collision.contacts[0].normal;
-            GameObject bouncer = Instantiate(objectToSpawn, collision.contacts[0].point, Quaternion.identity, powerRepository.transform);
-            var bouncerNormal = bouncer.transform.up = collision.contacts[0].normal;
-            bouncer.GetComponent<BouncerScript>().wallNormal = bouncerNormal;
-            Destroy(gameObject);
-            Debug.DrawLine(collision.contacts[0].point, collision.contacts[0].point + collision.contacts[0].normal, Color.magenta, 5f);
+            if(objectToSpawn != null)
+            {
+                //var bouncer = Instantiate(objectToSpawn, collision.contacts[0].point, Quaternion.identity, powerRepository.transform).transform.up = collision.contacts[0].normal;
+                GameObject bouncer = Instantiate(objectToSpawn, collision.contacts[0].point, Quaternion.identity, powerRepository.transform);
+                var bouncerNormal = bouncer.transform.up = collision.contacts[0].normal;
+                bouncer.GetComponent<BouncerScript>().wallNormal = bouncerNormal;
+                Destroy(gameObject);
+                Debug.DrawLine(collision.contacts[0].point, collision.contacts[0].point + collision.contacts[0].normal, Color.magenta, 5f);
+            }
         }
     }
 
@@ -63,7 +68,7 @@ public class Projectile : MonoBehaviour
     {
         if(!hasHitGround)
         {
-            if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance && !isGravityOn)
+            if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance || Mathf.Abs(yStartPos - transform.position.y) >= travelDistance && !isGravityOn)
             {
                 isGravityOn = true;
                 rb.gravityScale = gravity;

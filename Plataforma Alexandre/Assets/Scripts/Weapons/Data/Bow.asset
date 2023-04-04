@@ -15,4 +15,4 @@ MonoBehaviour:
   projectileDamage: 10
   projectileSpeed: 12
   projectileTravelDistance: 5
-  projectileSpawnRadius: 1
+  projectileSpawnRadius: 0.1
