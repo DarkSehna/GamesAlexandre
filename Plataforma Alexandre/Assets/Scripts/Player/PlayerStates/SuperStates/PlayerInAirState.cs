@@ -93,33 +93,33 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.landState);
         }
-        else if(isTouchingWall && !isTouchingLedge && !isGrounded && !isDriven)
-        {
-            stateMachine.ChangeState(player.ledgeClimbState);
-        }
-        else if(jumpInput && (isTouchingWall || isTouchingWallBack || wallJumpCoyoteTime))
-        {
-            StopWallJumpCoyoteTime();
-            isTouchingWall = core.CollisionSenses.WallFront;
-            player.wallJumpState.DetermineWallJumpDirection(isTouchingWall);
-            stateMachine.ChangeState(player.wallJumpState);
-        }
         else if(jumpInput && player.jumpState.CanJump())
         {
             stateMachine.ChangeState(player.jumpState);
-        }
-        else if(isTouchingWall && grabInput && isTouchingLedge && !isDriven)
-        {
-            stateMachine.ChangeState(player.wallGrabState);
-        }
-        else if(isTouchingWall && !isDriven && xInput == core.Movement.facingDirection && core.Movement.currentVelocity.y<=0)
-        {
-            stateMachine.ChangeState(player.wallSlideState);
         }
         else if(dashInput && player.dashState.CheckIfCanDash())
         {
             stateMachine.ChangeState(player.dashState);
         }
+        //else if(isTouchingWall && !isTouchingLedge && !isGrounded && !isDriven)
+        //{
+        //    stateMachine.ChangeState(player.ledgeClimbState);
+        //}
+        //else if(jumpInput && (isTouchingWall || isTouchingWallBack || wallJumpCoyoteTime))
+        //{
+        //    StopWallJumpCoyoteTime();
+        //    isTouchingWall = core.CollisionSenses.WallFront;
+        //    player.wallJumpState.DetermineWallJumpDirection(isTouchingWall);
+        //    stateMachine.ChangeState(player.wallJumpState);
+        //}
+        //else if(isTouchingWall && grabInput && isTouchingLedge && !isDriven)
+        //{
+        //    stateMachine.ChangeState(player.wallGrabState);
+        //}
+        //else if(isTouchingWall && !isDriven && xInput == core.Movement.facingDirection && core.Movement.currentVelocity.y<=0)
+        //{
+        //    stateMachine.ChangeState(player.wallSlideState);
+        //}
     }
 
     public override void PhysicsUpdate()

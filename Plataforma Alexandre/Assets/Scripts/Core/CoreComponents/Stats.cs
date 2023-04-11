@@ -91,11 +91,13 @@ public class Stats : CoreComponents
     public void WaterRespawn()
     {
         core.entity.transform.position = core.PlayerRespawn.GetRespawnPosition();
+        core.entity.Core.Movement.SetVelocityZero();
     }
 
     public void CheckpointRespawn()
     {
         core.entity.transform.position = core.entity.playerData.lastCheckpointPos;
+        core.entity.Core.Movement.SetVelocityZero();
         currentHealth = maxHealth;
         currentShield = maxShield;
     }

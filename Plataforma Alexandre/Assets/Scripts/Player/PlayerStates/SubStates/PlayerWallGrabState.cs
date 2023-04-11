@@ -47,11 +47,11 @@ public class PlayerWallGrabState : PlayerTouchingWallState
             HoldPosition();
             if (yInput > 0)
             {
-                stateMachine.ChangeState(player.wallClimbState);
+                //stateMachine.ChangeState(player.wallClimbState);
             }
             else if (yInput < 0 || !grabInput)
             {
-                stateMachine.ChangeState(player.wallSlideState);
+                //stateMachine.ChangeState(player.wallSlideState);
             }
         } 
     }

@@ -92,14 +92,14 @@ public class PlayerGroundedState : PlayerState
                 stateMachine.ChangeState(player.airImpulseState);
             }
         }
-        else if(isTouchingWall && grabInput && isTouchingLedge)
-        {
-            stateMachine.ChangeState(player.wallGrabState);
-        }
         else if(dashInput && player.dashState.CheckIfCanDash() && !isTouchingCeiling)
         {
             stateMachine.ChangeState(player.dashState);
         }
+        //else if(isTouchingWall && grabInput && isTouchingLedge)
+        //{
+        //    stateMachine.ChangeState(player.wallGrabState);
+        //}
     }
 
     public override void PhysicsUpdate()
