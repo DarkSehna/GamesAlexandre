@@ -7,8 +7,6 @@ public class PlayerGroundedState : PlayerState
     protected int xInput;
     protected int yInput;
     private bool jumpInput;
-    private bool grabInput;
-    private bool dashInput;
     private bool gatherInput;
 
     private bool isGrounded;
@@ -44,7 +42,6 @@ public class PlayerGroundedState : PlayerState
     {
         base.Enter();
         player.jumpState.ResetAmountOfJumpsLeft();
-        player.dashState.ResetCanDash();
     }
 
     public override void Exit()
@@ -58,8 +55,6 @@ public class PlayerGroundedState : PlayerState
         xInput = player.inputHandler.normInputX;
         yInput = player.inputHandler.normInputY;
         jumpInput = player.inputHandler.jumpInput;
-        grabInput = player.inputHandler.grabInput;
-        dashInput = player.inputHandler.dashInput;
         gatherInput = player.inputHandler.ammoGatherInput;
 
         if (player.inputHandler.attackInputs[(int)combatInputs.primary] && !isTouchingCeiling)
@@ -92,14 +87,6 @@ public class PlayerGroundedState : PlayerState
                 stateMachine.ChangeState(player.airImpulseState);
             }
         }
-        else if(dashInput && player.dashState.CheckIfCanDash() && !isTouchingCeiling)
-        {
-            stateMachine.ChangeState(player.dashState);
-        }
-        //else if(isTouchingWall && grabInput && isTouchingLedge)
-        //{
-        //    stateMachine.ChangeState(player.wallGrabState);
-        //}
     }
 
     public override void PhysicsUpdate()

@@ -25,12 +25,6 @@ public class Player : MonoBehaviour
     public PlayerAirControlState inAirState { get; private set; }
     public PlayerAirImpulseState airImpulseState { get; private set; }
     public PlayerLandState landState { get; private set; }
-    //public PlayerWallSlideState wallSlideState { get; private set; }
-    //public PlayerWallGrabState wallGrabState { get; private set; }
-    //public PlayerWallClimbState wallClimbState { get; private set; }
-    public PlayerWallJumpState wallJumpState { get; private set; }
-    public PlayerLedgeClimbState ledgeClimbState { get; private set; }
-    public PlayerDashState dashState { get; private set; }
     public PlayerCrouchIdleState crouchIdleState { get; private set; }
     public PlayerCrouchMoveState crouchMoveState { get; private set; }
     public PlayerAttackState primaryAttackState { get; private set; }
@@ -58,12 +52,6 @@ public class Player : MonoBehaviour
         inAirState = new PlayerAirControlState(this, stateMachine, playerData, "inAir");
         airImpulseState = new PlayerAirImpulseState(this, stateMachine, playerData, "inAir");
         landState = new PlayerLandState(this, stateMachine, playerData, "land");
-        //wallSlideState = new PlayerWallSlideState(this, stateMachine, playerData, "wallSlide");
-        //wallGrabState = new PlayerWallGrabState(this, stateMachine, playerData, "wallGrab");
-        //wallClimbState = new PlayerWallClimbState(this, stateMachine, playerData, "wallClimb");
-        wallJumpState = new PlayerWallJumpState(this, stateMachine, playerData, "inAir");
-        ledgeClimbState = new PlayerLedgeClimbState(this, stateMachine, playerData, "ledgeClimbState");
-        dashState = new PlayerDashState(this, stateMachine, playerData, "inAir");
         crouchIdleState = new PlayerCrouchIdleState(this, stateMachine, playerData, "crouchIdle");
         crouchMoveState = new PlayerCrouchMoveState(this, stateMachine, playerData, "crouchMove");
         primaryAttackState = new PlayerAttackState(this, stateMachine, playerData, "attack"); 

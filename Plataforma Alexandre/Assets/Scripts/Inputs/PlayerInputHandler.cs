@@ -10,24 +10,18 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField]
     private float inputHoldTime = 0.2f;
     private float jumpInputStartTime;
-    private float dashInputStartTime;
     private PlayerInput playerInput;
     private Camera cam;
     public float cameraMinY = 0.4f;
     public float cameraMaxY = 0.6f;
     public CinemachineVirtualCamera virtualCamera;
     public Vector2 rawMovementInput { get; private set; }
-    public Vector2 rawDashDirectionInput { get; private set; }
-    public Vector2Int dashDirectionInput { get; private set; }
     public Vector2 rawShotDirectionInput { get; private set; }
     public Vector2Int shotDirectionInput { get; private set; }
     public int normInputX { get; private set; }
     public int normInputY { get; private set; }
     public bool jumpInput { get; private set; }
     public bool jumpInputStop { get; private set; }
-    public bool grabInput { get; private set; }
-    public bool dashInput { get; private set; }
-    public bool dashInputStop { get; private set; }
     public bool[] attackInputs { get; private set; }
     public powerInputs currentPower { get; private set; }
     public bool[] collectedPowers { get; set; }
@@ -55,7 +49,6 @@ public class PlayerInputHandler : MonoBehaviour
     void Update()
     {
         CheckJumpInputHoldTime();
-        CheckDashInputHoldTime();
     }
 
     public void OnPrimaryAttackInput(InputAction.CallbackContext context)
@@ -104,33 +97,6 @@ public class PlayerInputHandler : MonoBehaviour
         if(context.canceled)
         {
             jumpInputStop = true;
-        }
-    }
-
-    public void OnGrabInput(InputAction.CallbackContext context)
-    {
-        if(context.started)
-        {
-            grabInput = true;
-        }
-
-        if(context.canceled)
-        {
-            grabInput = false;
-        }
-    }
-
-    public void OnDashInput(InputAction.CallbackContext context)
-    {
-        if(context.started)
-        {
-            dashInput = true;
-            dashInputStop = false;
-            dashInputStartTime = Time.time;
-        }
-        else if(context.canceled)
-        {
-            dashInputStop = true;
         }
     }
 
@@ -209,23 +175,9 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    public void OnDashDirectionInput(InputAction.CallbackContext context)
-    {
-        rawDashDirectionInput = context.ReadValue<Vector2>();
-
-       // if(playerInput.currentControlScheme == "GameKeyboard")
-        {
-            rawDashDirectionInput = cam.ScreenToWorldPoint((Vector3)rawDashDirectionInput) - transform.position;
-        }
-
-        dashDirectionInput = Vector2Int.RoundToInt(rawDashDirectionInput.normalized);
-    }
-
     public void OnShotDirectionInput(InputAction.CallbackContext context)
     {
         rawShotDirectionInput = context.ReadValue<Vector2>();
-        //rawShotDirectionInput = cam.ScreenToWorldPoint((Vector3)rawShotDirectionInput) - transform.position;
-        //shotDirectionInput = Vector2Int.RoundToInt(rawShotDirectionInput.normalized);
         rawShotDirectionInput = cam.ScreenToWorldPoint((Vector3)rawShotDirectionInput);
     }
 
@@ -243,8 +195,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void UseJumpInput() => jumpInput = false;
 
-    public void UseDashInput() => dashInput = false;
-
     private void CheckJumpInputHoldTime()
     {
         if(Time.time > jumpInputStartTime+inputHoldTime)
@@ -253,13 +203,6 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    private void CheckDashInputHoldTime()
-    {
-        if(Time.time >= dashInputStartTime+inputHoldTime)
-        {
-            dashInput = false;
-        }
-    }
 }
 
 public enum combatInputs 
