@@ -19,6 +19,9 @@ public class CanvasScript : MonoBehaviour
     public int[] maxAmmo;
     #endregion
 
+    private bool openWheelInput;
+    public  GameObject combatWheel;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -37,6 +40,7 @@ public class CanvasScript : MonoBehaviour
 
     private void Update()
     {
+        openWheelInput = player.inputHandler.openWheelInput;
         selectedPower = (int)player.inputHandler.currentPower;
         ShieldUpdate();
         AmmoUpdate();

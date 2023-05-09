@@ -27,6 +27,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool[] collectedPowers { get; set; }
     public bool ammoGatherInput { get; private set; }
     public bool interactInput { get; private set; }
+    public bool openWheelInput { get; private set; }
 
     private void Start()
     {
@@ -190,6 +191,18 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.canceled)
         {
             interactInput = false;
+        }
+    }
+
+    public void OnOpenWheelInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            openWheelInput = true;
+        }
+        if (context.canceled)
+        {
+            openWheelInput = false;
         }
     }
 
