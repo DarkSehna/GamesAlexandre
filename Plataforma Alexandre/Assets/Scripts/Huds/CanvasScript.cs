@@ -20,7 +20,7 @@ public class CanvasScript : MonoBehaviour
     #endregion
 
     private bool openWheelInput;
-    public  GameObject combatWheel;
+    public GameObject combatWheel;
 
     private void Start()
     {
@@ -44,6 +44,7 @@ public class CanvasScript : MonoBehaviour
         selectedPower = (int)player.inputHandler.currentPower;
         ShieldUpdate();
         AmmoUpdate();
+        CombatWheelSwitch();
 
         if (selectedPower != powerSet)
         {
@@ -155,6 +156,20 @@ public class CanvasScript : MonoBehaviour
         else if (selectedPower == 5)
         {
             AmmoOn(maxAmmo[selectedPower], ammo[selectedPower], Color.black);
+        }
+    }
+
+    private void CombatWheelSwitch()
+    {
+        if(player.inputHandler.openWheelInput)
+        {
+            combatWheel.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            combatWheel.SetActive(false);
+            Time.timeScale = 1f;
         }
     }
 }

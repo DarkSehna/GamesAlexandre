@@ -11,10 +11,12 @@ public class PlayerInputHandler : MonoBehaviour
     private float inputHoldTime = 0.2f;
     private float jumpInputStartTime;
     private PlayerInput playerInput;
+
     private Camera cam;
     public float cameraMinY = 0.4f;
     public float cameraMaxY = 0.6f;
     public CinemachineVirtualCamera virtualCamera;
+
     public Vector2 rawMovementInput { get; private set; }
     public Vector2 rawShotDirectionInput { get; private set; }
     public Vector2Int shotDirectionInput { get; private set; }
@@ -23,10 +25,14 @@ public class PlayerInputHandler : MonoBehaviour
     public bool jumpInput { get; private set; }
     public bool jumpInputStop { get; private set; }
     public bool[] attackInputs { get; private set; }
+
     public powerInputs currentPower { get; private set; }
     public bool[] collectedPowers { get; set; }
     public bool ammoGatherInput { get; private set; }
     public bool interactInput { get; private set; }
+
+    public weaponInputs currentWeapon { get; private set; }
+    public bool[] collectedWeapons { get; set; }
     public bool openWheelInput { get; private set; }
 
     private void Start()
@@ -37,6 +43,16 @@ public class PlayerInputHandler : MonoBehaviour
         attackInputs = new bool[count];
 
         collectedPowers = new bool[]
+        {
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        };
+
+        collectedWeapons = new bool[]
         {
             false,
             false,
@@ -182,6 +198,18 @@ public class PlayerInputHandler : MonoBehaviour
         rawShotDirectionInput = cam.ScreenToWorldPoint((Vector3)rawShotDirectionInput);
     }
 
+    #region OnWeaponSetInputs
+    public void OnTackleSetInput()
+    {
+        if (collectedWeapons[(int)weaponInputs.tackle])
+        {
+            currentWeapon = weaponInputs.tackle;
+            Debug.Log(" tackle ");
+        }
+    }
+
+    #endregion
+
     public void OnInteractInput(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -232,4 +260,14 @@ public enum powerInputs
     bubble,
     grapple,
     clone
+}
+
+public enum weaponInputs
+{
+    empty,
+    tackle,
+    p2,
+    p3,
+    p4,
+    p5
 }
