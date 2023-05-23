@@ -137,4 +137,9 @@ public class Player : MonoBehaviour
             transform.parent = null;
         }
     }
+
+    private void SetWeapon()
+    {
+        primaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.primary]); 
+    }
 }

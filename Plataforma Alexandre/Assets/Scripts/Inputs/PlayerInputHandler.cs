@@ -55,11 +55,11 @@ public class PlayerInputHandler : MonoBehaviour
         collectedWeapons = new bool[]
         {
             false,
-            false,
-            false,
-            false,
-            false,
-            false
+            true,
+            true,
+            true,
+            true,
+            true
         };
     }
 
@@ -208,6 +208,42 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void OnPunchSetInput()
+    {
+        if (collectedWeapons[(int)weaponInputs.punch])
+        {
+            currentWeapon = weaponInputs.punch;
+            Debug.Log(" punch ");
+        }
+    }
+
+    public void OnExplosionSetInput()
+    {
+        if (collectedWeapons[(int)weaponInputs.explosion])
+        {
+            currentWeapon = weaponInputs.explosion;
+            Debug.Log(" explosion ");
+        }
+    }
+
+    public void OnWhipSetInput()
+    {
+        if (collectedWeapons[(int)weaponInputs.whip])
+        {
+            currentWeapon = weaponInputs.whip;
+            Debug.Log(" whip ");
+        }
+    }
+
+    public void OnFlamethrowerSetInput()
+    {
+        if (collectedWeapons[(int)weaponInputs.flamethrower])
+        {
+            currentWeapon = weaponInputs.flamethrower;
+            Debug.Log(" flamethrower ");
+        }
+    }
+
     #endregion
 
     public void OnInteractInput(InputAction.CallbackContext context)
@@ -249,7 +285,8 @@ public class PlayerInputHandler : MonoBehaviour
 public enum combatInputs 
 { 
     primary,
-    secondary
+    secondary,
+    tackle
 }
 
 public enum powerInputs
@@ -266,8 +303,8 @@ public enum weaponInputs
 {
     empty,
     tackle,
-    p2,
-    p3,
-    p4,
-    p5
+    punch,
+    explosion,
+    whip,
+    flamethrower
 }
