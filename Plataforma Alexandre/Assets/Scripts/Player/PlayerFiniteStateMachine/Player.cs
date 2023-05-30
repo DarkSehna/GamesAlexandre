@@ -138,8 +138,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SetWeapon()
+    public void SetWeapon()
     {
-        primaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.primary]); 
+        primaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.tackle]); 
     }
 }
