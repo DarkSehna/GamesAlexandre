@@ -332,6 +332,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MenuKeyboard",
+            "id": "9ab5cb41-9209-425e-80e5-8b2c68de8b35",
+            "actions": [
+                {
+                    "name": "OpenCombatWheel",
+                    "type": "Button",
+                    "id": "f6772af0-521e-46ca-82e6-98dbeb43e824",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "dd707cbe-1195-4ba6-8db3-c5f7deb1a937",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "OpenCombatWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

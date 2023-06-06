@@ -35,6 +35,11 @@ public class PlayerInputHandler : MonoBehaviour
     public bool[] collectedWeapons { get; set; }
     public bool openWheelInput { get; private set; }
 
+    private void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+    }
+
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
