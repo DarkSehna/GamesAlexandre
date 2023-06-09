@@ -6,8 +6,8 @@ public class TackleWeaponScript : AgressiveWeapon
 {
     protected SO_TackleWeaponData tackleWeaponData;
     
-    public override void AnimationStartMovementTrigger()
-    {
-        core.Movement.SetVelocityX(tackleWeaponData.tackleSpeed * core.Movement.facingDirection);
-    }
+    //public override void AnimationStartMovementTrigger()
+    //{
+    //    state.SetPlayerVelocity(tackleWeaponData.tackleSpeed * core.Movement.facingDirection);
+    //}
 }

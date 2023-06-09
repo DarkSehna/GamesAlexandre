@@ -34,6 +34,7 @@ public class PlayerInputHandler : MonoBehaviour
     public weaponInputs currentWeapon { get; private set; }
     public bool[] collectedWeapons { get; set; }
     public bool openWheelInput { get; private set; }
+    public bool pauseGameInput { get; private set; }
 
     private void Awake()
     {
@@ -46,6 +47,7 @@ public class PlayerInputHandler : MonoBehaviour
         cam = Camera.main;
         int count = Enum.GetValues(typeof(combatInputs)).Length;
         attackInputs = new bool[count];
+        pauseGameInput = false;
 
         collectedPowers = new bool[]
         {
@@ -272,6 +274,14 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.canceled)
         {
             openWheelInput = false;
+        }
+    }
+
+    public void OnPauseGameInput(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            pauseGameInput = !pauseGameInput;
         }
     }
 

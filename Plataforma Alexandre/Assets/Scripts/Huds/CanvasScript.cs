@@ -21,6 +21,7 @@ public class CanvasScript : MonoBehaviour
 
     private bool openWheelInput;
     public GameObject combatWheel;
+    public GameObject pauseMenu;
 
     private void Start()
     {
@@ -169,6 +170,20 @@ public class CanvasScript : MonoBehaviour
         else
         {
             combatWheel.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    }
+
+    private void PauseGame()
+    {
+        if(player.inputHandler.pauseGameInput)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            pauseMenu.SetActive(false);
             Time.timeScale = 1f;
         }
     }
