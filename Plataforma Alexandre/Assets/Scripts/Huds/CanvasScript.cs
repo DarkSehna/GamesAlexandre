@@ -46,6 +46,7 @@ public class CanvasScript : MonoBehaviour
         ShieldUpdate();
         AmmoUpdate();
         CombatWheelSwitch();
+        PauseGame();
 
         if (selectedPower != powerSet)
         {

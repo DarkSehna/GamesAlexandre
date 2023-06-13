@@ -79,13 +79,19 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        Core.LogicUpdate();
-        stateMachine.currentState.LogicUpdate();
-        AimDirection();
+        if(!inputHandler.pauseGameInput && !inputHandler.openWheelInput)
+        {
+            Core.LogicUpdate();
+            stateMachine.currentState.LogicUpdate();
+            AimDirection();
+        }
     }
     private void FixedUpdate()
     {
-        stateMachine.currentState.PhysicsUpdate();
+        if (!inputHandler.pauseGameInput && !inputHandler.openWheelInput)
+        {
+            stateMachine.currentState.PhysicsUpdate();
+        }
     }
     #endregion
 

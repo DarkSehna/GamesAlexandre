@@ -40,18 +40,24 @@ public class Entity : MonoBehaviour
 
     public virtual void Update()
     {
-        Core.LogicUpdate();
-        stateMachine.currentState.LogicUpdate();
-        anim.SetFloat("yVelocity", Core.Movement.rB.velocity.y);
-        if(Time.time >= lastDamageTime + entityData.stunRecoveryTime)
+        if (Time.timeScale > 0f)
         {
-            ResetStunResistance();
+            Core.LogicUpdate();
+            stateMachine.currentState.LogicUpdate();
+            anim.SetFloat("yVelocity", Core.Movement.rB.velocity.y);
+            if(Time.time >= lastDamageTime + entityData.stunRecoveryTime)
+            {
+                ResetStunResistance();
+            }
         }
     }
 
     public virtual void FixedUpdate()
     {
-        stateMachine.currentState.PhysicsUpdate();
+        if (Time.timeScale > 0f)
+        {
+            stateMachine.currentState.PhysicsUpdate();
+        }
     }
 
     public virtual bool CheckPlayerInMinAgroRange()
