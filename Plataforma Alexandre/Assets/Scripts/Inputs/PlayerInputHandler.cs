@@ -62,11 +62,11 @@ public class PlayerInputHandler : MonoBehaviour
         collectedWeapons = new bool[]
         {
             false,
-            true,
-            true,
-            true,
-            true,
-            true
+            false,
+            false,
+            false,
+            false,
+            false
         };
     }
 

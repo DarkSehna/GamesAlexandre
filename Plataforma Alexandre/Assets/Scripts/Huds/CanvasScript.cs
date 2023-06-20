@@ -21,6 +21,8 @@ public class CanvasScript : MonoBehaviour
 
     private bool openWheelInput;
     public GameObject combatWheel;
+    public GameObject[] attackButtons;
+
     public GameObject pauseMenu;
 
     private void Start()
@@ -165,6 +167,7 @@ public class CanvasScript : MonoBehaviour
     {
         if(player.inputHandler.openWheelInput)
         {
+            AttackButtonOn();
             combatWheel.SetActive(true);
             Time.timeScale = 0f;
         }
@@ -172,6 +175,21 @@ public class CanvasScript : MonoBehaviour
         {
             combatWheel.SetActive(false);
             Time.timeScale = 1f;
+        }
+    }
+
+    private void AttackButtonOn()
+    {
+        for (int i = 0; i < attackButtons.Length; i++)
+        { 
+            if(player.inputHandler.collectedWeapons[i+1])
+            {
+                attackButtons[i].SetActive(true);
+            }
+            else
+            {
+                attackButtons[i].SetActive(false);
+            }
         }
     }
 

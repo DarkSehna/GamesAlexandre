@@ -483,6 +483,7 @@
 "Assets/Scripts/Player/PlayerStates/SuperStates/PlayerTouchingWallState.cs"
 "Assets/Scripts/Player/Powers/BouncerScript.cs"
 "Assets/Scripts/Player/Powers/CollectPower.cs"
+"Assets/Scripts/Player/Powers/CollectWeapon.cs"
 "Assets/Scripts/Projectiles/Projectile.cs"
 "Assets/Scripts/Scriptable Objects/Weapons/AttackPowersData/SO_TackleWeaponData.cs"
 "Assets/Scripts/Scriptable Objects/Weapons/SO_AgressiveWeaponData.cs"
