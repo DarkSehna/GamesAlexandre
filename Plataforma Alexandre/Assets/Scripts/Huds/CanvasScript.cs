@@ -49,6 +49,7 @@ public class CanvasScript : MonoBehaviour
         AmmoUpdate();
         CombatWheelSwitch();
         PauseGame();
+        CheckGameFreeze();
 
         if (selectedPower != powerSet)
         {
@@ -163,21 +164,6 @@ public class CanvasScript : MonoBehaviour
         }
     }
 
-    private void CombatWheelSwitch()
-    {
-        if(player.inputHandler.openWheelInput)
-        {
-            AttackButtonOn();
-            combatWheel.SetActive(true);
-            Time.timeScale = 0f;
-        }
-        else
-        {
-            combatWheel.SetActive(false);
-            Time.timeScale = 1f;
-        }
-    }
-
     private void AttackButtonOn()
     {
         for (int i = 0; i < attackButtons.Length; i++)
@@ -193,16 +179,39 @@ public class CanvasScript : MonoBehaviour
         }
     }
 
+    private void CombatWheelSwitch()
+    {
+        if(player.inputHandler.openWheelInput && !pauseMenu.activeSelf)
+        {
+            AttackButtonOn();
+            combatWheel.SetActive(true);
+        }
+        else
+        {
+            combatWheel.SetActive(false);
+        }
+    }
+
     private void PauseGame()
     {
         if(player.inputHandler.pauseGameInput)
         {
             pauseMenu.SetActive(true);
-            Time.timeScale = 0f;
         }
         else
         {
             pauseMenu.SetActive(false);
+        }
+    }
+
+    private void CheckGameFreeze()
+    {
+        if(player.inputHandler.pauseGameInput || player.inputHandler.openWheelInput)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
             Time.timeScale = 1f;
         }
     }
