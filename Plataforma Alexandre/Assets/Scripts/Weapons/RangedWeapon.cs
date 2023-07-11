@@ -18,7 +18,7 @@ public class RangedWeapon : Weapon
         Debug.DrawLine(attackPosition.transform.position, (Vector2)attackPosition.transform.position + spawnPosition, Color.red, 1f);
         var projectilePrefab = GameObject.Instantiate(projectile, (Vector2)attackPosition.transform.position + spawnPosition, Quaternion.Euler(0f, 0f, angle));
         
-        projectileScript = projectilePrefab.GetComponent<Projectile>();
+        projectileScript = projectilePrefab.GetComponent<SpawnProjectile>();
         projectileScript.FireProjectile(rangedWeapon.projectileSpeed, rangedWeapon.projectileTravelDistance, rangedWeapon.projectileDamage);
         projectileScript.objectToSpawn = objectToSpawn;
     }

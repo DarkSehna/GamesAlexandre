@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44232ff1ce2fc5f4c8d82c6e89301c83, type: 3}
   m_Name: Janitor_RangedAttackStateData
   m_EditorClassIdentifier: 
-  projectile: {fileID: 5453044503896159740, guid: 36b0fe88d39fa4d4a85145b86b8bd394,
+  projectile: {fileID: 5453044503896159740, guid: 891bee8f6144f2b40a93089c0dac745f,
     type: 3}
   projectileDamage: 10
   projectileSpeed: 12

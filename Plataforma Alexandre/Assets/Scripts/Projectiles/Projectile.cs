@@ -22,9 +22,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Transform damagePosition;
 
     public GameObject objectToSpawn;
-    private GameObject powerRepository;
+    public GameObject powerRepository;
 
-    private void Start()
+    public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0;
@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour
         powerRepository = GameObject.Find("AmmoRepository");
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if(!hasHitGround)
         {
@@ -48,23 +48,12 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag != "Player")
-        {
-            if(objectToSpawn != null)
-            {
-                //var bouncer = Instantiate(objectToSpawn, collision.contacts[0].point, Quaternion.identity, powerRepository.transform).transform.up = collision.contacts[0].normal;
-                GameObject bouncer = Instantiate(objectToSpawn, collision.contacts[0].point, Quaternion.identity, powerRepository.transform);
-                var bouncerNormal = bouncer.transform.up = collision.contacts[0].normal;
-                bouncer.GetComponent<BouncerScript>().wallNormal = bouncerNormal;
-                Destroy(gameObject);
-                Debug.DrawLine(collision.contacts[0].point, collision.contacts[0].point + collision.contacts[0].normal, Color.magenta, 5f);
-            }
-        }
+        
     }
 
-    private void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if(!hasHitGround)
         {
@@ -106,14 +95,14 @@ public class Projectile : MonoBehaviour
         }
     }*/
 
-    public void FireProjectile(float speed, float travelDistance, float damage)
+    public virtual void FireProjectile(float speed, float travelDistance, float damage)
     {
         this.speed = speed;
         this.travelDistance = travelDistance;
         //attackDetails.damageAmount = damage;
     }
 
-    private void OnDrawGizmos()
+    public virtual void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(damagePosition.position, damageRadius);
     }
