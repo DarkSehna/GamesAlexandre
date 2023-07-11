@@ -70,7 +70,15 @@ public class Stats : CoreComponents
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            CheckpointRespawn();
+
+            if(core.self.CompareTag("Player"))
+            {
+                CheckpointRespawn();
+            }
+            else
+            {
+                core.self.SetActive(false);
+            }
             //Debug.Log("Health is zero!!");
             //Eventually here is where the entity will let the system know that it has died and the system will respond appropriately.
         }

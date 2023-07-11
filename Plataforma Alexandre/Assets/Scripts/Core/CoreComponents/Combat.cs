@@ -29,6 +29,8 @@ public class Combat : CoreComponents, IDamageable, IKnockbackable
 
     public void Knockback(Vector2 angle, float strength, int direction)
     {
+        Debug.Log(core.transform.parent.name + "knocked");
+
         core.Movement.SetVelocity(strength, angle, direction);
         core.Movement.CanSetVelocity = false;
         isKnockbackActive = true;

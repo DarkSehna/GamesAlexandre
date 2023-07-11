@@ -15,6 +15,6 @@ MonoBehaviour:
   attackDetails:
   - attackName: Tackle
     movementSpeed: 20
-    damageAmount: 1
-    knockbackStrength: 1
-    knockbackAngle: {x: 1, y: 1}
+    damageAmount: 5
+    knockbackStrength: 10
+    knockbackAngle: {x: 1, y: 1.5}

@@ -30,6 +30,7 @@ public class Core : MonoBehaviour
         private set => respawn = value;
     }
     public Player entity;
+    public GameObject self;
 
     private Movement movement;
     private CollisionSenses collisionSenses;

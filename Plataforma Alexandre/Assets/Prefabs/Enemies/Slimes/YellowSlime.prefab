@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
+  self: {fileID: 8687263079869508579}
 --- !u!1 &8687263078777296506
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240fc03d7a172e3448a1536cdfbe2480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxControllableVelocity: {x: 0, y: 0}
 --- !u!1 &8687263078837073668
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,11 +636,16 @@ MonoBehaviour:
   ledgeCheckHorizontal: {fileID: 0}
   ledgeCheckVertical: {fileID: 8687263078777296507}
   ceilingCheck: {fileID: 0}
+  interactableCheck: {fileID: 0}
   groundCheckRadius: 0.3
   wallCheckDistance: 0.3
+  interactableCheckRadius: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
   whatIsTrap:
+    serializedVersion: 2
+    m_Bits: 0
+  whatIsInteractable:
     serializedVersion: 2
     m_Bits: 0
