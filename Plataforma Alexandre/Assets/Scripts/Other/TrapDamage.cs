@@ -39,7 +39,7 @@ public class TrapDamage : MonoBehaviour
         if(knockbackable != null && gameObject.tag != "Water")
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            Debug.Log(player);
+            //Debug.Log(player);
             KnockbackEntity(knockbackable, player.Core.Movement.facingDirection);
         }
     }

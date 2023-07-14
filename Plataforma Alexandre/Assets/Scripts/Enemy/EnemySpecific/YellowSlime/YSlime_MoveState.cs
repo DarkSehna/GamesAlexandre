@@ -6,6 +6,7 @@ public class YSlime_MoveState : MoveState
 {
     private YellowSlime enemy;
     protected Transform hitPosition;
+    private bool canDamage;
     public YSlime_MoveState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_MoveState stateData, YellowSlime enemy, Transform hitPosition) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
@@ -20,6 +21,7 @@ public class YSlime_MoveState : MoveState
     public override void Enter()
     {
         //base.Enter();
+        canDamage = true;
         startTime = Time.time;
 
         core.Movement.SetVelocity(stateData.movementSpeed, stateData.jumpAngle, core.Movement.facingDirection);
@@ -34,7 +36,10 @@ public class YSlime_MoveState : MoveState
     {
         //base.LogicUpdate();
 
-        DamagePlayer();
+        if(canDamage)
+        {
+            DamagePlayer();
+        }
 
         if (Time.time >= startTime + stateData.jumpTime && isTouchingGround)
         {
@@ -53,13 +58,14 @@ public class YSlime_MoveState : MoveState
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(hitPosition.position, stateData.hitRadius, stateData.whatIsPlayer);
         foreach (Collider2D collider in detectedObjects)
         {
-            IDamageable damageable = collider.GetComponent<IDamageable>();
+            IDamageable damageable = collider.GetComponentInChildren<IDamageable>();
             if (damageable != null)
             {
                 damageable.Damage(stateData.hitDamage, entity.gameObject);
+                canDamage = false;
             }
 
-            IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
+            IKnockbackable knockbackable = collider.GetComponentInChildren<IKnockbackable>();
             if (knockbackable != null)
             {
                 knockbackable.Knockback(stateData.knockbackAngle, stateData.knockbackStrength, core.Movement.facingDirection);

@@ -11,6 +11,8 @@ public class Movement : CoreComponents
     public Vector2 currentVelocity { get; private set; }
     private Vector2 workSpace;
 
+    private float normalGravScale;
+    
     public Vector2 maxControllableVelocity;
 
     protected override void Awake()
@@ -18,6 +20,7 @@ public class Movement : CoreComponents
         base.Awake();
 
         rB = GetComponentInParent<Rigidbody2D>();
+        normalGravScale = rB.gravityScale;
         facingDirection = 1;
         CanSetVelocity = true;
         isDriven = false;
@@ -74,10 +77,12 @@ public class Movement : CoreComponents
         if(Mathf.Abs(currentVelocity.x) < Mathf.Abs(maxControllableVelocity.x))
         {
             isDriven = false;
+            rB.gravityScale = normalGravScale;
         }
         else
         {
             isDriven = true;
+            //rB.gravityScale = 0;
         }
     }
 

@@ -25,7 +25,7 @@ public class DamageProjectile : Projectile
             if (knockbackable != null)
             {
                 player = collision.transform.GetComponent<Player>();
-                KnockbackEntity(knockbackable, player.Core.Movement.facingDirection);
+                KnockbackEntity(knockbackable, facingDirection);
                 Debug.Log("knockback");
             }
         }

@@ -10,6 +10,8 @@ public class Projectile : MonoBehaviour
     private float xStartPos;
     private float yStartPos;
 
+    public int facingDirection { get; private set; }
+
     [SerializeField] private float gravity;
     [SerializeField] private float damageRadius;
 
@@ -100,6 +102,14 @@ public class Projectile : MonoBehaviour
         this.speed = speed;
         this.travelDistance = travelDistance;
         //attackDetails.damageAmount = damage;
+    }
+
+    public virtual void FireProjectile(float speed, float travelDistance, float damage, int facingDirection)
+    {
+        this.speed = speed;
+        this.travelDistance = travelDistance;
+        //attackDetails.damageAmount = damage;
+        this.facingDirection = facingDirection;
     }
 
     public virtual void OnDrawGizmos()

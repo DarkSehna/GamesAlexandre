@@ -15,3 +15,10 @@ MonoBehaviour:
   movementSpeed: 25
   jumpTime: 0.2
   jumpAngle: {x: 1, y: 2}
+  hitRadius: 0.5
+  hitDamage: 10
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 512
+  knockbackAngle: {x: 1, y: 1}
+  knockbackStrength: 10
