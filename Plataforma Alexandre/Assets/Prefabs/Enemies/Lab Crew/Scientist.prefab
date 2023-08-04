@@ -234,13 +234,13 @@ SpriteRenderer:
   m_SortingLayerID: -1266164027
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4394945544779488877, guid: c1b4f768906dc084795c1283311eb102,
+  m_Sprite: {fileID: -6949323471574244179, guid: c1b4f768906dc084795c1283311eb102,
     type: 3}
   m_Color: {r: 1, g: 0.7904128, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -261,7 +261,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -345,7 +345,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 4, y: 4}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -397,6 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240fc03d7a172e3448a1536cdfbe2480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxControllableVelocity: {x: 0, y: 0}
 --- !u!1 &3383901577522377271
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3383901577522377270}
   - component: {fileID: 3383901577522377265}
+  - component: {fileID: 1307394661500480389}
   m_Layer: 10
   m_Name: Combat
   m_TagString: Untagged
@@ -444,6 +446,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxKnockbackTime: 0.2
+--- !u!61 &1307394661500480389
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383901577522377271}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &3383901577570066151
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +504,7 @@ Transform:
   - {fileID: 3383901577348515665}
   - {fileID: 3383901577919030886}
   - {fileID: 3383901577522377270}
+  - {fileID: 2921082345229779104}
   m_Father: {fileID: 3383901577190237447}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -492,6 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
+  self: {fileID: 3383901577190237497}
 --- !u!1 &3383901577919030887
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +588,57 @@ MonoBehaviour:
   whatIsInteractable:
     serializedVersion: 2
     m_Bits: 8192
+--- !u!1 &7036215483475747470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2921082345229779104}
+  - component: {fileID: 8237971822473528898}
+  m_Layer: 0
+  m_Name: Stats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2921082345229779104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036215483475747470}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3383901577570066150}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8237971822473528898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036215483475747470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3229652e368938f458e43f0001c36e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  maxShield: 0
+  shieldRechargeTime: 0
+  shieldRechargeValue: 0
+  maxShieldRecharge: 0
+  currentHealth: 0
+  currentShield: 0
 --- !u!1 &7339727770167944539
 GameObject:
   m_ObjectHideFlags: 0

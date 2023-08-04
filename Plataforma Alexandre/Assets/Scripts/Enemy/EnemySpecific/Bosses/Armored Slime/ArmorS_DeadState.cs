@@ -18,5 +18,7 @@ public class ArmorS_DeadState : DeadState
     public override void Enter()
     {
         base.Enter();
+
+        GameObject.Instantiate(stateData.itemDrop);
     }
 }

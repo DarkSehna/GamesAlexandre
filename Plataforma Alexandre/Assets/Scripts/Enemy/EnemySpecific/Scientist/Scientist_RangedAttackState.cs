@@ -42,6 +42,10 @@ public class Scientist_RangedAttackState : RangedAttackState
             {
                 stateMachine.ChangeState(enemy.playerDetectedState);
             }
+            else
+            {
+                stateMachine.ChangeState(enemy.lookForPlayerState);
+            }
         }
     }
 

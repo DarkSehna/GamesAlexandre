@@ -7,6 +7,7 @@ public class ArmorS_ChargeState : ChargeState
     private ArmoredSlime boss;
     
     private bool playerHit;
+    private bool canDamage;
     private Collider2D playerDetected;
 
     public ArmorS_ChargeState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_ChargeState stateData, ArmoredSlime boss) : base(entity, stateMachine, animBoolName, stateData)
@@ -24,6 +25,7 @@ public class ArmorS_ChargeState : ChargeState
         base.Enter();
 
         playerHit = false;
+        canDamage = true;
     }
 
     public override void Exit()
@@ -40,6 +42,12 @@ public class ArmorS_ChargeState : ChargeState
         if (playerDetected)
         {
             playerHit = true;
+
+            if(canDamage)
+            {
+                TriggerAttack();
+                canDamage = false;
+            }
         }
 
         if (isDetecteingWall)
@@ -59,5 +67,22 @@ public class ArmorS_ChargeState : ChargeState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+    }
+
+    public void TriggerAttack()
+    {
+        {
+            IDamageable damageable = playerDetected.GetComponentInChildren<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.Damage(stateData.chargeDamage, entity.gameObject);
+            }
+
+            IKnockbackable knockbackable = playerDetected.GetComponentInChildren<IKnockbackable>();
+            if (knockbackable != null)
+            {
+                knockbackable.Knockback(stateData.chargeKnockbackAngle, stateData.chargeKnockbackPower, core.Movement.facingDirection);
+            }
+        }
     }
 }

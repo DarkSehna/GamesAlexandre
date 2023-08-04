@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ff45e32e69db44b8a2622737a040fa, type: 3}
   m_Name: ArmorS_ChargeStateData
   m_EditorClassIdentifier: 
-  chargeSpeed: 15
+  chargeSpeed: 12
   chargeTime: 2
-  collisionRadius: 2.5
+  chargeDamage: 30
+  chargeKnockbackPower: 10
+  chargeKnockbackAngle: {x: 1, y: 1}
+  collisionRadius: 3
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
