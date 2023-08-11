@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b303fba1314014a989ad2918ee1d46, type: 3}
   m_Name: ArmorS_DeadStateData
   m_EditorClassIdentifier: 
+  itemDrop: {fileID: 697383857351626437, guid: 2290c321612f15145a137fe3f7240c25, type: 3}
   deadChunckParticle: {fileID: 0}
   deadBloodParticle: {fileID: 0}

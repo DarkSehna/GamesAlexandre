@@ -452,6 +452,7 @@
 "Assets/Scripts/Huds/CanvasScript.cs"
 "Assets/Scripts/Huds/HealthBar_scr.cs"
 "Assets/Scripts/Inputs/PlayerInputHandler.cs"
+"Assets/Scripts/Interactables/BattleTriggerScript.cs"
 "Assets/Scripts/Interactables/DoorLeverScript.cs"
 "Assets/Scripts/Interactables/EscapeDoor_script.cs"
 "Assets/Scripts/Interactables/Platform.cs"

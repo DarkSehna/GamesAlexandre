@@ -19,6 +19,6 @@ public class ArmorS_DeadState : DeadState
     {
         base.Enter();
 
-        GameObject.Instantiate(stateData.itemDrop);
+        GameObject.Instantiate(stateData.itemDrop, entity.transform.position, entity.transform.rotation);
     }
 }

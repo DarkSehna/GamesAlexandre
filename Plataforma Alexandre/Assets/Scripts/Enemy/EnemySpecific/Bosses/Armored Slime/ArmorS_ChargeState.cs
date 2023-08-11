@@ -59,6 +59,7 @@ public class ArmorS_ChargeState : ChargeState
             }
             else
             {
+                SelfDamage();
                 stateMachine.ChangeState(boss.hitState);
             }
         }
@@ -83,6 +84,15 @@ public class ArmorS_ChargeState : ChargeState
             {
                 knockbackable.Knockback(stateData.chargeKnockbackAngle, stateData.chargeKnockbackPower, core.Movement.facingDirection);
             }
+        }
+    }
+
+    public void SelfDamage()
+    {
+        IDamageable damageable = boss.gameObject.GetComponentInChildren<IDamageable>();
+        if (damageable != null)
+        {
+            damageable.Damage(stateData.chargeDamage, entity.gameObject);
         }
     }
 }

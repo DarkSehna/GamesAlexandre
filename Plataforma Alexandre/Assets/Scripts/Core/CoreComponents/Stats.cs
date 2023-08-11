@@ -29,6 +29,7 @@ public class Stats : CoreComponents
 
         timeWithoutDamage += Time.deltaTime;
 
+        //Shield Recharge
         if(currentShield < maxShieldRecharge && timeWithoutDamage >= shieldRechargeTime)
         {
             currentShield += shieldRechargeValue * Time.deltaTime;
@@ -75,10 +76,7 @@ public class Stats : CoreComponents
             {
                 CheckpointRespawn();
             }
-            else
-            {
-                core.self.SetActive(false);
-            }
+            
             //Debug.Log("Health is zero!!");
             //Eventually here is where the entity will let the system know that it has died and the system will respond appropriately.
         }
