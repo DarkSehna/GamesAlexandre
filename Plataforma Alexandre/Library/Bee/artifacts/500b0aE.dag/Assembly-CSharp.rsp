@@ -462,6 +462,7 @@
 "Assets/Scripts/Intermediaries/AnimationToStateMachine.cs"
 "Assets/Scripts/Intermediaries/WeaponAnimationToWeapon.cs"
 "Assets/Scripts/Intermediaries/WeaponHitboxToWeapon.cs"
+"Assets/Scripts/Manager/DoorManagerScript.cs"
 "Assets/Scripts/Other/Checkpoint_scr.cs"
 "Assets/Scripts/Other/TrapDamage.cs"
 "Assets/Scripts/Player/Data/PlayerData.cs"

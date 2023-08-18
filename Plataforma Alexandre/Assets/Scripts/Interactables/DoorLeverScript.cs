@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DoorLeverScript : MonoBehaviour
 {
-    public GameObject door;
+    public DoorManagerScript manager;
+    public GameObject[] door;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,7 +19,7 @@ public class DoorLeverScript : MonoBehaviour
         {
             if(player.inputHandler.interactInput)
             {
-                door.SetActive(false);
+                manager.OpenDoors(door);
             }
         }
     }
