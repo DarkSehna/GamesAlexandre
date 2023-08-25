@@ -33,10 +33,9 @@ public class BattleTriggerScript : MonoBehaviour
             }
         }
 
-        if(killCount==enemyCount)
-        {
-            manager.OpenDoors(doors);
-        }
+        
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,8 +44,30 @@ public class BattleTriggerScript : MonoBehaviour
         if (player != null)
         {
             manager.CloseDoors(doors);
-            trigger.enabled = false;
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        
+        if (killCount >= enemyCount)
+        {
+            manager.OpenDoors(doors);
+        }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var player = collision.GetComponent<Player>();
+        if (player != null)
+        {
+            manager.OpenDoors(doors);
+        }
+
+        if (killCount >= enemyCount)
+        {
+            trigger.enabled = false;
+        }
+    }
 }
