@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class BattleTriggerScript : MonoBehaviour
 {
     private Collider2D trigger;
+
     public DoorManagerScript manager;
     public GameObject[] doors;
-    public GameObject[] enemies;
 
-    private int killCount;
-    private int enemyCount;
+    public List<GameObject> enemyList;
+    public bool enemySpawning;
+
+    public CinemachineVirtualCamera roomCamera;
 
     private void Awake()
     {
@@ -18,56 +21,56 @@ public class BattleTriggerScript : MonoBehaviour
 
         trigger = gameObject.GetComponent<BoxCollider2D>();
         trigger.enabled = true;
-
-        enemyCount = enemies.Length;
-        killCount = enemies.Length - enemies.Length;
     }
 
     private void Update()
     {
-        foreach(GameObject enemy in enemies)
+        if(enemyList.Count == 0)
         {
-            if(enemy.activeSelf == false)
-            {
-                killCount++;
-            }
+            manager.OpenDoors(doors);
         }
-
-        
-
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.CompareTag("Enemy") && !enemySpawning)
+        {
+            enemyList.Add(collision.gameObject);
+        }
+
         var player = collision.GetComponent<Player>();
         if (player != null)
         {
-            manager.CloseDoors(doors);
-        }
-    }
+            if(enemySpawning)
+            {
+                SpawnEnemies();
+            }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        
-        if (killCount >= enemyCount)
-        {
-            manager.OpenDoors(doors);
+            manager.CloseDoors(doors);
+            roomCamera.m_Lens.OrthographicSize += 10;
         }
-        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            enemyList.Remove(collision.gameObject);
+        }
+
         var player = collision.GetComponent<Player>();
         if (player != null)
         {
             manager.OpenDoors(doors);
+            roomCamera.m_Lens.OrthographicSize -= 10;
         }
+    }
 
-        if (killCount >= enemyCount)
+    private void SpawnEnemies()
+    {
+        foreach(GameObject enemy in enemyList)
         {
-            trigger.enabled = false;
+            enemy.SetActive(true);
         }
     }
 }
