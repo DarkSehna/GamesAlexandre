@@ -19,8 +19,17 @@ public class BattleTriggerScript : MonoBehaviour
     {
         manager.OpenDoors(doors);
 
-        trigger = gameObject.GetComponent<BoxCollider2D>();
+        trigger = gameObject.GetComponent<PolygonCollider2D>();
         trigger.enabled = true;
+
+        if(enemySpawning == true)
+        {
+            HideEnemies();
+        }
+        else 
+        {
+            SpawnEnemies();
+        }
     }
 
     private void Update()
@@ -48,6 +57,7 @@ public class BattleTriggerScript : MonoBehaviour
 
             manager.CloseDoors(doors);
             roomCamera.m_Lens.OrthographicSize += 10;
+
         }
     }
 
@@ -71,6 +81,14 @@ public class BattleTriggerScript : MonoBehaviour
         foreach(GameObject enemy in enemyList)
         {
             enemy.SetActive(true);
+        }
+    }
+
+    private void HideEnemies()
+    {
+        foreach (GameObject enemy in enemyList)
+        {
+            enemy.SetActive(false);
         }
     }
 }

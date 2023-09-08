@@ -44,4 +44,14 @@ public class Scientist : Entity
         stateMachine.Initialize(idleState);
 
     }
+
+    public override void Update()
+    {
+        base.Update();
+        if (Core.Stats.currentHealth <= 0)
+        {
+            Core.Stats.currentHealth = 0;
+            stateMachine.ChangeState(deadState);
+        }
+    }
 }

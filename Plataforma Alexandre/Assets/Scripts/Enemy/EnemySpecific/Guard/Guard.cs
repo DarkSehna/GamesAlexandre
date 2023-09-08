@@ -40,4 +40,14 @@ public class Guard : Entity
         stateMachine.Initialize(playerDetectedState);
 
     }
+
+    public override void Update()
+    {
+        base.Update();
+        if (Core.Stats.currentHealth <= 0)
+        {
+            Core.Stats.currentHealth = 0;
+            stateMachine.ChangeState(deadState);
+        }
+    }
 }

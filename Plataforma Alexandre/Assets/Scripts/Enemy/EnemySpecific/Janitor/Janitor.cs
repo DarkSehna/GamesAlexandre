@@ -49,6 +49,16 @@ public class Janitor : Entity
 
     }
 
+    public override void Update()
+    {
+        base.Update();
+        if (Core.Stats.currentHealth <= 0)
+        {
+            Core.Stats.currentHealth = 0;
+            stateMachine.ChangeState(deadState);
+        }
+    }
+
     public override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
