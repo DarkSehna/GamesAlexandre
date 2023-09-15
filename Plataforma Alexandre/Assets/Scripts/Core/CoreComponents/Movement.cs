@@ -7,7 +7,7 @@ public class Movement : CoreComponents
     public Rigidbody2D rB { get; private set; }
     public int facingDirection { get; private set; }
     public bool CanSetVelocity { get; set; }
-    public bool isDriven { get; set; }
+    public bool bouncing { get; set; }
     public Vector2 currentVelocity { get; private set; }
     private Vector2 workSpace;
 
@@ -23,13 +23,12 @@ public class Movement : CoreComponents
         normalGravScale = rB.gravityScale;
         facingDirection = 1;
         CanSetVelocity = true;
-        isDriven = false;
+        bouncing = false;
     }
 
     public override void LogicUpdate()
     {
         currentVelocity = rB.velocity;
-        CheckIfIsDriven();
     }
 
     public void SetVelocityX(float velocity)
@@ -72,18 +71,9 @@ public class Movement : CoreComponents
         }
     }
 
-    public void CheckIfIsDriven()
+    public void SetGravity(float gravity)
     {
-        if(Mathf.Abs(currentVelocity.x) < Mathf.Abs(maxControllableVelocity.x))
-        {
-            isDriven = false;
-            rB.gravityScale = normalGravScale;
-        }
-        else
-        {
-            isDriven = true;
-            //rB.gravityScale = 0;
-        }
+        rB.gravityScale = gravity;
     }
 
     public void CheckIfShouldFlip(int xInput)
@@ -98,5 +88,12 @@ public class Movement : CoreComponents
     {
         facingDirection *= -1;
         rB.transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void Launch(float velocity, Vector2 direction)
+    {
+        SetGravity(0f);
+        SetVelocity(velocity, direction);
+        
     }
 }

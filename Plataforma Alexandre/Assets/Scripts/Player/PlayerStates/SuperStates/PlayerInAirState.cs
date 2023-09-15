@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerInAirState : PlayerState
 {
     protected int xInput;
-    protected bool isDriven;
     protected bool isGrounded;
     protected bool isTouchingWall;
     protected bool isTouchingWallBack;
@@ -43,7 +42,6 @@ public class PlayerInAirState : PlayerState
         isTouchingWallBack = core.CollisionSenses.WallBack;
         isTouchingLedge = core.CollisionSenses.LedgeHorizontal;
 
-        isDriven = core.Movement.isDriven;
     }
 
     public override void Enter()
@@ -69,7 +67,6 @@ public class PlayerInAirState : PlayerState
         xInput = player.inputHandler.normInputX;
         jumpInput = player.inputHandler.jumpInput;
         jumpInputStop = player.inputHandler.jumpInputStop;
-        isDriven = core.Movement.isDriven;
         CheckJumpMultiplier();
 
         if(isGrounded && core.Movement.currentVelocity.y<0.01f)

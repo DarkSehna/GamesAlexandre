@@ -126,6 +126,11 @@ public class Player : MonoBehaviour
         float angle = Vector2.SignedAngle(Vector2.right, aimDirection);
         aimDirectionIndicator.rotation = Quaternion.Euler(0f, 0f, angle - 45f);
     }
+
+    public void SetWeapon()
+    {
+        primaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.tackle]); 
+    }
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -144,8 +149,4 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void SetWeapon()
-    {
-        primaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.tackle]); 
-    }
 }

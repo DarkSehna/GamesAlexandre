@@ -37,7 +37,7 @@ public class PlayerAirImpulseState : PlayerInAirState
     {
         base.LogicUpdate();
 
-        if(!isDriven)
+        if(!)
         {
             stateMachine.ChangeState(player.inAirState);
         }

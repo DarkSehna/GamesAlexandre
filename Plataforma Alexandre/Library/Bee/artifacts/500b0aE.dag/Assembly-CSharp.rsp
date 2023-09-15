@@ -361,7 +361,6 @@
 "Assets/Scripts/Core/Core.cs"
 "Assets/Scripts/Core/CoreComponents/CollisionSenses.cs"
 "Assets/Scripts/Core/CoreComponents/Combat.cs"
-"Assets/Scripts/Core/CoreComponents/CoreComponent.cs"
 "Assets/Scripts/Core/CoreComponents/CoreComponents.cs"
 "Assets/Scripts/Core/CoreComponents/Movement.cs"
 "Assets/Scripts/Core/CoreComponents/PlayerRespawn.cs"
