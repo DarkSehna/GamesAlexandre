@@ -37,10 +37,10 @@ public class PlayerAirControlState : PlayerInAirState
     {
         base.LogicUpdate();
         
-        if()
-        {
-            stateMachine.ChangeState(player.airImpulseState);
-        }
+        //if()
+        //{
+        //    stateMachine.ChangeState(player.airImpulseState);
+        //}
 
         core.Movement.CheckIfShouldFlip(xInput);
         core.Movement.SetVelocityX(playerData.movementVelocity * xInput);

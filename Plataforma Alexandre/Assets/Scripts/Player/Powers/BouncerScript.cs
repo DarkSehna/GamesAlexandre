@@ -62,12 +62,14 @@ public class BouncerScript : MonoBehaviour
             {
                 player.stateMachine.ChangeState(player.inAirState);
                 playerMovement.SetVelocity(jumpForce, playerDirection);
+                playerMovement.CanSetVelocity = false;
                 Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
             }
             else
             {
                 player.stateMachine.ChangeState(player.inAirState);
                 playerMovement.SetVelocity(jumpForce, playerDirection);
+                playerMovement.CanSetVelocity = false;
                 Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
             }
         }
@@ -75,7 +77,7 @@ public class BouncerScript : MonoBehaviour
 
     private Vector2 SetBounceDirection(Vector2 velocity)
     {
-        var direction = Vector2.Reflect(velocity, transform.up).normalized;
+        var direction = Vector2.Reflect(velocity, transform.up);
 
         //if(direction)
 

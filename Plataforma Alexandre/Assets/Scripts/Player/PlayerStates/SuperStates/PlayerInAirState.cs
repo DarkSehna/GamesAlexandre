@@ -8,6 +8,7 @@ public class PlayerInAirState : PlayerState
     protected bool isGrounded;
     protected bool isTouchingWall;
     protected bool isTouchingWallBack;
+    protected bool isTouchingCeiling;
     protected bool oldIsTouchingWall;
     protected bool oldIsTouchingWallBack;
     protected bool isTouchingLedge;
@@ -40,6 +41,7 @@ public class PlayerInAirState : PlayerState
         isGrounded = core.CollisionSenses.Ground;
         isTouchingWall = core.CollisionSenses.WallFront;
         isTouchingWallBack = core.CollisionSenses.WallBack;
+        isTouchingCeiling = core.CollisionSenses.Ceiling;
         isTouchingLedge = core.CollisionSenses.LedgeHorizontal;
 
     }
@@ -47,6 +49,8 @@ public class PlayerInAirState : PlayerState
     public override void Enter()
     {
         base.Enter();
+
+        playerData.launchStartTime = Time.time;
     }
 
     public override void Exit()
@@ -76,6 +80,11 @@ public class PlayerInAirState : PlayerState
         else if(jumpInput && player.jumpState.CanJump())
         {
             stateMachine.ChangeState(player.jumpState);
+        }
+        else if (Time.time >= playerData.launchStartTime + playerData.launchEndTime)// || isTouchingCeiling || isTouchingWall || isTouchingWallBack)
+        {
+            core.Movement.CanSetVelocity = true;
+            stateMachine.ChangeState(player.inAirState);
         }
     }
 

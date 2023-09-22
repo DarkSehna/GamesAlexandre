@@ -15,26 +15,14 @@ MonoBehaviour:
   movementVelocity: 10
   jumpVelocity: 22
   amountOfJumps: 1
-  wallJumpVelocity: 20
-  wallJumpTime: 0.4
-  wallJumpAngle: {x: 1, y: 2}
   coyoteTime: 0.1
   variableJumpHeightMultiplier: 0.5
-  wallSlideVelocity: 3
-  wallClimbVelocity: 3
-  startOffset: {x: 0.4, y: 1}
-  stopOffset: {x: 0.4, y: 0.75}
-  dashCooldown: 0.5
-  maxHoldTime: 1
-  holdTimeScale: 0.25
-  dashTime: 0.2
-  dashVelocity: 30
-  drag: 10
-  dashEndYMultiplier: 0.2
-  distanceBetweenAfterimages: 0.5
+  launchStartTime: 4.44
+  launchEndTime: 2.6
   crouchMoveVelocity: 5
   crouchColliderHeight: 0.8
   standColliderHeight: 1.6
+  lastCheckpointPos: {x: 80.9, y: -32.3, z: 0}
   objectToSpawn:
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
@@ -42,5 +30,5 @@ MonoBehaviour:
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
-  ammo: 000000000500000005000000030000000100000001000000
+  ammo: 000000000400000005000000030000000100000001000000
   maxAmmo: 000000000500000005000000030000000100000001000000

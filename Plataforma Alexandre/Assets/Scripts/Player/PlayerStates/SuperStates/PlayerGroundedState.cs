@@ -80,15 +80,7 @@ public class PlayerGroundedState : PlayerState
         }
         else if (!isGrounded)
         {
-            if(!core.Movement.isDriven)
-            {
-                player.inAirState.StartCoyoteTime();
-                stateMachine.ChangeState(player.inAirState);
-            }
-            else
-            {
-                stateMachine.ChangeState(player.airImpulseState);
-            }
+            stateMachine.ChangeState(player.inAirState);
         }
     }
 

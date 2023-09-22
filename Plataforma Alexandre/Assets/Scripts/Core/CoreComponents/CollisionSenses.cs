@@ -66,6 +66,10 @@ public class CollisionSenses : CoreComponents
     {
         get => Physics2D.Raycast(WallCheck.position, Vector2.right * core.Movement.facingDirection, wallCheckDistance, whatIsGround);
     }
+    public bool WallBack
+    {
+        get => Physics2D.Raycast(WallCheck.position, Vector2.right * -core.Movement.facingDirection, wallCheckDistance, whatIsGround);
+    }
     public bool Ceiling
     {
         get => Physics2D.OverlapCircle(CeilingCheck.position, groundCheckRadius, whatIsGround);
@@ -77,10 +81,6 @@ public class CollisionSenses : CoreComponents
     public bool LedgeVertical
     {
         get => Physics2D.Raycast(LedgeCheckVertical.position, Vector2.down, wallCheckDistance, whatIsGround);
-    }
-    public bool WallBack
-    {
-        get => Physics2D.Raycast(WallCheck.position, Vector2.right * -core.Movement.facingDirection, wallCheckDistance, whatIsGround);
     }
     public bool Interactable
     {

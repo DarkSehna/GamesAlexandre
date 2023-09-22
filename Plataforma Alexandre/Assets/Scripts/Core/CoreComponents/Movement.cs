@@ -11,7 +11,7 @@ public class Movement : CoreComponents
     public Vector2 currentVelocity { get; private set; }
     private Vector2 workSpace;
 
-    private float normalGravScale;
+    public float normalGravScale;
     
     public Vector2 maxControllableVelocity;
 
@@ -90,7 +90,7 @@ public class Movement : CoreComponents
         rB.transform.Rotate(0f, 180f, 0f);
     }
 
-    public void Launch(float velocity, Vector2 direction)
+    public void Launch(float velocity, Vector2 direction, float time)
     {
         SetGravity(0f);
         SetVelocity(velocity, direction);

@@ -26,6 +26,7 @@ public class PlayerAirImpulseState : PlayerInAirState
     public override void Enter()
     {
         base.Enter();
+
     }
 
     public override void Exit()
@@ -35,12 +36,9 @@ public class PlayerAirImpulseState : PlayerInAirState
 
     public override void LogicUpdate()
     {
-        base.LogicUpdate();
+        //base.LogicUpdate();
 
-        if(!)
-        {
-            stateMachine.ChangeState(player.inAirState);
-        }
+        
     }
 
     public override void PhysicsUpdate()
