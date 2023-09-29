@@ -17,8 +17,7 @@ MonoBehaviour:
   amountOfJumps: 1
   coyoteTime: 0.1
   variableJumpHeightMultiplier: 0.5
-  launchStartTime: 4.44
-  launchEndTime: 2.6
+  launchEndTime: 0.5
   crouchMoveVelocity: 5
   crouchColliderHeight: 0.8
   standColliderHeight: 1.6
@@ -30,5 +29,5 @@ MonoBehaviour:
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
-  ammo: 000000000400000005000000030000000100000001000000
+  ammo: 000000000500000005000000030000000100000001000000
   maxAmmo: 000000000500000005000000030000000100000001000000

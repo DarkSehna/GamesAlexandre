@@ -71,8 +71,8 @@ public class CanvasScript : MonoBehaviour
         }
         else if(ammo[selectedPower] != previousAmmo[selectedPower])
         {
-            Debug.Log(ammo[selectedPower]);
-            Debug.Log(previousAmmo[selectedPower]);
+            //Debug.Log(ammo[selectedPower]);
+           // Debug.Log(previousAmmo[selectedPower]);
             AmmoSpent(ammo[selectedPower]);
             previousAmmo[selectedPower] = ammo[selectedPower];
         }

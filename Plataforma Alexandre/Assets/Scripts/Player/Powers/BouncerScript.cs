@@ -25,30 +25,31 @@ public class BouncerScript : MonoBehaviour
         isActive = true;
         box.enabled = true;
 
-        Debug.Log(wallNormal);
+        Debug.Log("x " + wallNormal.x);
+        Debug.Log("y " + wallNormal.y);
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if(!isActive)
-    //    {
-    //        activateTime -= Time.deltaTime;
-    //        if (activateTime <= 0f)
-    //        {
-    //            box.enabled = true;
-    //            isActive = true;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        destroyTime -= Time.deltaTime;
-    //        if(destroyTime <= 0f)
-    //        {
-    //            box.enabled = false;
-    //        }
-    //    }
-    //}
+    //Update is called once per frame
+    void Update()
+    {
+        if (!isActive)
+        {
+            activateTime -= Time.deltaTime;
+            if (activateTime <= 0f)
+            {
+                box.enabled = true;
+                isActive = true;
+            }
+        }
+        else
+        {
+            destroyTime -= Time.deltaTime;
+            if (destroyTime <= 0f)
+            {
+                box.enabled = false;
+            }
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -62,14 +63,20 @@ public class BouncerScript : MonoBehaviour
             {
                 player.stateMachine.ChangeState(player.inAirState);
                 playerMovement.SetVelocity(jumpForce, playerDirection);
-                playerMovement.CanSetVelocity = false;
+                if(wallNormal.x != 0)
+                {
+                    playerMovement.CanSetVelocity = false;
+                }
                 Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
             }
             else
             {
                 player.stateMachine.ChangeState(player.inAirState);
                 playerMovement.SetVelocity(jumpForce, playerDirection);
-                playerMovement.CanSetVelocity = false;
+                if (wallNormal.x != 0)
+                {
+                    playerMovement.CanSetVelocity = false;
+                }
                 Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
             }
         }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5453044503896159736}
   - component: {fileID: 5453044503896159737}
   - component: {fileID: 5453044503896159738}
-  - component: {fileID: 5453044503896159739}
   - component: {fileID: 5984782484404300775}
   m_Layer: 0
   m_Name: SpawnProjectile
@@ -110,29 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &5453044503896159739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5453044503896159740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e3748bf7b523c4ca0b4e0529f00bf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 3
-  damageRadius: 0.15
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 512
-  damagePosition: {fileID: 5453044504377992907}
-  objectToSpawn: {fileID: 0}
-  powerRepository: {fileID: 0}
 --- !u!114 &5984782484404300775
 MonoBehaviour:
   m_ObjectHideFlags: 0

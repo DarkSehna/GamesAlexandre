@@ -59,7 +59,7 @@ public class Stats : CoreComponents
             
             if(currentShield <= 0)
             { 
-                Debug.Log("Shield broken ");
+                //Debug.Log("Shield broken ");
                 currentShield = 0;
             }
         }

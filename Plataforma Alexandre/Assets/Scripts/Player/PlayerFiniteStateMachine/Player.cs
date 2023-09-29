@@ -22,8 +22,8 @@ public class Player : MonoBehaviour
     public PlayerIdleState idleState { get; private set; }
     public PlayerMoveState moveState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
-    public PlayerAirControlState inAirState { get; private set; }
-    public PlayerAirImpulseState airImpulseState { get; private set; }
+    public PlayerInAirState inAirState { get; private set; }
+    //public PlayerAirImpulseState airImpulseState { get; private set; }
     public PlayerLandState landState { get; private set; }
     public PlayerCrouchIdleState crouchIdleState { get; private set; }
     public PlayerCrouchMoveState crouchMoveState { get; private set; }
@@ -49,8 +49,8 @@ public class Player : MonoBehaviour
         idleState = new PlayerIdleState(this, stateMachine, playerData, "idle");
         moveState = new PlayerMoveState(this, stateMachine, playerData, "move");
         jumpState = new PlayerJumpState(this, stateMachine, playerData, "inAir");
-        inAirState = new PlayerAirControlState(this, stateMachine, playerData, "inAir");
-        airImpulseState = new PlayerAirImpulseState(this, stateMachine, playerData, "inAir");
+        inAirState = new PlayerInAirState(this, stateMachine, playerData, "inAir");
+        //airImpulseState = new PlayerAirImpulseState(this, stateMachine, playerData, "inAir");
         landState = new PlayerLandState(this, stateMachine, playerData, "land");
         crouchIdleState = new PlayerCrouchIdleState(this, stateMachine, playerData, "crouchIdle");
         crouchMoveState = new PlayerCrouchMoveState(this, stateMachine, playerData, "crouchMove");

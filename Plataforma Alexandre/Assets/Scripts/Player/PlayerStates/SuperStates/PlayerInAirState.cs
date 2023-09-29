@@ -61,6 +61,12 @@ public class PlayerInAirState : PlayerState
         oldIsTouchingWallBack = false;
         isTouchingWall = false;
         isTouchingWallBack = false;
+
+        if(!core.Movement.CanSetVelocity)
+        {
+            core.Movement.CanSetVelocity = true;
+            //Debug.Log("Launch End");
+        }
     }
 
     public override void LogicUpdate()
@@ -73,7 +79,13 @@ public class PlayerInAirState : PlayerState
         jumpInputStop = player.inputHandler.jumpInputStop;
         CheckJumpMultiplier();
 
-        if(isGrounded && core.Movement.currentVelocity.y<0.01f)
+        core.Movement.CheckIfShouldFlip(xInput);
+        core.Movement.SetVelocityX(playerData.movementVelocity * xInput);
+
+        player.anim.SetFloat("yVelocity", core.Movement.currentVelocity.y);
+        player.anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.currentVelocity.x));
+
+        if (isGrounded && core.Movement.currentVelocity.y<0.01f)
         {
             stateMachine.ChangeState(player.landState);
         }
@@ -81,10 +93,11 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.jumpState);
         }
-        else if (Time.time >= playerData.launchStartTime + playerData.launchEndTime)// || isTouchingCeiling || isTouchingWall || isTouchingWallBack)
+
+        if (Time.time >= playerData.launchStartTime + playerData.launchEndTime)// || isTouchingCeiling || isTouchingWall || isTouchingWallBack)
         {
+            //Debug.Log("Launch End");
             core.Movement.CanSetVelocity = true;
-            stateMachine.ChangeState(player.inAirState);
         }
     }
 

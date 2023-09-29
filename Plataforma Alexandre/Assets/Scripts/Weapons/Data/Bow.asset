@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   projectileDamage: 10
-  projectileSpeed: 12
-  projectileTravelDistance: 5
+  projectileSpeed: 15
+  projectileTravelDistance: 4
   projectileSpawnRadius: 0.1

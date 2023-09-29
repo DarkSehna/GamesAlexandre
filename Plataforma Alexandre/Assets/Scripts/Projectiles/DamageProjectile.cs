@@ -18,7 +18,7 @@ public class DamageProjectile : Projectile
             if (damageable != null)
             {
                 DamageEntity(damageable, damage);
-                Debug.Log("damage");
+                //Debug.Log("damage");
             }
 
             IKnockbackable knockbackable = collision.transform.GetComponentInChildren<IKnockbackable>();
@@ -26,7 +26,7 @@ public class DamageProjectile : Projectile
             {
                 player = collision.transform.GetComponent<Player>();
                 KnockbackEntity(knockbackable, facingDirection);
-                Debug.Log("knockback");
+                //Debug.Log("knockback");
             }
         }
         Destroy(gameObject);
