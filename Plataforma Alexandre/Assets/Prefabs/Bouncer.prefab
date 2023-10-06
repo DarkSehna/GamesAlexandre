@@ -128,3 +128,5 @@ MonoBehaviour:
   activateTime: 0.5
   destroyTime: 5
   jumpForce: 33
+  horizontalForce: 40
+  wallNormal: {x: 0, y: 0}

@@ -15,6 +15,8 @@ public class BattleTriggerScript : MonoBehaviour
 
     public CinemachineVirtualCamera roomCamera;
 
+    public float cameraZoom = 10f;
+
     private void Awake()
     {
         manager.OpenDoors(doors);
@@ -56,7 +58,7 @@ public class BattleTriggerScript : MonoBehaviour
             }
 
             manager.CloseDoors(doors);
-            roomCamera.m_Lens.OrthographicSize += 10;
+            //roomCamera.m_Lens.OrthographicSize += cameraZoom;
 
         }
     }
@@ -72,7 +74,7 @@ public class BattleTriggerScript : MonoBehaviour
         if (player != null)
         {
             manager.OpenDoors(doors);
-            roomCamera.m_Lens.OrthographicSize -= 10;
+            //roomCamera.m_Lens.OrthographicSize -= cameraZoom;
         }
     }
 

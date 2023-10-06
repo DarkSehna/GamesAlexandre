@@ -9,6 +9,7 @@ public class BouncerScript : MonoBehaviour
     public float activateTime = 60f;
     public float destroyTime = 60f;
     public float jumpForce = 40f;
+    public float horizontalForce = 50f;
 
     public Vector2 wallNormal;
     #endregion
@@ -25,8 +26,8 @@ public class BouncerScript : MonoBehaviour
         isActive = true;
         box.enabled = true;
 
-        Debug.Log("x " + wallNormal.x);
-        Debug.Log("y " + wallNormal.y);
+        //Debug.Log("x " + wallNormal.x);
+        //Debug.Log("y " + wallNormal.y);
     }
 
     //Update is called once per frame
@@ -57,36 +58,49 @@ public class BouncerScript : MonoBehaviour
         {
             var player = collision.GetComponent<Player>();
             var playerMovement = collision.GetComponent<Player>().Core.Movement;
-            var playerDirection = SetBounceDirection(-wallNormal);
-            Debug.Log(playerDirection);
-            if (Input.GetButton("Jump"))
+            float dot = Vector2.Dot(Vector2.up, wallNormal);
+            var playerDirection = SetBounceDirection(wallNormal, dot);
+            //Debug.Log(playerDirection);
+            //if (Input.GetButton("Jump"))
+            //{
+            player.stateMachine.ChangeState(player.inAirState);
+            Debug.Log(dot);
+            if(dot < 0.8f && dot > -0.8f)
             {
-                player.stateMachine.ChangeState(player.inAirState);
-                playerMovement.SetVelocity(jumpForce, playerDirection);
-                if(wallNormal.x != 0)
-                {
-                    playerMovement.CanSetVelocity = false;
-                }
-                Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
+                playerMovement.SetVelocity(horizontalForce, playerDirection);
+                playerMovement.CanSetVelocity = false;
             }
             else
             {
-                player.stateMachine.ChangeState(player.inAirState);
                 playerMovement.SetVelocity(jumpForce, playerDirection);
-                if (wallNormal.x != 0)
-                {
-                    playerMovement.CanSetVelocity = false;
-                }
-                Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
             }
+            Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
+            //}
+            //else
+            //{
+            //    player.stateMachine.ChangeState(player.inAirState);
+            //    playerMovement.SetVelocity(jumpForce, playerDirection);
+            //    if (wallNormal.x != 0)
+            //    {
+            //        playerMovement.CanSetVelocity = false;
+            //    }
+            //    Debug.DrawLine(transform.position, (Vector2)transform.position + playerMovement.currentVelocity, Color.green, 5f);
+            //}
         }
     }
 
-    private Vector2 SetBounceDirection(Vector2 velocity)
+    private Vector2 SetBounceDirection(Vector2 velocity, float dot)
     {
-        var direction = Vector2.Reflect(velocity, transform.up);
+        Vector2 direction;
 
-        //if(direction)
+        if (dot < 0.8f && dot > -0.8f)
+        {
+            direction = velocity + (Vector2.up * new Vector2(0, 0.5f));
+        }
+        else
+        {
+            direction = Vector2.Reflect(-velocity, transform.up);
+        }
 
         return direction;
     }
