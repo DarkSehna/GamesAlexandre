@@ -1,0 +1,521 @@
+﻿{ "pid": 0, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "BeeDriver" } },
+{ "pid": 0, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-2" } },
+{ "pid": 0, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 0, "tid": 1, "ts": 1697830152645713, "dur": 922337203685477580, "ph": "X", "name": "Build ScriptAssemblies", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830152647018, "dur": 44629, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830152691794, "dur": 48756, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830152740573, "dur": 391267, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830153131842, "dur": 16378839, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830169510701, "dur": 9916, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830194307006, "dur": 922337203685477580, "ph": "X", "name": "Build Player", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830194307279, "dur": 8156, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830194315437, "dur": 263511, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830194578951, "dur": 936560, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830195515513, "dur": 1040959, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830196556475, "dur": 7895, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830196565636, "dur": 25, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "netcorerun.dll" } },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-1" } },
+{ "pid": 35942, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 35942, "tid": 1, "ts": 1697830195252335, "dur": 234975, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1697830195253498, "dur": 83860, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1697830195461626, "dur": 7251, "ph": "X", "name": "OutputData.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1697830195468883, "dur": 18411, "ph": "X", "name": "Backend.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1697830195469862, "dur": 15827, "ph": "X", "name": "JsonToString", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1697830195496510, "dur": 1519, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1697830195495562, "dur": 2507, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830196565773, "dur": 341, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
+{ "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
+,{ "pid":12345, "tid":0, "ts":1697830195595885, "dur":3108, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830195599002, "dur":566, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1697830195599583, "dur":23, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1697830195599608, "dur":315, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1697830195599955, "dur":730, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830195600686, "dur":1, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527026, "dur":104, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527130, "dur":25, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527155, "dur":54, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527209, "dur":11, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527220, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527223, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527230, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527232, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527239, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527242, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527249, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527251, "dur":9, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527260, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527276, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196527288, "dur":3104, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1697830195600188, "dur":505, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195600695, "dur":7272, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195607981, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1697830195607986, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195610074, "dur":3114, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1697830195613192, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1697830195613264, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195614126, "dur":3027, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1697830195617156, "dur":132, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1697830195617291, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195617390, "dur":3122, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1697830195620583, "dur":27700, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":1, "ts":1697830195648287, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195648295, "dur":3342, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":1, "ts":1697830195651701, "dur":11612, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":1, "ts":1697830195663319, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195663330, "dur":19170, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":1, "ts":1697830195682561, "dur":123, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":1, "ts":1697830195682687, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195685304, "dur":36646, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":1, "ts":1697830195722012, "dur":3745, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195725762, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195725841, "dur":3780, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195729686, "dur":37988, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195767679, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195767687, "dur":75390, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195843141, "dur":19265, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195862437, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195862447, "dur":2415, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195865260, "dur":22533, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195887796, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195887802, "dur":3583, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195891454, "dur":26029, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195917486, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195917493, "dur":12716, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195930282, "dur":2523, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195932810, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195932818, "dur":5880, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195938775, "dur":2156, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195940936, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195940944, "dur":3043, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195944050, "dur":2800, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195946858, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830195946868, "dur":9299, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830195956230, "dur":50071, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196006308, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196006320, "dur":3601, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196009987, "dur":1087, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196011079, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196011087, "dur":3122, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196014272, "dur":37573, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196051849, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196051857, "dur":2300, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196054218, "dur":963, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196055185, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196055190, "dur":2947, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196058194, "dur":26153, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196084353, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196084362, "dur":2913, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196087335, "dur":34492, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196121834, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196121842, "dur":6359, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196128269, "dur":975, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196129247, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196129254, "dur":2644, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196131960, "dur":24705, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196156668, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196156675, "dur":4167, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196160903, "dur":6683, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Mathematics.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196167591, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196167599, "dur":8332, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Mathematics.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196175997, "dur":6972, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.InputSystem.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196182973, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196182980, "dur":2364, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.InputSystem.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196185404, "dur":82746, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.Cecil.Mdb.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196268155, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196268163, "dur":18166, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.Cecil.Mdb.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196286393, "dur":844, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196287240, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196287245, "dur":29213, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196316529, "dur":306, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196316838, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196316874, "dur":45281, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196362217, "dur":32229, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196394451, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196394460, "dur":14607, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196409145, "dur":4280, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196413431, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196413439, "dur":73832, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196487328, "dur":2298, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196489631, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196489640, "dur":23412, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":1, "ts":1697830196513112, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/resources.assets" }}
+,{ "pid":12345, "tid":1, "ts":1697830196513172, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196513176, "dur":3638, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/resources.assets" }}
+,{ "pid":12345, "tid":1, "ts":1697830196516893, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":1, "ts":1697830196516950, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1697830196516955, "dur":9543, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":1, "ts":1697830196526570, "dur":433, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830195600286, "dur":412, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830195600698, "dur":7277, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830195607981, "dur":69634, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":2, "ts":1697830195677620, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830195682033, "dur":1511, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":2, "ts":1697830195683606, "dur":5410, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830195689021, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830195689347, "dur":10799, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830195700208, "dur":37850, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830195738063, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830195738072, "dur":102573, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830195840709, "dur":19693, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830195860407, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830195860417, "dur":2221, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830195862698, "dur":19597, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830195882301, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830195882310, "dur":3064, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830195885436, "dur":19925, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830195905415, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830195905424, "dur":4230, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830195909724, "dur":122069, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196031799, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196031811, "dur":3384, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196035255, "dur":1043, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196036301, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196036310, "dur":8312, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196044710, "dur":59386, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196104099, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196104107, "dur":7603, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196111769, "dur":6987, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196118761, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196118770, "dur":9136, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196127968, "dur":19608, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196147581, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196147589, "dur":2397, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196150049, "dur":1384, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196151438, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196151447, "dur":2901, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196154407, "dur":105483, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196259894, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196259902, "dur":33753, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196293727, "dur":19765, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196313497, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196313510, "dur":15735, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196329315, "dur":192, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196329510, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196329517, "dur":65254, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196394840, "dur":91760, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196486604, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196486613, "dur":7006, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":2, "ts":1697830196493680, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":2, "ts":1697830196493742, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196493749, "dur":17016, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":2, "ts":1697830196510907, "dur":181, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":2, "ts":1697830196511090, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196511095, "dur":4657, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":2, "ts":1697830196515812, "dur":120, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/level0" }}
+,{ "pid":12345, "tid":2, "ts":1697830196515934, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1697830196515941, "dur":8884, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/level0" }}
+,{ "pid":12345, "tid":2, "ts":1697830196524879, "dur":2141, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195600410, "dur":293, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195600703, "dur":7273, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195607981, "dur":284, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":3, "ts":1697830195608267, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195614689, "dur":5032, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":3, "ts":1697830195619788, "dur":157, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":3, "ts":1697830195619948, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195620912, "dur":3173, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":3, "ts":1697830195624169, "dur":28986, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":3, "ts":1697830195653159, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195653168, "dur":3560, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":3, "ts":1697830195656792, "dur":112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":3, "ts":1697830195656906, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195656911, "dur":7733, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":3, "ts":1697830195664705, "dur":278181, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830195942891, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195942897, "dur":16922, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830195959882, "dur":4518, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830195964406, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195964413, "dur":6049, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830195970529, "dur":1072, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830195971604, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195971613, "dur":4516, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830195976287, "dur":939, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830195977238, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830195977246, "dur":2282, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830195979588, "dur":55314, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196034906, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196034914, "dur":6464, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196041440, "dur":18072, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196059550, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196059557, "dur":6174, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196065791, "dur":720, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196066516, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196066524, "dur":6141, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196072727, "dur":75533, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196148263, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196148268, "dur":6006, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196154336, "dur":110151, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196264492, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196264500, "dur":22350, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196286910, "dur":169, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Runtime.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196287082, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196287089, "dur":28283, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Runtime.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196315453, "dur":338, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196315793, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196315799, "dur":49383, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196365252, "dur":199, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196365453, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196365460, "dur":40887, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196406429, "dur":700, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196407135, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196407144, "dur":7228, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196414439, "dur":73556, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196488000, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196488010, "dur":24286, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":3, "ts":1697830196512356, "dur":745, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":3, "ts":1697830196513107, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1697830196513112, "dur":13675, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":3, "ts":1697830196526846, "dur":156, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830195600447, "dur":260, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830195600707, "dur":7397, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830195608104, "dur":41175, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":4, "ts":1697830195649283, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830195649299, "dur":7371, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":4, "ts":1697830195656739, "dur":141, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":4, "ts":1697830195656882, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830195656895, "dur":8606, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":4, "ts":1697830195665566, "dur":53702, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/UnityCrashHandler32.exe" }}
+,{ "pid":12345, "tid":4, "ts":1697830195719273, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830195719279, "dur":4923, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/UnityCrashHandler32.exe" }}
+,{ "pid":12345, "tid":4, "ts":1697830195724266, "dur":38142, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830195762413, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830195762421, "dur":81666, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830195844164, "dur":123349, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830195967518, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830195967524, "dur":6860, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830195974457, "dur":73665, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196048130, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196048138, "dur":2313, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196050516, "dur":708, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196051227, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196051235, "dur":2769, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196054066, "dur":829, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196054898, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196054906, "dur":3146, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196058114, "dur":52992, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196111110, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196111170, "dur":2651, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196113885, "dur":41438, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196155327, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196155336, "dur":3408, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196158809, "dur":20638, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196179451, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196179460, "dur":4137, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196183667, "dur":61575, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.Cecil.Pdb.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196245247, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196245256, "dur":2459, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.Cecil.Pdb.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196247775, "dur":358, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196248160, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196248167, "dur":3715, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196251945, "dur":217, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196252166, "dur":6, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196252179, "dur":4116, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196256355, "dur":635, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196256995, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196257002, "dur":2153, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196259292, "dur":30293, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196289590, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196289597, "dur":72610, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196362268, "dur":27319, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196389592, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196389601, "dur":24851, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196414512, "dur":72089, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/clipper_library.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196486605, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196486613, "dur":4442, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/clipper_library.dll" }}
+,{ "pid":12345, "tid":4, "ts":1697830196491112, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":4, "ts":1697830196491177, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196491306, "dur":7835, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":4, "ts":1697830196499218, "dur":114, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":4, "ts":1697830196499335, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196499344, "dur":5450, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":4, "ts":1697830196504882, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1697830196504955, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196504969, "dur":5585, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1697830196510616, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":4, "ts":1697830196510674, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196510681, "dur":1913, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":4, "ts":1697830196512659, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1697830196512719, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196512725, "dur":3831, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1697830196516616, "dur":80, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":4, "ts":1697830196516698, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1697830196516705, "dur":8444, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":4, "ts":1697830196525211, "dur":1804, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195600483, "dur":230, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195600713, "dur":7386, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195608102, "dur":715, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":5, "ts":1697830195608821, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195614401, "dur":5538, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":5, "ts":1697830195620723, "dur":404, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":5, "ts":1697830195624074, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195624199, "dur":2187, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":5, "ts":1697830195626451, "dur":132, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1697830195626586, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195626593, "dur":2423, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1697830195629086, "dur":159, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":5, "ts":1697830195629248, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195631141, "dur":3405, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":5, "ts":1697830195634612, "dur":17212, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1697830195651827, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195651833, "dur":6324, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1697830195658221, "dur":16935, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195675162, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195678371, "dur":2897, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195681330, "dur":206112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre.exe" }}
+,{ "pid":12345, "tid":5, "ts":1697830195887447, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195887456, "dur":4297, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre.exe" }}
+,{ "pid":12345, "tid":5, "ts":1697830195891814, "dur":46155, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195937975, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195937986, "dur":5482, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195943528, "dur":13638, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195957171, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195957181, "dur":3366, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195960603, "dur":922, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195961531, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195961540, "dur":3404, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195965004, "dur":1362, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195966371, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195966383, "dur":5092, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195971542, "dur":18736, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195990283, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830195990292, "dur":2429, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830195992786, "dur":18598, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196011422, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196011428, "dur":3008, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196014496, "dur":721, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196015220, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196015231, "dur":2455, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196017787, "dur":16063, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196033856, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196033864, "dur":2426, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196036352, "dur":1740, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196038097, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196038105, "dur":5513, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196043679, "dur":1374, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196045057, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196045065, "dur":3188, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196048321, "dur":24089, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196072416, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196072425, "dur":3806, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196076291, "dur":22401, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196098698, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196098706, "dur":2222, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196100989, "dur":681, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196101704, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196101712, "dur":2159, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196103932, "dur":20674, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196124610, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196124618, "dur":4614, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196129294, "dur":27685, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196156983, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196156992, "dur":2640, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196159691, "dur":3768, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196163464, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196163472, "dur":6751, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196170285, "dur":2516, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.InternalAPIEngineBridge.001.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196172806, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196172815, "dur":9689, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.InternalAPIEngineBridge.001.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196182570, "dur":3247, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196185821, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196185829, "dur":7594, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196193480, "dur":96208, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.Cecil.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196289690, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196289697, "dur":25385, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.Cecil.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196315143, "dur":259, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196315405, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196315411, "dur":46173, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196361650, "dur":714, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196362368, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196362374, "dur":42809, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196405249, "dur":5683, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196410938, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196410948, "dur":76219, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196487238, "dur":7385, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Cinemachine.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196494627, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196494634, "dur":19392, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Cinemachine.dll" }}
+,{ "pid":12345, "tid":5, "ts":1697830196514088, "dur":114, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/level1" }}
+,{ "pid":12345, "tid":5, "ts":1697830196514232, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196514239, "dur":10548, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/level1" }}
+,{ "pid":12345, "tid":5, "ts":1697830196524847, "dur":278, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/boot.config" }}
+,{ "pid":12345, "tid":5, "ts":1697830196525127, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1697830196525133, "dur":1794, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/boot.config" }}
+,{ "pid":12345, "tid":5, "ts":1697830196526987, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":5, "ts":1697830196526989, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830195600509, "dur":209, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830195600718, "dur":7377, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830195608097, "dur":40187, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":6, "ts":1697830195648288, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830195648303, "dur":3085, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":6, "ts":1697830195651453, "dur":136, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":6, "ts":1697830195651592, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830195651660, "dur":3299, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":6, "ts":1697830195655024, "dur":134, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1697830195655161, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830195655169, "dur":5278, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1697830195660532, "dur":133167, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830195793704, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830195793774, "dur":5562, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830195799416, "dur":33125, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830195832546, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830195832554, "dur":10312, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830195843022, "dur":36675, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830195879714, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830195879723, "dur":2755, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830195882546, "dur":30236, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830195912787, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830195912795, "dur":4065, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830195916920, "dur":95511, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196012435, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196012445, "dur":2760, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196015267, "dur":16772, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196032042, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196032048, "dur":3121, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196035233, "dur":18555, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196053793, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196053801, "dur":2613, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196057299, "dur":1219, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196058521, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196058529, "dur":10115, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196068709, "dur":47818, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196116532, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196116539, "dur":6328, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196122930, "dur":33443, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196156378, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196156420, "dur":3283, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196159775, "dur":5152, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196164932, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196164940, "dur":13933, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196178930, "dur":906, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.Unsafe.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196179839, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196179844, "dur":3703, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.Unsafe.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196183607, "dur":45718, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.Cecil.Rocks.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196229330, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196229339, "dur":3284, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.Burst.Cecil.Rocks.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196232688, "dur":1071, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.2D.SpriteShape.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196233763, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196233771, "dur":2048, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.2D.SpriteShape.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196235882, "dur":615, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.2D.PixelPerfect.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196236501, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196236508, "dur":2649, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.2D.PixelPerfect.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196239217, "dur":663, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.2D.IK.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196239885, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196239892, "dur":2153, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.2D.IK.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196242105, "dur":1172, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.2D.Common.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196243282, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196243290, "dur":2370, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.2D.Common.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196245721, "dur":763, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.2D.Animation.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196246489, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196246500, "dur":2082, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/Unity.2D.Animation.Runtime.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196248640, "dur":143960, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196392605, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196392612, "dur":21192, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196413866, "dur":3824, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196417695, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196417703, "dur":73001, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196490775, "dur":29170, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Plugins/x86/lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196519953, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1697830196523490, "dur":2429, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Alexandre/OneDrive/rea de Trabalho/Plataforma Alexandre_Data/Plugins/x86/lib_burst_generated.dll" }}
+,{ "pid":12345, "tid":6, "ts":1697830196525980, "dur":1037, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1697830196533543, "dur":2233, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid": 0, "tid": 1, "ts": 1697830196566217, "dur": 1035, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1697830196565622, "dur": 1672, "ph": "X", "name": "Write chrome-trace events", "args": {} },

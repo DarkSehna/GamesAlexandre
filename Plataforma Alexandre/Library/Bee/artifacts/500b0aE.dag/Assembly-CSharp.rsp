@@ -464,6 +464,7 @@
 "Assets/Scripts/Intermediaries/WeaponHitboxToWeapon.cs"
 "Assets/Scripts/Manager/DoorManagerScript.cs"
 "Assets/Scripts/Manager/GameManagerScript.cs"
+"Assets/Scripts/Manager/MainMenuManager.cs"
 "Assets/Scripts/Other/Checkpoint_scr.cs"
 "Assets/Scripts/Other/TrapDamage.cs"
 "Assets/Scripts/Player/Data/PlayerData.cs"
