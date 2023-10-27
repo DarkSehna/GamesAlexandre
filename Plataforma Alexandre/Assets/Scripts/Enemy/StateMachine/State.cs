@@ -26,7 +26,7 @@ public class State
         entity.anim.SetBool(animBoolName, true);
         DoChecks();
 
-        //Debug.Log(animBoolName);
+        Debug.Log(animBoolName);
     }
 
     public virtual void Exit()

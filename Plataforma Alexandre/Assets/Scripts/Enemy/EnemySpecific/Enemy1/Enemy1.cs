@@ -24,5 +24,29 @@ public class Enemy1 : Entity
 
     [SerializeField] private Transform meleeAttackPosition;
 
+    public override void Awake()
+    {
+        base.Awake();
 
+        idleState = new E1_IdleState(this, stateMachine, "idle", idleStateData, this);
+        moveState = new E1_MoveState(this, stateMachine, "move", moveStateData, this);
+        playerDetectedState = new E1_PlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedStateData, this);
+        chargeState = new E1_ChargeState(this, stateMachine, "charge", chargeStateData, this);
+        lookForPlayerState = new E1_LookForPlayerState(this, stateMachine, "lookForPlayer", lokForPlayerStateData, this);
+        meleeAttackState = new E1_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
+        stunState = new E1_StunState(this, stateMachine, "stun", stunStateData, this);
+        deadState = new E1_DeadState(this, stateMachine, "dead", deadStateData, this);
+    }
+
+    private void Start()
+    {
+        stateMachine.Initialize(idleState);
+    }
+
+    public override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+
+        Gizmos.DrawWireSphere(meleeAttackPosition.position, meleeAttackStateData.attackRadius);
+    }
 }
