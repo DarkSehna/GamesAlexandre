@@ -30,4 +30,13 @@ public class PlayerData : ScriptableObject
     public GameObject[] objectToSpawn;
     public int[] ammo;
     public int[] maxAmmo;
+
+    [Header("Tackle")]
+    public float tackleSpeed = 6f;
+    public float tackleTime = 2f;
+    public float tackleDamage;
+    public float tackleKnockbackPower;
+    public Vector2 tackleKnockbackAngle;
+    public float tackleCollisionRadius;
+    public LayerMask whatIsEnemy;
 }

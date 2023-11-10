@@ -89,10 +89,10 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.landState);
         }
-        else if(jumpInput && player.jumpState.CanJump())
-        {
-            stateMachine.ChangeState(player.jumpState);
-        }
+        //else if (jumpInput && player.jumpState.CanJump())
+        //{
+        //    stateMachine.ChangeState(player.jumpState);
+        //}
 
         if (Time.time >= playerData.launchStartTime + playerData.launchEndTime)// || isTouchingCeiling || isTouchingWall || isTouchingWallBack)
         {
@@ -124,10 +124,11 @@ public class PlayerInAirState : PlayerState
 
     private void CheckCoyoteTime()
     {
-        if(coyoteTime && Time.time>startTime+playerData.coyoteTime)
+        if(coyoteTime && Time.time > startTime + playerData.coyoteTime)
         {
             coyoteTime = false;
             player.jumpState.DecreaseAmountOfJumpsLeft();
+            Debug.Log(coyoteTime);
         }
     }
     

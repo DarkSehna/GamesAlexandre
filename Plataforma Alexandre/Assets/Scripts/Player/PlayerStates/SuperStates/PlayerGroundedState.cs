@@ -62,7 +62,16 @@ public class PlayerGroundedState : PlayerState
 
         if (player.inputHandler.attackInputs[(int)combatInputs.primary] && !isTouchingCeiling && !wheelInput)
         {
-            stateMachine.ChangeState(player.primaryAttackState);
+            //stateMachine.ChangeState(player.primaryAttackState);
+            switch (player.inputHandler.currentWeapon)
+            {
+                case weaponInputs.tackle:
+                    stateMachine.ChangeState(player.tackleState);
+                    break;
+                //case weaponInputs.tackle:
+                //    stateMachine.ChangeState(player.tackleState);
+                //    break;
+            }
         }
         else if (player.inputHandler.attackInputs[(int)combatInputs.secondary] && !isTouchingCeiling && playerData.ammo[(int)player.inputHandler.currentPower] > 0 && !wheelInput)
         {

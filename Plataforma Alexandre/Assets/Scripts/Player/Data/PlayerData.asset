@@ -21,7 +21,7 @@ MonoBehaviour:
   crouchMoveVelocity: 5
   crouchColliderHeight: 0.8
   standColliderHeight: 1.6
-  lastCheckpointPos: {x: 80.9, y: -32.3, z: 0}
+  lastCheckpointPos: {x: -7.4, y: 40.6, z: 0}
   objectToSpawn:
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
@@ -31,3 +31,12 @@ MonoBehaviour:
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
   ammo: 000000000500000005000000030000000100000001000000
   maxAmmo: 000000000500000005000000030000000100000001000000
+  tackleSpeed: 12
+  tackleTime: 2
+  tackleDamage: 5
+  tackleKnockbackPower: 5
+  tackleKnockbackAngle: {x: 1, y: 2}
+  tackleCollisionRadius: 0.5
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 1024

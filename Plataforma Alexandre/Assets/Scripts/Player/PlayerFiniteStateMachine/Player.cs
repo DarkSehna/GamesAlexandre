@@ -30,9 +30,11 @@ public class Player : MonoBehaviour
     public PlayerAttackState primaryAttackState { get; private set; }
     public PlayerAttackState secondaryAttackState { get; private set; }
     public PlayerAmmoGatherState ammoGatherState { get; private set; }
+    public PlayerTackleState tackleState { get; private set; }
 
     [SerializeField]
     public PlayerData playerData;
+    public Transform tackleAttackPosition;
     private Vector2 workSpace;
     public Vector2 aimDirection;
     private Vector2 aimDirectionInput;
@@ -56,7 +58,8 @@ public class Player : MonoBehaviour
         crouchMoveState = new PlayerCrouchMoveState(this, stateMachine, playerData, "crouchMove");
         primaryAttackState = new PlayerAttackState(this, stateMachine, playerData, "attack"); 
         secondaryAttackState = new PlayerAttackState(this, stateMachine, playerData, "attack");
-        ammoGatherState = new PlayerAmmoGatherState(this, stateMachine, playerData, "ammoGather");
+        ammoGatherState = new PlayerAmmoGatherState(this, stateMachine, playerData, "ammoGather"); 
+        tackleState = new PlayerTackleState(this, stateMachine, playerData, "tackle");
     }
     private void Start()
     {

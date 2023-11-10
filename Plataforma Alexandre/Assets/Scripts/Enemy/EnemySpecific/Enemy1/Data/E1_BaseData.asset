@@ -25,7 +25,7 @@ MonoBehaviour:
   hitParticle: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
