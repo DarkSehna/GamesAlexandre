@@ -130,9 +130,10 @@ public class Player : MonoBehaviour
         aimDirectionIndicator.rotation = Quaternion.Euler(0f, 0f, angle - 45f);
     }
 
-    public void SetWeapon()
+    public void SetWeapon(int i)
     {
-        primaryAttackState.SetWeapon(inventory.weapons[(int)combatInputs.tackle]); 
+        //primaryAttackState.SetWeapon(inventory.weapons[i]); 
+        inputHandler.currentWeapon = (weaponInputs)i;
     }
     #endregion
 

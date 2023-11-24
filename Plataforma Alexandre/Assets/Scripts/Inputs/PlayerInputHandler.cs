@@ -31,7 +31,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool ammoGatherInput { get; private set; }
     public bool interactInput { get; private set; }
 
-    public weaponInputs currentWeapon { get; private set; }
+    public weaponInputs currentWeapon { get; set; }
     public bool[] collectedWeapons { get; set; }
     public bool openWheelInput { get; private set; }
     public bool pauseGameInput { get; private set; }

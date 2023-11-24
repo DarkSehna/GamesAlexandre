@@ -31,10 +31,10 @@ MonoBehaviour:
   - {fileID: 6490361611882172161, guid: 9638ec972235b7241b25717edbe8058b, type: 3}
   ammo: 000000000500000005000000030000000100000001000000
   maxAmmo: 000000000500000005000000030000000100000001000000
-  tackleSpeed: 12
-  tackleTime: 2
+  tackleSpeed: 20
+  tackleTime: 0.2
   tackleDamage: 5
-  tackleKnockbackPower: 5
+  tackleKnockbackPower: 10
   tackleKnockbackAngle: {x: 1, y: 2}
   tackleCollisionRadius: 0.5
   whatIsEnemy:
