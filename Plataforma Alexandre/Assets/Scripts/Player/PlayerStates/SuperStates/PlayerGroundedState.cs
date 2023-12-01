@@ -67,11 +67,15 @@ public class PlayerGroundedState : PlayerState
             switch (player.inputHandler.currentWeapon)
             {
                 case weaponInputs.tackle:
-                    stateMachine.ChangeState(player.tackleState);
-                    break;
-                //case weaponInputs.tackle:
-                //    stateMachine.ChangeState(player.tackleState);
-                //    break;
+                    {
+                        stateMachine.ChangeState(player.tackleState);
+                        break;
+                    }
+                case weaponInputs.explosion:
+                    {
+                        stateMachine.ChangeState(player.explosionState);
+                        break;
+                    }
             }
         }
         else if (player.inputHandler.attackInputs[(int)combatInputs.secondary] && !isTouchingCeiling && playerData.ammo[(int)player.inputHandler.currentPower] > 0 && !wheelInput)

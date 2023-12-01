@@ -486,6 +486,7 @@
 "Assets/Scripts/Player/PlayerStates/SubStates/PlayerAttackState.cs"
 "Assets/Scripts/Player/PlayerStates/SubStates/PlayerCrouchIdleState.cs"
 "Assets/Scripts/Player/PlayerStates/SubStates/PlayerCrouchMoveState.cs"
+"Assets/Scripts/Player/PlayerStates/SubStates/PlayerExplosionState.cs"
 "Assets/Scripts/Player/PlayerStates/SubStates/PlayerIdleState.cs"
 "Assets/Scripts/Player/PlayerStates/SubStates/PlayerJumpState.cs"
 "Assets/Scripts/Player/PlayerStates/SubStates/PlayerLandState.cs"

@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "newPlayerData", menuName = "Data/Player Data/Base Data")]
 public class PlayerData : ScriptableObject
 {
+    [Header("Common")]
+    public LayerMask whatIsEnemy;
+
     [Header("Move State")]
     public float movementVelocity = 10f;
 
@@ -38,5 +41,11 @@ public class PlayerData : ScriptableObject
     public float tackleKnockbackPower;
     public Vector2 tackleKnockbackAngle;
     public float tackleCollisionRadius;
-    public LayerMask whatIsEnemy;
+
+    [Header("Explosion")]
+    public float explosionTime = 2f;
+    public float explosionDamage;
+    public float explosionKnockbackPower;
+    public Vector2 explosionKnockbackAngle;
+    public float explosionCollisionRadius;
 }
