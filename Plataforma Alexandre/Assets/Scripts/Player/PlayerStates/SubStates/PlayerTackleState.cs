@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerTackleState : PlayerAbilityState
 {
     private bool isTackleTimeOver;
-    private bool enemyHit;
     private bool canDamage;
     private Collider2D enemyDetected;
 
@@ -33,7 +32,6 @@ public class PlayerTackleState : PlayerAbilityState
         base.Enter();
 
         isTackleTimeOver = false;
-        enemyHit = false;
         canDamage = true;
     }
 
@@ -56,8 +54,6 @@ public class PlayerTackleState : PlayerAbilityState
 
         if (enemyDetected)
         {
-            enemyHit = true;
-
             if (canDamage)
             {
                 TriggerAttack();

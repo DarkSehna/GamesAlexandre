@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2217aa0688afe6345aa20267e2910963, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 1024
   movementVelocity: 10
   jumpVelocity: 22
   amountOfJumps: 1
@@ -37,6 +40,8 @@ MonoBehaviour:
   tackleKnockbackPower: 10
   tackleKnockbackAngle: {x: 1, y: 2}
   tackleCollisionRadius: 0.5
-  whatIsEnemy:
-    serializedVersion: 2
-    m_Bits: 1024
+  explosionTime: 2
+  explosionDamage: 15
+  explosionKnockbackPower: 20
+  explosionKnockbackAngle: {x: 1, y: 2}
+  explosionCollisionRadius: 3
