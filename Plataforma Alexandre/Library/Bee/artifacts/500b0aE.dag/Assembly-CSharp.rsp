@@ -471,6 +471,7 @@
 "Assets/Scripts/Intermediaries/WeaponAnimationToWeapon.cs"
 "Assets/Scripts/Intermediaries/WeaponHitboxToWeapon.cs"
 "Assets/Scripts/Manager/DoorManagerScript.cs"
+"Assets/Scripts/Manager/EntityManager.cs"
 "Assets/Scripts/Manager/GameManagerScript.cs"
 "Assets/Scripts/Manager/MainMenuManager.cs"
 "Assets/Scripts/Other/Checkpoint_scr.cs"

@@ -11,6 +11,7 @@ public class PlayerExplosionState : PlayerAbilityState
     private Collider2D enemyDetected;
     private List<IDamageable> detectedDamageable = new List<IDamageable>();
     private List<IKnockbackable> detectedKnockbackables = new List<IKnockbackable>();
+    private List<float> enemyID = new List<float>();
     private int knockbackDirection;
 
     public PlayerExplosionState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
@@ -35,8 +36,6 @@ public class PlayerExplosionState : PlayerAbilityState
 
         TriggerAttack();
     }
-
-
 
     public override void DoChecks()
     {
@@ -108,11 +107,15 @@ public class PlayerExplosionState : PlayerAbilityState
                 SetKnockbackDirection();
                 item.Knockback(playerData.explosionKnockbackAngle, playerData.explosionKnockbackPower, knockbackDirection);
             }
-        
     }
 
     public void AddToDetected(Collider2D collision)
     {
+        Entity enemy = collision.GetComponent<Entity>();
+        if (enemy != null)
+        {
+            enemyID.Add(enemy.entityID);
+        }
         IDamageable damageable = collision.GetComponent<IDamageable>();
         if (damageable != null)
         {

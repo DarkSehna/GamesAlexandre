@@ -12,6 +12,8 @@ public class Entity : MonoBehaviour
     public Animator anim { get; private set; }
     public AnimationToStateMachine atsm { get; private set; }
 
+    public float entityID;
+
     [SerializeField] private Transform wallCheck;
     [SerializeField] private Transform ledgeCheck;
     [SerializeField] private Transform playerCheck;
